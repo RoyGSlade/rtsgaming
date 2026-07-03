@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"stone"
+display_name = "Stone"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 2.0
+fertility = 0.0
+moisture = 0.1
+path_cost = 1.35
+harvest_resource_id = &"stone"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"stone"
+albedo_color = Color(0.78, 0.78, 0.78, 1)
+texture_top = &"stone"
+texture_bottom = &"stone"
+texture_side = &"stone"

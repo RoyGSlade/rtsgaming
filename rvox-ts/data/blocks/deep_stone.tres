@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"deep_stone"
+display_name = "Deep Stone"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 4.0
+path_cost = 1.5
+harvest_resource_id = &"stone"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"deep_stone"
+albedo_color = Color(0.18, 0.19, 0.22, 1)
+texture_top = &"deep_stone"
+texture_bottom = &"deep_stone"
+texture_side = &"deep_stone"

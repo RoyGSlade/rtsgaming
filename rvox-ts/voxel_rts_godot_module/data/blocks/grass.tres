@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"grass"
+display_name = "Grass"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 0.6
+fertility = 0.8
+moisture = 0.4
+path_cost = 1.0
+harvest_resource_id = &"dirt"
+harvest_amount = 1
+tool_required = &"shovel"
+material_id = &"grass"

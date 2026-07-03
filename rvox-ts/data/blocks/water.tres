@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"water"
+display_name = "Water"
+category = &"fluid"
+solid = false
+transparent = true
+walkable = false
+buildable = false
+diggable = false
+fluid = true
+hardness = 0.0
+fertility = 0.0
+moisture = 1.0
+path_cost = 999.0
+harvest_resource_id = &"water"
+harvest_amount = 1
+material_id = &"water"

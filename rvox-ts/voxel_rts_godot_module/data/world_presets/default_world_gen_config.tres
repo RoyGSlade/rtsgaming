@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/config/world_gen_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+world_seed = 1337
+world_size = Vector2i(256, 256)
+chunk_size = 32
+max_height = 48
+water_level = 15
+height_scale = 72.0
+height_power = 1.35
+octaves = 5
+lacunarity = 2.0
+persistence = 0.5
+ridge_scale = 110.0
+ridge_mix = 0.22
+detail_scale = 28.0
+detail_mix = 0.08
+sand_line = 17
+tree_line = 32
+pine_line = 37
+snow_line = 41
+tree_density = 0.16
+ore_density = 0.12
+wildlife_density = 0.05
+generate_trees = true
+generate_ores = true
+generate_water = true

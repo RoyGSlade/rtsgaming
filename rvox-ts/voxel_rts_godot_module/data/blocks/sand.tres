@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"sand"
+display_name = "Sand"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 0.4
+fertility = 0.1
+moisture = 0.2
+path_cost = 1.25
+harvest_resource_id = &"sand"
+harvest_amount = 1
+tool_required = &"shovel"
+material_id = &"sand"

@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dwlc4gwp8acbu"]
+
+[ext_resource type="Script" uid="uid://bcf714bmjb0e5" path="res://scripts/core/game_main.gd" id="1_i0gke"]
+[ext_resource type="Script" uid="uid://cqbews8dikhwb" path="res://scripts/world/world_runtime.gd" id="2_od6pc"]
+[ext_resource type="Script" uid="uid://u7sd7ql3xsxq" path="res://scripts/camera/rts_camera_controller.gd" id="3_23cjt"]
+[ext_resource type="Script" path="res://scripts/world/foliage/grass_scatter.gd" id="4_grass"]
+[ext_resource type="Script" path="res://scripts/world/environment/sun_moon_rig.gd" id="5_sunmoon"]
+[ext_resource type="Script" path="res://scripts/world/weather/rain_controller.gd" id="6_rain"]
+[ext_resource type="Script" path="res://scripts/ui/time_dial.gd" id="7_timedial"]
+
+[node name="GameMain" type="Node3D" unique_id=741542905]
+script = ExtResource("1_i0gke")
+
+[node name="World" type="Node3D" parent="." unique_id=1472096980]
+script = ExtResource("2_od6pc")
+
+[node name="TerrainMesh" type="MeshInstance3D" parent="World" unique_id=818149381]
+
+[node name="Grass" type="MultiMeshInstance3D" parent="World" unique_id=3105582214]
+script = ExtResource("4_grass")
+
+[node name="WaterMesh" type="MeshInstance3D" parent="World" unique_id=3105582215]
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1098483633]
+script = ExtResource("3_23cjt")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1195243711]
+current = true
+
+[node name="SunMoonRig" type="Node3D" parent="." unique_id=2882910447]
+script = ExtResource("5_sunmoon")
+
+[node name="Sun" type="DirectionalLight3D" parent="SunMoonRig" unique_id=1974627416]
+transform = Transform3D(0.81915206, 0.46984634, -0.32898995, 0, 0.57357645, 0.81915206, 0.57357645, -0.6710101, 0.46984634, 0, 0, 0)
+light_energy = 1.15
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="SunMoonRig" unique_id=2882910448]
+light_color = Color(0.45, 0.55, 0.9, 1)
+light_energy = 0.0
+shadow_enabled = false
+
+[node name="RainController" type="Node3D" parent="." unique_id=2882910449]
+script = ExtResource("6_rain")
+target_path = NodePath("../CameraRig")
+world_path = NodePath("../World")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1504104435]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=985037431]
+
+[node name="Root" type="Control" parent="HUD" unique_id=2044616835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="Margin" type="MarginContainer" parent="HUD/Root" unique_id=13124798]
+layout_mode = 0
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="Layout" type="VBoxContainer" parent="HUD/Root/Margin" unique_id=357272868]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="HUD/Root/Margin/Layout" unique_id=464608107]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "CROWN & CIRCUIT · WORLD FOUNDATION"
+
+[node name="Status" type="Label" parent="HUD/Root/Margin/Layout" unique_id=2061025723]
+layout_mode = 2
+text = "Generating world…"
+
+[node name="Controls" type="Label" parent="HUD/Root/Margin/Layout" unique_id=2016935722]
+layout_mode = 2
+text = "WASD pan · Middle drag orbit · Wheel zoom · R new seed"
+
+[node name="Regenerate" type="Button" parent="HUD/Root/Margin/Layout" unique_id=890028577]
+layout_mode = 2
+text = "Regenerate World"
+
+[node name="ToggleRain" type="Button" parent="HUD/Root/Margin/Layout" unique_id=2882910450]
+layout_mode = 2
+text = "Toggle Rain"
+
+[node name="Minimap" type="TextureRect" parent="HUD/Root" unique_id=3927104558]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 176.0
+mouse_filter = 2
+texture_filter = 1
+
+[node name="TimeDial" type="Control" parent="HUD/Root" unique_id=3927104559]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_top = 192.0
+offset_right = -16.0
+offset_bottom = 352.0
+script = ExtResource("7_timedial")

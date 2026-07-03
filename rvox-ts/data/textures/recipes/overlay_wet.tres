@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"overlay_wet"
+resolution = 64
+pattern = 0
+base_color = Color(0.1, 0.12, 0.16, 1)
+accent_color = Color(0.08, 0.1, 0.14, 1)
+accent_density = 0.1
+noise_seed = 201
+contrast = 1.0

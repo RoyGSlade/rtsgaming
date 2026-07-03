@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"iron_ore"
+display_name = "Iron Ore"
+category = &"ore"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 3.0
+path_cost = 999.0
+harvest_resource_id = &"raw_iron_ore"
+harvest_amount = 3
+tool_required = &"pickaxe"
+material_id = &"iron_ore"
+albedo_color = Color(0.48, 0.32, 0.24, 1)
+texture_top = &"iron_ore"
+texture_bottom = &"iron_ore"
+texture_side = &"iron_ore"

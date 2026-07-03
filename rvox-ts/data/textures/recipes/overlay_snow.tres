@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"overlay_snow"
+resolution = 64
+pattern = 1
+base_color = Color(0.95, 0.97, 1.0, 1)
+accent_color = Color(0.88, 0.92, 0.98, 1)
+accent_density = 0.12
+noise_seed = 203
+contrast = 1.0

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"tile_floor"
+resolution = 64
+pattern = 3
+base_color = Color(0.82, 0.8, 0.76, 1)
+accent_color = Color(0.68, 0.66, 0.62, 1)
+accent_density = 0.25
+noise_seed = 116
+contrast = 1.0

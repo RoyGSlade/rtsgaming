@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wood_planks"
+display_name = "Wood Planks"
+category = &"construction"
+solid = true
+transparent = false
+buildable = true
+diggable = true
+hardness = 1.1
+flammability = 0.9
+path_cost = 999.0
+harvest_resource_id = &"wood"
+harvest_amount = 1
+tool_required = &"axe"
+material_id = &"wood_planks"
+albedo_color = Color(0.88, 0.78, 0.64, 1)
+texture_top = &"wood_planks"
+texture_bottom = &"wood_planks"
+texture_side = &"wood_planks"

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"dirt"
+display_name = "Dirt"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 0.5
+fertility = 0.5
+moisture = 0.3
+path_cost = 1.1
+harvest_resource_id = &"dirt"
+harvest_amount = 1
+tool_required = &"shovel"
+material_id = &"dirt"
+albedo_color = Color(0.32, 0.18, 0.09, 1)
+texture_top = &"dirt"
+texture_bottom = &"dirt"
+texture_side = &"dirt"

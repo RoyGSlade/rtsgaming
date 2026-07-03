@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"coal_ore"
+resolution = 64
+pattern = 2
+base_color = Color(0.48, 0.48, 0.5, 1)
+accent_color = Color(0.08, 0.08, 0.09, 1)
+accent_density = 0.25
+noise_seed = 109
+contrast = 1.0

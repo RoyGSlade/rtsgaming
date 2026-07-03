@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"snow"
+display_name = "Snow"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = false
+diggable = true
+hardness = 0.3
+fertility = 0.0
+moisture = 0.8
+path_cost = 1.5
+harvest_resource_id = &"snow"
+harvest_amount = 1
+tool_required = &"shovel"
+material_id = &"snow"
+albedo_color = Color(0.86, 0.91, 0.94, 1)
+texture_top = &"snow"
+texture_bottom = &"snow"
+texture_side = &"snow"
