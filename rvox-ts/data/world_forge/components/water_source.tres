@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"water_source"
+display_name = "Water Source"
+category = &"environment"
+sort_order = 7
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("fluid_source", "water")
+ports = Array[Dictionary]([])
+color = Color(0.23137254901960785, 0.5568627450980392, 0.8588235294117647, 1.0)
+snap_required = false
+rules = Array[Dictionary]([{"channel": "fluid", "effect": "emit", "fluid": "water", "level": 8}])

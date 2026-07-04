@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/part_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"axle"
+display_name = "Axle"
+category = 1
+geometry_kind = 1
+geometry_params = {"radius": 0.02, "height": 0.6}
+long_axis = Vector3(0, 0, 1)
+collision_boxes = Array[AABB]([AABB(-0.02, -0.02, -0.3, 0.04, 0.04, 0.6)])
+material_id = &"steel"
+color = Color(0.62, 0.64, 0.68, 1.0)
+occupancy = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(0, 0, 1), Vector3i(0, 0, 2), Vector3i(0, 0, 3), Vector3i(0, 0, 4)])
+sockets = Array[Dictionary]([{"id": "end_a", "position": Vector3(0.0, 0.0, -0.3), "axis": Vector3(0.0, 0.0, -1.0), "kinds": ["bearing", "power_shaft"], "accepts": ["bearing", "power_shaft"]}, {"id": "end_b", "position": Vector3(0.0, 0.0, 0.3), "axis": Vector3(0.0, 0.0, 1.0), "kinds": ["bearing", "power_shaft"], "accepts": ["bearing", "power_shaft"]}])
+mass_kg = 0.0
+stock_recipe_id = &"axle_turning"

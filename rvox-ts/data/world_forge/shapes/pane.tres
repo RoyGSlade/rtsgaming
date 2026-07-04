@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/block_shape_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pane"
+display_name = "Pane / Bars"
+sort_order = 5
+geometry_kind = 4
+connection_kind = 1
+supports_rotation = false
+occupies_full_cell = false
+blocks_visibility = false
+blocks_movement = true
+support_fraction = 0.2
+collision_boxes = Array[AABB]([AABB(0.4375, 0, 0.4375, 0.125, 1, 0.125)])

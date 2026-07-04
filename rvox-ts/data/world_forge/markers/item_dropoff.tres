@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/marker_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"item_dropoff"
+display_name = "Item Drop-off"
+sort_order = 2
+color = Color(0.8235294117647058, 0.6, 0.13333333333333333, 1.0)

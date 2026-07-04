@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"fire_source"
+display_name = "Fire / Heat Source"
+category = &"environment"
+sort_order = 8
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("heat_source", "fire")
+ports = Array[Dictionary]([])
+color = Color(1.0, 0.47843137254901963, 0.1843137254901961, 1.0)
+snap_required = false
+rules = Array[Dictionary]([{"channel": "thermal", "effect": "emit", "temperature": 700.0}, {"channel": "damage", "effect": "ignite", "target_tag": "flammable"}])

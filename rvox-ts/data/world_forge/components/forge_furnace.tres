@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"forge_furnace"
+display_name = "Furnace Chamber"
+category = &"heating"
+sort_order = 1
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("smelting_chamber", "heat_receiver")
+ports = Array[Dictionary]([{"id": "heat_in", "type": "heat", "accepts": ["heat"], "cell": [0, 0, 0], "facing": [0, -1, 0]}, {"id": "exhaust_out", "type": "exhaust", "accepts": ["exhaust"], "cell": [0, 0, 0], "facing": [0, 1, 0]}])
+color = Color(0.43137254901960786, 0.4627450980392157, 0.5058823529411764, 1.0)
+snap_required = true
+rules = Array[Dictionary]([{"channel": "thermal", "effect": "receive", "minimum": 700.0}])

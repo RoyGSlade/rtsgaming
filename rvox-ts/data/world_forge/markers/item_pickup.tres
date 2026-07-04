@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/marker_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"item_pickup"
+display_name = "Item Pickup"
+sort_order = 3
+color = Color(0.6392156862745098, 0.44313725490196076, 0.9686274509803922, 1.0)

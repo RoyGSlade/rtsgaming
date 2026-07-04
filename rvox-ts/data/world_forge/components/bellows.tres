@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"bellows"
+display_name = "Bellows"
+category = &"heating"
+sort_order = 5
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("airflow_source")
+ports = Array[Dictionary]([{"id": "air_out", "type": "airflow", "accepts": ["airflow"], "cell": [0, 0, 0], "facing": [1, 0, 0]}])
+color = Color(0.5450980392156862, 0.35294117647058826, 0.23529411764705882, 1.0)
+snap_required = true
+rules = Array[Dictionary]([{"channel": "force", "effect": "emit", "kind": "airflow"}])

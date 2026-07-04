@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/block_shape_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"cube"
+display_name = "Cube"
+sort_order = 0
+geometry_kind = 0
+connection_kind = 0
+supports_rotation = false
+occupies_full_cell = true
+blocks_visibility = true
+blocks_movement = true
+support_fraction = 1.0
+collision_boxes = Array[AABB]([AABB(0, 0, 0, 1, 1, 1)])

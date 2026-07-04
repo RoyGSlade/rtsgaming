@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/marker_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"entrance"
+display_name = "Entrance"
+sort_order = 1
+color = Color(0.9490196078431372, 0.8, 0.3764705882352941, 1.0)

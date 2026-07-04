@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/material_properties.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"bloom_iron"
+display_name = "Bloom Iron"
+density_kg_m3 = 7000.0
+specific_heat = 460.0
+conductivity = 0.6
+ignition_temp_c = -1.0
+melting_temp_c = 1500.0
+working_temp_c = 800.0
+strength = 120.0
+molten_material_id = &"molten_iron"

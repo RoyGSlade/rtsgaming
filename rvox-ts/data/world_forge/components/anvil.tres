@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"anvil"
+display_name = "Anvil"
+category = &"crafting"
+sort_order = 3
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("metal_work_surface")
+ports = Array[Dictionary]([])
+color = Color(0.5333333333333333, 0.5725490196078431, 0.6078431372549019, 1.0)
+snap_required = false
+rules = Array[Dictionary]([])

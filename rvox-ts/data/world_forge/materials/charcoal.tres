@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/material_properties.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"charcoal"
+display_name = "Charcoal"
+density_kg_m3 = 300.0
+specific_heat = 1000.0
+conductivity = 0.35
+ignition_temp_c = 349.0
+melting_temp_c = -1.0
+working_temp_c = -1.0
+strength = 2.0
+molten_material_id = &""

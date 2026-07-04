@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"forge_firebox"
+display_name = "Forge Firebox"
+category = &"heating"
+sort_order = 0
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("heat_source", "fuel_input")
+ports = Array[Dictionary]([{"id": "heat_out", "type": "heat", "accepts": ["heat"], "cell": [0, 0, 0], "facing": [0, 1, 0]}, {"id": "air_in", "type": "airflow", "accepts": ["airflow"], "cell": [0, 0, 0], "facing": [-1, 0, 0]}])
+color = Color(0.8392156862745098, 0.35294117647058826, 0.19215686274509805, 1.0)
+snap_required = false
+rules = Array[Dictionary]([{"channel": "thermal", "effect": "emit", "temperature": 900.0}])

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/part_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wood_beam"
+display_name = "Wood Beam"
+category = 0
+geometry_kind = 0
+geometry_params = {"size": Vector3(0.1, 0.1, 2.0)}
+collision_boxes = Array[AABB]([AABB(-0.05, -0.05, -1.0, 0.1, 0.1, 2.0)])
+material_id = &"oak"
+color = Color(0.55, 0.4, 0.24, 1.0)
+occupancy = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(0, 0, 1), Vector3i(0, 0, 2), Vector3i(0, 0, 3), Vector3i(0, 0, 4), Vector3i(0, 0, 5), Vector3i(0, 0, 6), Vector3i(0, 0, 7), Vector3i(0, 0, 8), Vector3i(0, 0, 9), Vector3i(0, 0, 10), Vector3i(0, 0, 11), Vector3i(0, 0, 12), Vector3i(0, 0, 13), Vector3i(0, 0, 14), Vector3i(0, 0, 15)])
+sockets = Array[Dictionary]([{"id": "end_a", "position": Vector3(0.0, 0.0, -1.0), "axis": Vector3(0.0, 0.0, -1.0), "kinds": ["weld", "hinge"], "accepts": ["weld", "hinge"]}, {"id": "end_b", "position": Vector3(0.0, 0.0, 1.0), "axis": Vector3(0.0, 0.0, 1.0), "kinds": ["weld", "hinge"], "accepts": ["weld", "hinge"]}])
+mass_kg = 0.0
+stock_recipe_id = &"wood_beam_sawing"

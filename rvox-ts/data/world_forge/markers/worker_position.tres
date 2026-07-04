@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/marker_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"worker_position"
+display_name = "Worker Position"
+sort_order = 0
+color = Color(0.32941176470588235, 0.8392156862745098, 0.6313725490196078, 1.0)

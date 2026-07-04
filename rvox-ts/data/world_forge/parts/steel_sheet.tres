@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/part_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"steel_sheet"
+display_name = "Steel Sheet"
+category = 0
+geometry_kind = 0
+geometry_params = {"size": Vector3(0.5, 0.0125, 0.5)}
+collision_boxes = Array[AABB]([AABB(-0.25, -0.00625, -0.25, 0.5, 0.0125, 0.5)])
+material_id = &"steel"
+color = Color(0.66, 0.68, 0.72, 1.0)
+occupancy = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(0, 0, 1), Vector3i(0, 0, 2), Vector3i(0, 0, 3), Vector3i(1, 0, 0), Vector3i(1, 0, 1), Vector3i(1, 0, 2), Vector3i(1, 0, 3), Vector3i(2, 0, 0), Vector3i(2, 0, 1), Vector3i(2, 0, 2), Vector3i(2, 0, 3), Vector3i(3, 0, 0), Vector3i(3, 0, 1), Vector3i(3, 0, 2), Vector3i(3, 0, 3)])
+sockets = Array[Dictionary]([{"id": "edge_north", "position": Vector3(0.0, 0.0, -0.25), "axis": Vector3(0.0, 0.0, -1.0), "kinds": ["weld"], "accepts": ["weld"]}, {"id": "edge_south", "position": Vector3(0.0, 0.0, 0.25), "axis": Vector3(0.0, 0.0, 1.0), "kinds": ["weld"], "accepts": ["weld"]}, {"id": "edge_east", "position": Vector3(0.25, 0.0, 0.0), "axis": Vector3(1.0, 0.0, 0.0), "kinds": ["weld"], "accepts": ["weld"]}, {"id": "edge_west", "position": Vector3(-0.25, 0.0, 0.0), "axis": Vector3(-1.0, 0.0, 0.0), "kinds": ["weld"], "accepts": ["weld"]}])
+mass_kg = 0.0
+stock_recipe_id = &"steel_sheet_rolling"

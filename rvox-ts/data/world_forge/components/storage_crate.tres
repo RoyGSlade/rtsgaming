@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"storage_crate"
+display_name = "Storage Crate"
+category = &"storage"
+sort_order = 6
+footprint = Array[Vector3i]([Vector3i(0, 0, 0)])
+capabilities = PackedStringArray("item_storage")
+ports = Array[Dictionary]([{"id": "item_port", "type": "item", "accepts": ["item"], "cell": [0, 0, 0], "facing": [0, 0, 1]}])
+color = Color(0.6078431372549019, 0.4196078431372549, 0.23921568627450981, 1.0)
+snap_required = false
+rules = Array[Dictionary]([])

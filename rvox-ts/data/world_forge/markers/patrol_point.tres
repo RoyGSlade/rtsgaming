@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/marker_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"patrol_point"
+display_name = "Patrol Point"
+sort_order = 6
+color = Color(0.4745098039215686, 0.7529411764705882, 1.0, 1.0)

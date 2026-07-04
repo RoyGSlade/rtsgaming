@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"workbench"
+display_name = "Workbench (2x1)"
+category = &"crafting"
+sort_order = 4
+footprint = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(1, 0, 0)])
+capabilities = PackedStringArray("work_surface")
+ports = Array[Dictionary]([{"id": "worker_side", "type": "worker", "accepts": ["worker"], "cell": [0, 0, 0], "facing": [0, 0, 1]}])
+color = Color(0.6392156862745098, 0.44313725490196076, 0.30980392156862746, 1.0)
+snap_required = false
+rules = Array[Dictionary]([])

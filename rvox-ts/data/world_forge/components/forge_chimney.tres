@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/functional_component_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"forge_chimney"
+display_name = "Chimney Stack (1x2)"
+category = &"heating"
+sort_order = 2
+footprint = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(0, 1, 0)])
+capabilities = PackedStringArray("exhaust")
+ports = Array[Dictionary]([{"id": "exhaust_in", "type": "exhaust", "accepts": ["exhaust"], "cell": [0, 0, 0], "facing": [0, -1, 0]}])
+color = Color(0.3411764705882353, 0.3764705882352941, 0.41568627450980394, 1.0)
+snap_required = true
+rules = Array[Dictionary]([])

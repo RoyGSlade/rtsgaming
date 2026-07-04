@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/block_shape_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"slab_top"
+display_name = "Top Slab"
+sort_order = 2
+geometry_kind = 1
+connection_kind = 0
+supports_rotation = false
+occupies_full_cell = false
+blocks_visibility = false
+blocks_movement = true
+support_fraction = 0.5
+collision_boxes = Array[AABB]([AABB(0, 0.5, 0, 1, 0.5, 1)])

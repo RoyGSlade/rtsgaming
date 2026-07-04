@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/material_properties.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"water"
+display_name = "Water"
+density_kg_m3 = 1000.0
+specific_heat = 4186.0
+conductivity = 0.5
+ignition_temp_c = -1.0
+melting_temp_c = -1.0
+working_temp_c = -1.0
+strength = 0.0
+molten_material_id = &""

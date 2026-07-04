@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/part_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wood_plank"
+display_name = "Wood Plank"
+category = 0
+geometry_kind = 0
+geometry_params = {"size": Vector3(0.1, 0.02, 1.0)}
+collision_boxes = Array[AABB]([AABB(-0.05, -0.01, -0.5, 0.1, 0.02, 1.0)])
+material_id = &"oak"
+color = Color(0.6, 0.45, 0.28, 1.0)
+occupancy = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(0, 0, 1), Vector3i(0, 0, 2), Vector3i(0, 0, 3), Vector3i(0, 0, 4), Vector3i(0, 0, 5), Vector3i(0, 0, 6), Vector3i(0, 0, 7)])
+sockets = Array[Dictionary]([{"id": "end_a", "position": Vector3(0.0, 0.0, -0.5), "axis": Vector3(0.0, 0.0, -1.0), "kinds": ["weld"], "accepts": ["weld"]}, {"id": "end_b", "position": Vector3(0.0, 0.0, 0.5), "axis": Vector3(0.0, 0.0, 1.0), "kinds": ["weld"], "accepts": ["weld"]}])
+mass_kg = 0.0
+stock_recipe_id = &"wood_plank_sawing"

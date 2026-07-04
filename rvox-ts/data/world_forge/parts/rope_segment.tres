@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/world_forge/model/part_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"rope_segment"
+display_name = "Rope Segment"
+category = 2
+geometry_kind = 1
+geometry_params = {"radius": 0.01, "height": 0.5}
+long_axis = Vector3(0, 0, 1)
+collision_boxes = Array[AABB]([AABB(-0.01, -0.01, -0.25, 0.02, 0.02, 0.5)])
+material_id = &"rope_fiber"
+color = Color(0.62, 0.52, 0.34, 1.0)
+occupancy = Array[Vector3i]([Vector3i(0, 0, 0), Vector3i(0, 0, 1), Vector3i(0, 0, 2), Vector3i(0, 0, 3)])
+sockets = Array[Dictionary]([{"id": "end_a", "position": Vector3(0.0, 0.0, -0.25), "axis": Vector3(0.0, 0.0, -1.0), "kinds": ["rope_anchor"], "accepts": ["rope_anchor"]}, {"id": "end_b", "position": Vector3(0.0, 0.0, 0.25), "axis": Vector3(0.0, 0.0, 1.0), "kinds": ["rope_anchor"], "accepts": ["rope_anchor"]}])
+mass_kg = 0.0
+stock_recipe_id = &"rope_twisting"
