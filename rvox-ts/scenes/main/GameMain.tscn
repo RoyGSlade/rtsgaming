@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://bcf714bmjb0e5" path="res://scripts/core/game_main.gd" id="1_i0gke"]
 [ext_resource type="Script" uid="uid://cqbews8dikhwb" path="res://scripts/world/world_runtime.gd" id="2_od6pc"]
 [ext_resource type="Script" uid="uid://u7sd7ql3xsxq" path="res://scripts/camera/rts_camera_controller.gd" id="3_23cjt"]
-[ext_resource type="Script" path="res://scripts/world/foliage/grass_scatter.gd" id="4_grass"]
-[ext_resource type="Script" path="res://scripts/world/environment/sun_moon_rig.gd" id="5_sunmoon"]
-[ext_resource type="Script" path="res://scripts/world/weather/rain_controller.gd" id="6_rain"]
-[ext_resource type="Script" path="res://scripts/ui/time_dial.gd" id="7_timedial"]
+[ext_resource type="Script" uid="uid://d051m45x3ckhg" path="res://scripts/world/foliage/grass_scatter.gd" id="4_grass"]
+[ext_resource type="Script" uid="uid://m16bt2pm6w4" path="res://scripts/world/environment/sun_moon_rig.gd" id="5_sunmoon"]
+[ext_resource type="Script" uid="uid://b84tjl1ktv8gq" path="res://scripts/world/weather/rain_controller.gd" id="6_rain"]
+[ext_resource type="Script" uid="uid://dubv8exqpu5w1" path="res://scripts/ui/time_dial.gd" id="7_timedial"]
 
 [node name="GameMain" type="Node3D" unique_id=741542905]
 script = ExtResource("1_i0gke")
@@ -16,10 +16,10 @@ script = ExtResource("2_od6pc")
 
 [node name="TerrainMesh" type="MeshInstance3D" parent="World" unique_id=818149381]
 
-[node name="Grass" type="MultiMeshInstance3D" parent="World" unique_id=3105582214]
+[node name="Grass" type="MultiMeshInstance3D" parent="World" unique_id=-1189385082]
 script = ExtResource("4_grass")
 
-[node name="WaterMesh" type="MeshInstance3D" parent="World" unique_id=3105582215]
+[node name="WaterMesh" type="MeshInstance3D" parent="World" unique_id=-1189385081]
 
 [node name="CameraRig" type="Node3D" parent="." unique_id=1098483633]
 script = ExtResource("3_23cjt")
@@ -27,7 +27,7 @@ script = ExtResource("3_23cjt")
 [node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1195243711]
 current = true
 
-[node name="SunMoonRig" type="Node3D" parent="." unique_id=2882910447]
+[node name="SunMoonRig" type="Node3D" parent="." unique_id=-1412056849]
 script = ExtResource("5_sunmoon")
 
 [node name="Sun" type="DirectionalLight3D" parent="SunMoonRig" unique_id=1974627416]
@@ -35,12 +35,11 @@ transform = Transform3D(0.81915206, 0.46984634, -0.32898995, 0, 0.57357645, 0.81
 light_energy = 1.15
 shadow_enabled = true
 
-[node name="Moon" type="DirectionalLight3D" parent="SunMoonRig" unique_id=2882910448]
+[node name="Moon" type="DirectionalLight3D" parent="SunMoonRig" unique_id=-1412056848]
 light_color = Color(0.45, 0.55, 0.9, 1)
 light_energy = 0.0
-shadow_enabled = false
 
-[node name="RainController" type="Node3D" parent="." unique_id=2882910449]
+[node name="RainController" type="Node3D" parent="." unique_id=-1412056847]
 script = ExtResource("6_rain")
 target_path = NodePath("../CameraRig")
 world_path = NodePath("../World")
@@ -54,6 +53,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 
 [node name="Margin" type="MarginContainer" parent="HUD/Root" unique_id=13124798]
@@ -78,17 +79,18 @@ text = "Generating world…"
 
 [node name="Controls" type="Label" parent="HUD/Root/Margin/Layout" unique_id=2016935722]
 layout_mode = 2
-text = "WASD pan · Middle drag orbit · Wheel zoom · R new seed"
+text = "WASD pan · Middle drag orbit · Wheel zoom · R new seed · L-click select · R-click move"
 
 [node name="Regenerate" type="Button" parent="HUD/Root/Margin/Layout" unique_id=890028577]
 layout_mode = 2
 text = "Regenerate World"
 
-[node name="ToggleRain" type="Button" parent="HUD/Root/Margin/Layout" unique_id=2882910450]
+[node name="ToggleRain" type="Button" parent="HUD/Root/Margin/Layout" unique_id=-1412056846]
 layout_mode = 2
 text = "Toggle Rain"
 
-[node name="Minimap" type="TextureRect" parent="HUD/Root" unique_id=3927104558]
+[node name="Minimap" type="TextureRect" parent="HUD/Root" unique_id=-367862738]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -97,10 +99,10 @@ offset_left = -176.0
 offset_top = 16.0
 offset_right = -16.0
 offset_bottom = 176.0
-mouse_filter = 2
-texture_filter = 1
+grow_horizontal = 0
+mouse_filter = 0
 
-[node name="TimeDial" type="Control" parent="HUD/Root" unique_id=3927104559]
+[node name="TimeDial" type="Control" parent="HUD/Root" unique_id=-367862737]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -109,4 +111,5 @@ offset_left = -176.0
 offset_top = 192.0
 offset_right = -16.0
 offset_bottom = 352.0
+grow_horizontal = 0
 script = ExtResource("7_timedial")

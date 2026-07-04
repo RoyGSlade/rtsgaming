@@ -8,6 +8,7 @@ var resource_generator := ResourceVeinGenerator.new()
 var tree_generator := TreeGenerator.new()
 var lake_generator := LakeGenerator.new()
 var river_generator := RiverGenerator.new()
+var ocean_seeder := OceanSeeder.new()
 
 func configure(config: WorldGenConfig) -> void:
     height_generator.configure(config)
@@ -15,7 +16,7 @@ func configure(config: WorldGenConfig) -> void:
     resource_generator.configure(config)
     tree_generator.configure(config)
 
-func generate_chunk(chunk_position: Vector2i, config: WorldGenConfig) -> ChunkData:
+func generate_chunk(chunk_position: Vector2i, config: WorldGenConfig, water_simulator: WaterFlowSimulator = null) -> ChunkData:
     configure(config)
     var chunk := ChunkData.new()
     chunk.setup(chunk_position, config.chunk_size, config.max_height)
@@ -37,15 +38,13 @@ func generate_chunk(chunk_position: Vector2i, config: WorldGenConfig) -> ChunkDa
                     if ore_id != &"":
                         block_id = ore_id
                     chunk.set_block(local_x, y, local_z, block_id)
-                elif config.generate_water and y <= config.get_clamped_water_level():
-                    chunk.set_block(local_x, y, local_z, &"water")
 
             if tree_generator.should_place_tree(global_x, global_z, height, biome_id, config):
                 tree_generator.place_oak_tree(chunk, local_x, height, local_z)
 
-    lake_generator.mark_lakes(chunk, config)
-    river_generator.carve_rivers(chunk, config)
-    WaterGrounding.enforce_grounding(chunk, config)
+    lake_generator.mark_lakes(chunk, config, water_simulator)
+    river_generator.carve_rivers(chunk, config, water_simulator)
+    ocean_seeder.seed_ocean_sources(chunk, config, water_simulator)
 
     chunk.clear_dirty()
     return chunk

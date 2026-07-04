@@ -9,10 +9,12 @@ extends RefCounted
 # construction (no water can end up higher than a neighboring wall cell),
 # unlike a simple "expand within tolerance" flood, which readily accepts
 # cells early (before the rim has grown) and can leave the final basin
-# bordering unvisited ground lower than its eventual rim — the exact
-# shape of "floating" water WaterGrounding (water_grounding.gd) exists to
-# catch, but this fixes the root cause instead of relying on cleanup:
-# an earlier tolerance-based version of this flood got ~93% of its cells
+# bordering unvisited ground lower than its eventual rim — exactly the
+# "floating" water shape a cleanup pass used to exist to catch, but this
+# fixes the root cause instead of relying on cleanup (water is now seeded
+# and settles live via WaterFlowSimulator, which can't produce a floating
+# surface at all since it only ever moves water down or sideways into open
+# space): an earlier tolerance-based version of this flood got ~93% of its cells
 # stripped as unsupported once the world was scaled up to 128x128, which
 # is what surfaced the bug. Also rejects basins that touch the chunk edge
 # (can't verify enclosure without neighbor-chunk data) or are too small
@@ -30,7 +32,7 @@ const MIN_BASIN_SIZE := 6
 const MAX_BASIN_SIZE := 400
 const MAX_RISE_FROM_SEED := 6
 
-func mark_lakes(chunk: ChunkData, config: WorldGenConfig) -> void:
+func mark_lakes(chunk: ChunkData, config: WorldGenConfig, water_simulator: WaterFlowSimulator = null) -> void:
     if not config.generate_water:
         return
     var rng := RandomNumberGenerator.new()
@@ -62,7 +64,7 @@ func mark_lakes(chunk: ChunkData, config: WorldGenConfig) -> void:
         if basin.is_empty():
             continue
         placed += 1
-        _fill_basin(chunk, basin.cells, basin.rim_height)
+        _fill_basin(chunk, basin.cells, basin.rim_height, water_simulator)
         for cell_pos: Vector2i in basin.cells:
             visited[cell_pos] = true
 
@@ -111,18 +113,41 @@ func _flood_basin(chunk: ChunkData, seed_pos: Vector2i, visited: Dictionary) -> 
 
     if touched_edge or pool.size() < MIN_BASIN_SIZE:
         return {}
+    # True-enclosure check against the actual terrain: every column just
+    # outside the pool must be at least rim-high, or water seeded at rim
+    # height escapes through the low neighbor. The flood alone can't prove
+    # this, for two reasons: the size cap can cut it off with a low frontier
+    # still unexplored, and cells pre-marked `visited` (ocean-level ground,
+    # earlier lakes) are skipped during expansion without ever checking
+    # their height - a basin butting up against ocean-level lowland would
+    # otherwise pass as "enclosed" and drain out through it, coating the
+    # terrain beyond in escaped water.
+    for pos: Vector2i in pool:
+        for dir in DIRECTIONS:
+            var npos: Vector2i = pos + dir
+            if pool.has(npos):
+                continue
+            if chunk.get_surface_height(npos.x, npos.y) < rim:
+                return {}
     return {"cells": pool.keys(), "rim_height": rim}
 
-func _fill_basin(chunk: ChunkData, cells: Array, rim_height: int) -> void:
+## Basin cells are a natural heightmap depression - everything from each
+## cell's own ground up through rim_height is already open air by
+## construction (terrain generation never fills above a column's own
+## height), so no digging is needed here, only seeding. Every qualifying
+## cell gets its own source at rim_height (the basin's target surface, not
+## its floor) rather than a single seed relying on cascading fill: dense
+## seeding fills the whole basin in a couple of ticks instead of needing
+## O(basin diameter) ticks to cascade out from one point, and
+## WaterFlowSimulator's distance-limited spread (MAX_FLOW_DISTANCE) means
+## seeding right up to the rim is safe even for a basin the flood-fill
+## couldn't fully prove enclosed - any leak through an unnoticed gap is
+## bounded to a few cells, not the whole map.
+func _fill_basin(chunk: ChunkData, cells: Array, rim_height: int, water_simulator: WaterFlowSimulator) -> void:
+    if water_simulator == null:
+        return
     for cell_pos: Vector2i in cells:
         var ground := chunk.get_surface_height(cell_pos.x, cell_pos.y)
         if ground >= rim_height:
             continue
-        for y in range(ground + 1, rim_height + 1):
-            chunk.set_block(cell_pos.x, y, cell_pos.y, &"water")
-        var cell := WaterCell.new()
-        cell.surface_y = rim_height
-        cell.depth = float(rim_height - ground)
-        cell.fish_density = clampf(cell.depth / 8.0, 0.0, 1.0)
-        chunk.set_water_cell(cell_pos.x, cell_pos.y, cell)
-        chunk.set_surface_height(cell_pos.x, cell_pos.y, rim_height)
+        water_simulator.seed_source(chunk, Vector3i(cell_pos.x, rim_height, cell_pos.y))

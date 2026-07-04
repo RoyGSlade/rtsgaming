@@ -18,6 +18,16 @@ extends Resource
 @export var flammability: float = 0.0
 @export var path_cost: float = 1.0
 
+@export_group("World Forge")
+## Reusable geometry profile. Existing definitions default to a full cube.
+@export var shape_id: StringName = &"cube"
+## Declarative interaction tags such as flammable, heat_sink, conductive, or waterloggable.
+@export var rule_tags: PackedStringArray = []
+## Item delivered by logistics workers when this block is constructed.
+@export var construction_item_id: StringName = &""
+@export var construction_item_count: int = 1
+@export var durability: float = 100.0
+
 @export var harvest_resource_id: StringName = &""
 @export var harvest_amount: int = 0
 @export var tool_required: StringName = &""

@@ -6,7 +6,9 @@ extends Node3D
 @export var show_only_surface: bool = true
 
 var generator := WorldGenerator.new()
-var water_solver := WaterFlowSolver.new()
+var water_simulator := WaterFlowSimulator.new()
+
+const PRESETTLE_TICKS := 200
 
 func _ready() -> void:
     if config == null:
@@ -18,8 +20,9 @@ func _ready() -> void:
     _generate_debug_preview()
 
 func _generate_debug_preview() -> void:
-    var chunk := generator.generate_chunk(Vector2i.ZERO, config)
-    water_solver.build_surface_water_cells(chunk, config)
+    var chunk := generator.generate_chunk(Vector2i.ZERO, config, water_simulator)
+    for i in PRESETTLE_TICKS:
+        water_simulator.tick(chunk)
 
     var min_h := 999999
     var max_h := -999999
@@ -49,9 +52,10 @@ func _draw_tiny_preview(chunk: ChunkData) -> void:
             if show_only_surface:
                 var y := chunk.get_surface_height(x, z)
                 _spawn_cube(mesh, Vector3(x, y, z), chunk.get_block(x, y, z))
-                var water_cell: WaterCell = chunk.get_water_cell(x, z)
-                if water_cell:
-                    _spawn_cube(mesh, Vector3(x, water_cell.surface_y, z), &"water")
+                var spans := water_simulator.get_column_spans(chunk, x, z)
+                if not spans.is_empty():
+                    var span: WaterSpan = spans[0]
+                    _spawn_cube(mesh, Vector3(x, span.surface_y, z), &"water")
             else:
                 for y in chunk.max_height:
                     var id := chunk.get_block(x, y, z)

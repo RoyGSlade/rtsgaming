@@ -1,5 +1,14 @@
 shader_type spatial;
-render_mode blend_mix, cull_disabled, specular_schlick_ggx;
+// depth_draw_always: a blend_mix (transparent) material otherwise doesn't
+// write to the depth buffer, so Godot falls back to sorting the whole water
+// surface per-object by view angle. At grazing camera angles that sort
+// resolves wrong and large patches of water (or the whole body) drop out -
+// the "water disappears depending on camera angle" bug. Writing depth makes
+// occlusion resolve per-pixel against real geometry instead, so the surface
+// stays put no matter how the camera is oriented. The tradeoff (you can't
+// see one water layer through another where they overlap) is invisible for
+// a single-surface top-down RTS pond.
+render_mode blend_mix, cull_disabled, specular_schlick_ggx, depth_draw_always;
 
 // All lighting/reflection math below runs in world space (not Godot's
 // usual view-space NORMAL/VIEW convention) and writes straight to ALBEDO
@@ -130,6 +139,14 @@ void fragment() {
     float water_depth_value = texture(water_depth, cell_uv).r;
     vec3 water_color = mix(sea_shallow_color, sea_deep_color, water_depth_value);
 
+    // Depth also drives opacity, not just color - shallow shoreline water
+    // lets the lakebed/reflection show through while deep water reads
+    // solid, giving the surface an actual sense of depth instead of a
+    // uniformly see-through sheet regardless of how deep it is. The shallow
+    // floor is kept fairly high so shallow ponds over pale sand still read
+    // as water rather than washing out to the lakebed color.
+    float depth_alpha = mix(alpha_amount * 0.72, alpha_amount, water_depth_value);
+
     vec3 albedo = mix(water_color, refl_sky, 0.15 + fresnel * 0.34);
 
     float sun_spec = pow(max(dot(reflect(-sun_direction, n), view_dir), 0.0), 200.0);
@@ -138,8 +155,13 @@ void fragment() {
     float moon_spec = pow(max(dot(reflect(-moon_direction, n), view_dir), 0.0), 400.0);
     albedo += moon_color * moon_spec * 0.35 * moon_glow;
 
+    // Wave-crest foam: only the sharpest crests should whitecap. The old
+    // 32x gain lit foam across nearly the whole surface (a stippled white
+    // sheet that buried the water color, worst on shallow ponds); gate it
+    // to genuine crests and cap its contribution so it accents rather than
+    // dominates. shore_foam still rings true shorelines (depth near zero).
     float curvature = h_r + h_l + h_u + h_d - 4.0 * h_c;
-    float wave_foam = clamp(curvature * (32.0 + rain_intensity * 16.0), 0.0, 1.0);
+    float wave_foam = smoothstep(0.015, 0.06, curvature) * (0.5 + rain_intensity * 0.5);
     float shore_foam = 1.0 - smoothstep(0.0, foam_band, water_depth_value);
     float foam_mask = clamp(wave_foam + shore_foam, 0.0, 1.0);
     albedo = mix(albedo, foam_color, foam_mask);
@@ -148,7 +170,7 @@ void fragment() {
     albedo *= mix(unexplored_darken, 1.0, explored);
 
     ALBEDO = albedo;
-    ALPHA = mix(alpha_amount, 0.95, fresnel);
+    ALPHA = mix(depth_alpha, 0.95, fresnel);
     ROUGHNESS = mix(roughness_amount, 0.12, rain_intensity);
     SPECULAR = specular_amount;
 }

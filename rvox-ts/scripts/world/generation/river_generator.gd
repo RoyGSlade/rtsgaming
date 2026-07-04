@@ -16,7 +16,7 @@ const MAX_STEPS := 170
 const SOURCE_HEIGHT_PERCENTILE := 0.8
 const NO_SOURCE := Vector2i(-1, -1)
 
-func carve_rivers(chunk: ChunkData, config: WorldGenConfig) -> void:
+func carve_rivers(chunk: ChunkData, config: WorldGenConfig, water_simulator: WaterFlowSimulator = null) -> void:
     if not config.generate_water or config.river_count <= 0:
         return
     var rng := RandomNumberGenerator.new()
@@ -27,7 +27,7 @@ func carve_rivers(chunk: ChunkData, config: WorldGenConfig) -> void:
         var source := _pick_source(chunk, threshold, rng)
         if source == NO_SOURCE:
             continue
-        _carve_path(chunk, source, config)
+        _carve_path(chunk, source, config, water_simulator)
 
 func _height_threshold(chunk: ChunkData, percentile: float) -> int:
     var heights: Array[int] = []
@@ -48,7 +48,7 @@ func _pick_source(chunk: ChunkData, threshold: int, rng: RandomNumberGenerator) 
         return NO_SOURCE
     return candidates[rng.randi_range(0, candidates.size() - 1)]
 
-func _carve_path(chunk: ChunkData, start: Vector2i, config: WorldGenConfig) -> void:
+func _carve_path(chunk: ChunkData, start: Vector2i, config: WorldGenConfig, water_simulator: WaterFlowSimulator) -> void:
     var pos := start
     var visited := {}
     var steps := 0
@@ -60,10 +60,7 @@ func _carve_path(chunk: ChunkData, start: Vector2i, config: WorldGenConfig) -> v
 
         var height := chunk.get_surface_height(pos.x, pos.y)
         if not visited.has(pos):
-            var existing: WaterCell = chunk.get_water_cell(pos.x, pos.y)
-            if existing != null:
-                break
-            _carve_channel_cell(chunk, pos, height, config)
+            _carve_channel_cell(chunk, pos, height, config, water_simulator)
             visited[pos] = true
 
         if height <= config.water_level:
@@ -74,16 +71,19 @@ func _carve_path(chunk: ChunkData, start: Vector2i, config: WorldGenConfig) -> v
             break
         pos = next
 
-func _carve_channel_cell(chunk: ChunkData, pos: Vector2i, bank_height: int, config: WorldGenConfig) -> void:
+func _carve_channel_cell(chunk: ChunkData, pos: Vector2i, bank_height: int, config: WorldGenConfig, water_simulator: WaterFlowSimulator) -> void:
     var carved_floor := maxi(bank_height - CHANNEL_DEPTH, config.water_level)
     if carved_floor >= bank_height:
         return
     for y in range(carved_floor + 1, bank_height + 1):
-        chunk.set_block(pos.x, y, pos.y, &"water")
-    var cell := WaterCell.new()
-    cell.surface_y = bank_height
-    cell.depth = float(bank_height - carved_floor)
-    chunk.set_water_cell(pos.x, pos.y, cell)
+        chunk.set_block(pos.x, y, pos.y, &"air")
+    # Seed ON THE CHANNEL BED (one block of water resting on the carved
+    # floor), never at bank height: the trench walls physically contain a
+    # bed-level stream, whereas a bank-level source on a slope pours over
+    # the channel sides and - multiplied by every step of every river -
+    # coats whole hillsides in stacked water mounds.
+    if water_simulator != null:
+        water_simulator.seed_source(chunk, Vector3i(pos.x, carved_floor + 1, pos.y))
 
 func _steepest_descent_neighbor(chunk: ChunkData, pos: Vector2i, visited: Dictionary) -> Vector2i:
     var best := pos
