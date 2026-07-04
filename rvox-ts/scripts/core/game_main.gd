@@ -11,6 +11,9 @@ extends Node3D
 
 const FOG_REVEAL_RADIUS := 22.0
 const RAIN_SUN_DIM := 0.55
+# Preloaded rather than referenced by class_name so a fresh checkout runs
+# before the editor has rescanned and registered the new global class.
+const DynamicResolutionControllerScript := preload("res://scripts/rendering/dynamic_resolution_controller.gd")
 
 var _minimap_generator := MinimapGenerator.new()
 var _environment_controller := EnvironmentController.new()
@@ -30,6 +33,7 @@ func _ready() -> void:
 	$HUD/Root/Margin/Layout/ToggleRain.pressed.connect(_toggle_rain)
 	rain_controller.rain_intensity_changed.connect(_on_rain_intensity_changed)
 	minimap.gui_input.connect(_on_minimap_gui_input)
+	_setup_display()
 	_setup_units()
 	if world.current_chunk != null:
 		_on_world_generated(world.get_summary())
@@ -40,9 +44,22 @@ func _setup_units() -> void:
 	_command_controller = RtsCommandController.new()
 	_command_controller.camera = camera_rig.camera
 	_command_controller.world = world
+	_command_controller.camera_rig = camera_rig
+	_command_controller.touch_enabled = DisplayServer.is_touchscreen_available()
 	add_child(_command_controller)
 	_spawn_worker(world.get_world_center())
 	_spawn_soldier(world.get_world_center() + SOLDIER_SPAWN_OFFSET)
+
+
+## Adaptive render-scale controller (holds framerate on weak GPUs) plus, on
+## touchscreen devices, a controls hint describing the gesture scheme instead
+## of the keyboard/mouse one.
+func _setup_display() -> void:
+	var dynamic_resolution := DynamicResolutionControllerScript.new()
+	dynamic_resolution.status_label = $HUD/Root/Margin/Layout/QualityStatus
+	add_child(dynamic_resolution)
+	if DisplayServer.is_touchscreen_available():
+		$HUD/Root/Margin/Layout/Controls.text = "1-finger drag pan · pinch zoom · twist rotate · tap select/move"
 
 
 ## Places the single starter worker at a world position (X/Z used; Y comes

@@ -30,6 +30,13 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/block_building_editor/plugin.cfg", "res://addons/godot_ai/plugin.cfg", "res://addons/world_forge/plugin.cfg")
 
+[input_devices]
+
+; Single-finger taps drive unit select/move through the command controller as
+; emulated left-clicks; multi-finger camera gestures are handled from the raw
+; touch events. Keep emulation on so HUD buttons and taps both work on touch.
+pointing/emulate_mouse_from_touch=true
+
 [importer_defaults]
 
 texture={

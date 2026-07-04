@@ -2,6 +2,33 @@
 
 This file is the running handoff log for changes made by coding agents. Add the newest entry at the top and include the intent, files touched, verification performed, and any known follow-up work.
 
+## 2026-07-04 — Touch controls and adaptive dynamic resolution
+
+### Intent
+
+Make the game playable on a touchscreen and hold framerate on weaker GPUs, per a direct user request ("touch screen controls in game and dynamic resolution smart controls too if available"). Camera and unit commands previously assumed keyboard + 3-button mouse; add a touch scheme alongside them without disturbing desktop input, and add adaptive 3D render scaling that only lowers internal resolution under GPU load.
+
+### Changes
+
+- Camera (`rts_camera_controller.gd`): added multi-touch gestures next to the existing mouse path — one-finger drag grab-pans the map (pan scales with zoom so the world tracks the finger at any distance), two-finger pinch zooms, two-finger twist rotates yaw. Tracks live touches in a dict; `is_gesture_active()` reports whether a two-finger gesture is in progress (stays true until every finger lifts). Twist uses a shortest-path `angle_delta()` static helper so a rotation across the ±PI seam doesn't spin the long way.
+- Commands (`rts_command_controller.gd`): added a touch mode (set by GameMain when `DisplayServer.is_touchscreen_available()`). With no right-click on touch, a single-finger TAP unifies select + move — tap a unit to select, tap the ground with a unit selected to order it there. Commands fire on tap-RELEASE with a travel threshold (`TAP_MAX_TRAVEL`) so a pan-drag isn't a command, and are suppressed while `camera_rig.is_gesture_active()` so the first finger of a two-finger gesture (which emulates a mouse click) doesn't issue a stray order. Desktop mouse behavior (left select / right move on press) is unchanged.
+- New `scripts/rendering/dynamic_resolution_controller.gd` (`DynamicResolutionController`): samples framerate every 0.5s and nudges the viewport's `scaling_3d_scale` down when below ~0.90x the target FPS and back up when above ~0.98x, with a dead-band to avoid oscillation. Target FPS follows the monitor refresh rate by default. Only the 3D world is scaled (UI is untouched). "Smart when available": when a RenderingDevice is present (Forward+/Mobile) the downscaled image is upscaled with FSR 2, and FSR 2 is engaged only while actually upscaling so native rendering pays no temporal-upscaler cost; otherwise bilinear. The scale decision is a pure static `compute_next_scale()` so the hysteresis is unit-testable.
+- `game_main.gd`: instantiates the dynamic-resolution controller (preloaded, not by class_name, so a fresh checkout runs before the editor rescans), points it at a new `QualityStatus` HUD label, wires `camera_rig`/`touch_enabled` into the command controller, and swaps the on-screen controls hint to the gesture scheme on touchscreen devices.
+- `GameMain.tscn`: added the `QualityStatus` HUD label (render scale + fps readout).
+- `project.godot`: added `[input_devices] pointing/emulate_mouse_from_touch=true` explicitly — single-finger taps reach the command controller as emulated left-clicks and HUD buttons stay tappable, while multi-finger camera gestures come from the raw touch events (index 1+ is never emulated, so no conflict).
+
+### Verification
+
+- New `tests/test_input_and_rendering.gd`: 7 tests (scale steps down/up/holds/clamps/no-op-without-target, twist short-way wrap, zero delta) — all pass.
+- Full suite: 78 tests passed (71 prior + 7 new), no regressions.
+- Launched GameMain in Godot 4.7 via MCP: game went live with no runtime errors from the changed scripts (the only retained errors were pre-existing deliberate error-path world_forge tests). This dev machine has no touchscreen, so the touch paths are covered by the pure-logic tests and by-construction reasoning rather than a live tap — handed to the user to verify on a touch device.
+
+### Follow-up
+
+- Touch was validated by unit tests + a clean launch, not a live multi-touch session (no touchscreen on the dev box). User to confirm feel on a tablet/touch monitor: pan speed (`touch_pan_sensitivity`), pinch (`touch_pinch_sensitivity`), and twist (`touch_twist_sensitivity`) are exported for tuning.
+- Optional: two-finger vertical drag for pitch/tilt (only yaw twist is a gesture today; pitch stays mouse/keyboard).
+- Optional: a settings toggle / target-FPS picker for dynamic resolution (currently always-on adaptive, min scale 0.5).
+
 ## 2026-07-04 — World Forge crafting-plan foundation (materials, parts, kinetics) and Xbox controller support
 
 ### Intent
