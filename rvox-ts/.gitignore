@@ -1,3 +1,12 @@
-# Godot 4+ specific ignores
-.godot/
+# Godot 4+ ignores.
+#
+# The import cache under .godot/ is INTENTIONALLY tracked so a fresh clone or a
+# GitHub source-zip opens and runs without waiting for the editor to reimport
+# every asset. Only the volatile, machine-/GPU-specific parts are ignored:
+#   - editor/       per-user editor layout, recent files, last-opened scene
+#   - shader_cache/ compiled shaders, regenerated per GPU/driver at runtime
+# If you change an asset's import settings, re-commit the updated .godot/imported
+# so downloads stay in sync.
+.godot/editor/
+.godot/shader_cache/
 /android/

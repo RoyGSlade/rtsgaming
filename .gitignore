@@ -1,5 +1,8 @@
 .claude/
-.godot/
 *.tmp
 *.log
 .DS_Store
+
+# NOTE: Godot's .godot/ cache is handled by rvox-ts/.gitignore, which keeps the
+# import cache tracked so a fresh clone/zip runs without a reimport step. Do NOT
+# add a blanket ".godot/" here — it would match at every depth and re-ignore it.

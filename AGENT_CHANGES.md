@@ -2,6 +2,28 @@
 
 This file is the running handoff log for changes made by coding agents. Add the newest entry at the top and include the intent, files touched, verification performed, and any known follow-up work.
 
+## 2026-07-04 — Track Godot import cache so a fresh download runs
+
+### Intent
+
+A GitHub source-zip (or fresh clone) wouldn't run without opening the editor first, because `.gitignore` excluded all of `.godot/` — including Godot's import cache — so a downloaded copy had no imported assets until the editor reimported them. Make it "download and run": commit the run-critical import cache, keep ignoring only the volatile, machine-/GPU-specific parts.
+
+### Changes
+
+- `rvox-ts/.gitignore`: replaced the blanket `.godot/` ignore with `.godot/editor/` and `.godot/shader_cache/` only. The import cache (`.godot/imported/`, ~5 MB), `uid_cache.bin`, `global_script_class_cache.cfg`, `scene_groups_cache.cfg`, and `.gdignore` are now tracked so a fresh copy opens and runs without a reimport step.
+- Root `.gitignore`: removed the blanket `.godot/` line (a rootless pattern matches at every depth and was re-ignoring `rvox-ts/.godot/`); left a note pointing at the nested rule.
+- Committed the current `.godot/` import cache (128 files).
+
+### Verification
+
+- `git check-ignore`: confirmed `.godot/editor/` and `.godot/shader_cache/` stay ignored while `.godot/imported`, `uid_cache.bin`, and `global_script_class_cache.cfg` are tracked-eligible.
+- Confirmed all 36 source assets and their `.import` metadata were already tracked, so the cache is the only missing piece.
+
+### Follow-up
+
+- The import cache is now versioned: if you change an asset's import settings (or add assets), re-commit the updated `.godot/imported` so downloads stay in sync. Shader cache and editor layout remain per-machine and regenerate on first open.
+- Tradeoff accepted per user request: binary import-cache files add churn to git history; the payoff is a clone/zip that runs immediately.
+
 ## 2026-07-04 — Touch controls and adaptive dynamic resolution
 
 ### Intent
