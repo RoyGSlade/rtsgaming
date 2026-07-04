@@ -84,6 +84,8 @@ const EnvironmentHandler := preload("res://addons/godot_ai/handlers/environment_
 const TextureHandler := preload("res://addons/godot_ai/handlers/texture_handler.gd")
 const CurveHandler := preload("res://addons/godot_ai/handlers/curve_handler.gd")
 const ControlDrawRecipeHandler := preload("res://addons/godot_ai/handlers/control_draw_recipe_handler.gd")
+const TilemapHandler := preload("res://addons/godot_ai/handlers/tilemap_handler.gd")
+const TilesetHandler := preload("res://addons/godot_ai/handlers/tileset_handler.gd")
 
 ## The Python server writes its own PID here on startup (passed as
 ## `--pid-file`) and unlinks on clean exit. Deterministic replacement
@@ -213,6 +215,10 @@ func _enter_tree() -> void:
 	_startup_trace_phase("settings_registered")
 
 	_log_buffer = LogBuffer.new()
+	## Apply the persisted dock "Log" toggle before anything logs through the
+	## buffer. Without this the choice only took effect after a manual toggle
+	## and reset to noisy on every editor restart (#626).
+	_log_buffer.enabled = McpSettings.mcp_logging_enabled()
 	_start_server()
 	_startup_trace_phase("server_start")
 
@@ -221,6 +227,7 @@ func _enter_tree() -> void:
 	_surfaced_error_tracker = SurfacedErrorTracker.new(_editor_log_buffer, _game_log_buffer)
 	_attach_editor_logger()
 	_dispatcher = Dispatcher.new(_log_buffer, _surfaced_error_tracker)
+	_dispatcher.mcp_logging = _log_buffer.enabled
 	_startup_trace_phase("core_objects")
 
 	_connection = Connection.new()
@@ -267,7 +274,9 @@ func _enter_tree() -> void:
 	var texture_handler := TextureHandler.new(get_undo_redo(), _connection)
 	var curve_handler := CurveHandler.new(get_undo_redo(), _connection)
 	var control_draw_recipe_handler := ControlDrawRecipeHandler.new(get_undo_redo())
-	_handlers = [editor_handler, scene_handler, node_handler, project_handler, client_handler, script_handler, resource_handler, api_handler, filesystem_handler, signal_handler, autoload_handler, input_handler, test_handler, batch_handler, ui_handler, theme_handler, animation_handler, material_handler, particle_handler, camera_handler, audio_handler, physics_shape_handler, environment_handler, texture_handler, curve_handler, control_draw_recipe_handler]
+	var tilemap_handler := TilemapHandler.new(get_undo_redo())
+	var tileset_handler := TilesetHandler.new()
+	_handlers = [editor_handler, scene_handler, node_handler, project_handler, client_handler, script_handler, resource_handler, api_handler, filesystem_handler, signal_handler, autoload_handler, input_handler, test_handler, batch_handler, ui_handler, theme_handler, animation_handler, material_handler, particle_handler, camera_handler, audio_handler, physics_shape_handler, environment_handler, texture_handler, curve_handler, control_draw_recipe_handler, tilemap_handler, tileset_handler]
 
 	_dispatcher.register("get_editor_state", editor_handler.get_editor_state)
 	_dispatcher.register("get_scene_tree", scene_handler.get_scene_tree)
@@ -398,6 +407,12 @@ func _enter_tree() -> void:
 	_dispatcher.register(
 		"control_draw_recipe", control_draw_recipe_handler.control_draw_recipe
 	)
+	_dispatcher.register("tilemap_set_cell",              tilemap_handler.set_cell)
+	_dispatcher.register("tilemap_set_cells_rect",        tilemap_handler.set_cells_rect)
+	_dispatcher.register("tilemap_clear",                 tilemap_handler.clear_layer)
+	_dispatcher.register("tilemap_get_cells",             tilemap_handler.get_used_cells)
+	_dispatcher.register("tileset_get_atlas_tiles",        tileset_handler.get_atlas_tiles)
+	_dispatcher.register("tileset_get_atlas_image",        tileset_handler.get_atlas_image)
 
 	_connection.dispatcher = _dispatcher
 	add_child(_connection)
