@@ -148,9 +148,13 @@ func _rebuild() -> void:
 ## A starter Storage Yard next to the camp so a builder visibly raises a
 ## building block-by-block from the opening moments (DEMO_PLAN.md §5).
 func _spawn_starter_building() -> void:
-	var pos := stockpile_position + Vector3(7.0, 0.0, 0.0)
-	pos.y = world.get_ground_height(pos.x, pos.z)
-	economy.register_build_site(BuildSite.new(&"storage_yard", 5, {&"wood": 2}, pos))
+	var yard_pos := stockpile_position + Vector3(7.0, 0.0, 0.0)
+	yard_pos.y = world.get_ground_height(yard_pos.x, yard_pos.z)
+	economy.register_build_site(BuildSite.new(&"storage_yard", 5, {&"wood": 2}, yard_pos))
+	# A watchtower the builders raise; once complete it strengthens raid defense.
+	var tower_pos := stockpile_position + Vector3(-7.0, 0.0, 4.0)
+	tower_pos.y = world.get_ground_height(tower_pos.x, tower_pos.z)
+	economy.register_build_site(BuildSite.new(&"watchtower", 4, {&"stone": 3}, tower_pos))
 
 
 func _register_stations() -> void:

@@ -322,7 +322,7 @@ func _on_economy_ready(economy) -> void:
 		_raid_controller.name = "Raids"
 		add_child(_raid_controller)
 	_raid_controller.bind(_run_coordinator.director, world,
-		_run_coordinator.stockpile_position, _run_coordinator.raider_camp_position)
+		_run_coordinator.stockpile_position, _run_coordinator.raider_camp_position, economy)
 
 
 ## Spawns a unit from the HUD's Units tab near the world center. The HUD has

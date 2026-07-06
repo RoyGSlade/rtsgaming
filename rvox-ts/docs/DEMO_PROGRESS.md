@@ -4,8 +4,39 @@ Running report of work against [DEMO_PLAN.md](DEMO_PLAN.md), maintained by the
 `/loop` session. Newest iteration on top. Nothing here is committed — all
 changes sit in the working tree for review.
 
-Test baseline at session start: **110/110** passing. Current: **198/198**.
+Test baseline at session start: **110/110** passing. Current: **200/200**.
 Live boot: **VICTORY run + block-by-block construction both verified in-engine.**
+
+---
+
+## Iteration 16 — watchtower → raid defense (buildings matter in combat, §6)
+
+### ✅ Finished
+
+Building a watchtower now actually strengthens the settlement: `RaidController`
+listens to `economy.building_completed`, counts finished **watchtowers**, and
+factors them into raid resolution (`resolve(swordsmen, watchtower_count,
+raid_size)` — a tower joins the garrison). The demo now places a watchtower
+build site alongside the storage yard, so a builder raises it and it defends
+later nights.
+- [raid_controller.gd](../scripts/mission/raid_controller.gd),
+  wired through `GameMain` (economy passed to `bind`) and
+  [run_coordinator.gd](../scripts/mission/run_coordinator.gd).
+- Tests: [test_raid_controller.gd](../tests/test_raid_controller.gd) — the
+  resolver takes a tower count; added that a watchtower turns a losing fight,
+  and that a completed watchtower (`building_completed`) is counted and saves an
+  otherwise-doomed raid. Full suite **200/200**.
+
+Now the buildings a builder raises feed back into the combat loop — the first
+real "building → gameplay" link (stations-inside-buildings is the next one).
+
+### 🔜 Next
+
+1. **Stations inside completed buildings** — forge/smelter activate on their
+   building's completion (rather than globally at run start).
+2. **BuildSite from HUD placement** — placing a building creates a site the
+   villagers build, instead of an instant box (needs your playtest).
+3. Difficulty tuning; real World Forge blueprint blocks; threaded meshing.
 
 ---
 

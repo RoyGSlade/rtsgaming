@@ -17,33 +17,45 @@ const RAIDER_COLOR := Color(0.85, 0.2, 0.2)
 
 var director: MissionDirector
 var world: WorldRuntime
+var economy: EconomyController
 var camp_position: Vector3
 var raider_camp_position: Vector3
 
 var _raiders: Array[MeshInstance3D] = []
 var _pending := false
 var _pending_size := 0
+## Completed watchtowers strengthen the garrison in raid resolution.
+var _watchtowers := 0
 
 
-func bind(new_director: MissionDirector, new_world: WorldRuntime, camp: Vector3, raider_camp: Vector3) -> void:
+func bind(new_director: MissionDirector, new_world: WorldRuntime, camp: Vector3, raider_camp: Vector3, new_economy: EconomyController = null) -> void:
 	if director != null and director.raid_incoming.is_connected(_on_raid_incoming):
 		director.raid_incoming.disconnect(_on_raid_incoming)
 	director = new_director
 	world = new_world
+	economy = new_economy
 	camp_position = camp
 	raider_camp_position = raider_camp
 	_clear_raiders()
 	_pending = false
+	_watchtowers = 0
 	if director != null:
 		director.raid_incoming.connect(_on_raid_incoming)
+	if economy != null:
+		economy.building_completed.connect(_on_building_completed)
+
+
+func _on_building_completed(building_id: StringName) -> void:
+	if building_id == &"watchtower":
+		_watchtowers += 1
 
 
 ## Resolve a raid with the combat core. `swordsmen` trained defenders (plus the
 ## base militia, plus a watchtower if built) face `raid_size` raiders. Returns
 ## { defended: bool, result: <skirmish dict> }.
-static func resolve(swordsmen: int, has_watchtower: bool, raid_size: int) -> Dictionary:
+static func resolve(swordsmen: int, watchtower_count: int, raid_size: int) -> Dictionary:
 	var garrison := CombatCatalog.line_of(&"swordsman", swordsmen + BASE_MILITIA)
-	if has_watchtower:
+	for i in maxi(0, watchtower_count):
 		garrison.append(CombatCatalog.watchtower())
 	var raiders := CombatCatalog.line_of(&"raider", raid_size)
 	var result := CombatMath.simulate_skirmish(garrison, raiders)
@@ -91,7 +103,7 @@ func _march_raiders(delta: float) -> bool:
 func _resolve_and_apply() -> void:
 	if director == null:
 		return
-	var outcome := RaidController.resolve(director.swordsmen_trained, false, _pending_size)
+	var outcome := RaidController.resolve(director.swordsmen_trained, _watchtowers, _pending_size)
 	if bool(outcome["defended"]):
 		_clear_raiders() # repelled
 	else:
