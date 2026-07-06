@@ -4,8 +4,39 @@ Running report of work against [DEMO_PLAN.md](DEMO_PLAN.md), maintained by the
 `/loop` session. Newest iteration on top. Nothing here is committed — all
 changes sit in the working tree for review.
 
-Test baseline at session start: **110/110** passing. Current: **200/200**.
+Test baseline at session start: **110/110** passing. Current: **201/201**.
 Live boot: **VICTORY run + block-by-block construction both verified in-engine.**
+
+---
+
+## Iteration 17 — buildings are machines: stations gate on construction (§3/§6)
+
+### ✅ Finished
+
+Production is now gated on building it: the smelter and forge **come online only
+when their building is finished**, instead of existing globally at run start.
+`RunCoordinator` places smelter and forge build sites, and registers their
+stations on `economy.building_completed` (the forge activates its handle + sword
+stations). So the flow is now: gather → **build the smelter/forge** → produce →
+train.
+- [run_coordinator.gd](../scripts/mission/run_coordinator.gd) — build sites +
+  `_on_building_completed` → `_activate_station`.
+- Tests: [test_run_coordinator.gd](../tests/test_run_coordinator.gd) — no
+  stations until buildings finish; smelter completion activates 1 station, forge
+  activates 2, an unrelated building activates none. Full suite **201/201**.
+- Boot-verified: four buildings (storage yard, watchtower, smelter, forge) are
+  raised block-by-block from the opening ("Building Watchtower: 1/4", stock
+  drawn down), zero run errors.
+
+The demo now exercises the full "buildings are machines" pillar — you build the
+forge before it can forge.
+
+### 🔜 Next
+
+1. **BuildSite from HUD placement** — placing a building creates a site the
+   villagers build (needs your playtest for feel).
+2. Real World Forge blueprint blocks instead of placeholder cubes.
+3. Difficulty tuning; threaded meshing.
 
 ---
 

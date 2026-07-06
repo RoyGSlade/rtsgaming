@@ -113,6 +113,26 @@ func test_loss_banks_no_unlock() -> void:
 	SaveIO.remove(path)
 
 
+func test_stations_activate_only_when_their_building_completes() -> void:
+	# "Buildings are machines": no production until the smelter/forge are built.
+	var h := _harness()
+	var coord: RunCoordinator = h["coord"]
+	var eco: EconomyController = h["eco"]
+	assert_eq(eco.stations().size(), 0, "No stations before any building is finished")
+
+	coord._on_building_completed(&"smelter")
+	assert_eq(eco.stations_of(&"smelter").size(), 1, "Smelter comes online on completion")
+	assert_eq(eco.stations().size(), 1, "Only the smelter so far")
+
+	coord._on_building_completed(&"forge")
+	assert_eq(eco.stations_of(&"forge").size(), 2, "Forge activates its handle + sword stations")
+	assert_eq(eco.stations().size(), 3, "Smelter + two forge stations")
+
+	# An unrelated building doesn't spawn a station.
+	coord._on_building_completed(&"storage_yard")
+	assert_eq(eco.stations().size(), 3, "Storage yard has no production station")
+
+
 func test_objective_completes_after_swords_and_swordsmen() -> void:
 	var h := _harness()
 	var coord: RunCoordinator = h["coord"]

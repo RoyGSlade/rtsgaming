@@ -118,13 +118,16 @@ func _rebuild() -> void:
 	economy.name = "Economy"
 	add_child(economy)
 	economy.seed_stock(STARTING_STOCK)
-	_register_stations()
 	economy.production_finished.connect(_on_production_finished)
+	# Stations are machines inside buildings: they come online only when their
+	# building is finished (the "buildings are machines" pillar).
+	economy.building_completed.connect(_on_building_completed)
 
 	if manifest.valid:
 		economy.populate_from_manifest(manifest, world.current_chunk)
 		_spawn_markers()
 		_spawn_starter_building()
+		_spawn_production_buildings()
 	else:
 		push_warning("Scenario invalid for seed %d: %s" % [world.config.world_seed, manifest.failure_reason])
 
@@ -142,26 +145,46 @@ func _rebuild() -> void:
 		manifest.camp_site, manifest.raider_camp])
 
 
-## Register the demo production chain as stations feeding off central stock:
-## smelter (ingots), forge-handles, forge-swords. Three stations because a
-## station runs one recipe and the forge does two jobs in the demo chain.
 ## A starter Storage Yard next to the camp so a builder visibly raises a
-## building block-by-block from the opening moments (DEMO_PLAN.md §5).
+## building block-by-block from the opening moments (DEMO_PLAN.md §5), plus a
+## watchtower that strengthens raid defense once complete.
 func _spawn_starter_building() -> void:
 	var yard_pos := stockpile_position + Vector3(7.0, 0.0, 0.0)
 	yard_pos.y = world.get_ground_height(yard_pos.x, yard_pos.z)
 	economy.register_build_site(BuildSite.new(&"storage_yard", 5, {&"wood": 2}, yard_pos))
-	# A watchtower the builders raise; once complete it strengthens raid defense.
 	var tower_pos := stockpile_position + Vector3(-7.0, 0.0, 4.0)
 	tower_pos.y = world.get_ground_height(tower_pos.x, tower_pos.z)
 	economy.register_build_site(BuildSite.new(&"watchtower", 4, {&"stone": 3}, tower_pos))
 
 
-func _register_stations() -> void:
-	for recipe_id: StringName in [&"smelt_iron_ingot", &"make_wood_handle", &"craft_iron_sword"]:
-		var recipe := DemoChain.recipe_by_id(recipe_id)
-		if recipe != null:
-			economy.register_station(ProductionStation.new(recipe.required_station, recipe))
+## The production buildings must be built before they can produce — the smelter
+## and forge come online (register their stations) only on completion.
+func _spawn_production_buildings() -> void:
+	var smelter_pos := stockpile_position + Vector3(5.0, 0.0, -6.0)
+	smelter_pos.y = world.get_ground_height(smelter_pos.x, smelter_pos.z)
+	economy.register_build_site(BuildSite.new(&"smelter", 6, {&"stone": 3}, smelter_pos))
+	var forge_pos := stockpile_position + Vector3(-5.0, 0.0, -6.0)
+	forge_pos.y = world.get_ground_height(forge_pos.x, forge_pos.z)
+	economy.register_build_site(BuildSite.new(&"forge", 6, {&"wood": 2, &"stone": 2}, forge_pos))
+
+
+## A finished building activates its machines. The forge runs two recipes
+## (handles and swords), so it registers two stations.
+func _on_building_completed(building_id: StringName) -> void:
+	if economy == null:
+		return
+	match building_id:
+		&"smelter":
+			_activate_station(&"smelt_iron_ingot")
+		&"forge":
+			_activate_station(&"make_wood_handle")
+			_activate_station(&"craft_iron_sword")
+
+
+func _activate_station(recipe_id: StringName) -> void:
+	var recipe := DemoChain.recipe_by_id(recipe_id)
+	if recipe != null:
+		economy.register_station(ProductionStation.new(recipe.required_station, recipe))
 
 
 func _on_production_finished(_station_id: StringName, recipe_id: StringName) -> void:
