@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"hay_bale"
+display_name = "Hay Bale"
+category = &"construction"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 0.4
+flammability = 0.95
+path_cost = 1.3
+harvest_resource_id = &"straw"
+harvest_amount = 3
+tool_required = &""
+material_id = &"hay_bale"
+albedo_color = Color(0.78, 0.62, 0.18, 1)
+texture_top = &"hay_bale"
+texture_bottom = &"hay_bale"
+texture_side = &"hay_bale"

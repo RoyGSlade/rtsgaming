@@ -1,5 +1,9 @@
 shader_type spatial;
-render_mode blend_mix, cull_back, diffuse_burley, specular_schlick_ggx;
+// Must stay fully opaque: writing ALPHA (or any transparent blend mode)
+// would push the entire merged terrain surface into the transparent pass,
+// where it stops writing depth and gets sorted per-object against water —
+// blocks then show water/geometry through them depending on camera angle.
+render_mode cull_back, diffuse_burley, specular_schlick_ggx;
 
 // Per-face albedo/normal, selected by the UV2.x layer index ChunkMesher
 // bakes into each vertex (see TerrainTextureAtlas.layer_index).
@@ -63,7 +67,6 @@ void fragment() {
     albedo *= mix(unexplored_darken, 1.0, explored);
 
     ALBEDO = albedo;
-    ALPHA = base.a;
     NORMAL_MAP = texture(normal_array, array_uv).rgb;
     ROUGHNESS = roughness_value;
 }

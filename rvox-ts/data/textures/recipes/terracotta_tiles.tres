@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"terracotta_tiles"
+resolution = 128
+pattern = 3
+base_color = Color(0.72, 0.4, 0.27, 1)
+accent_color = Color(0.58, 0.3, 0.2, 1)
+accent_density = 0.25
+noise_seed = 332
+contrast = 1.0

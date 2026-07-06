@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pumpkin"
+display_name = "Pumpkin"
+category = &"produce"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 0.4
+path_cost = 1.4
+harvest_resource_id = &"pumpkin"
+harvest_amount = 1
+tool_required = &""
+material_id = &"pumpkin"
+albedo_color = Color(0.82, 0.46, 0.1, 1)
+texture_top = &"pumpkin"
+texture_bottom = &"pumpkin"
+texture_side = &"pumpkin"

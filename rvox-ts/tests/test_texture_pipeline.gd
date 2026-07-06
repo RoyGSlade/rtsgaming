@@ -64,11 +64,11 @@ func test_fog_of_war_reveal_marks_radius() -> void:
 	var fog := FogOfWar.new(16, 16)
 	assert_false(fog.is_explored(8, 8), "Nothing should be explored initially")
 	var changed := fog.reveal(8.0, 8.0, 2.0)
-	assert_true(changed, "First reveal over unexplored cells should report a change")
+	assert_true(not changed.is_empty(), "First reveal over unexplored cells should report a change")
 	assert_true(fog.is_explored(8, 8), "Center of reveal should be explored")
 	assert_false(fog.is_explored(15, 15), "Far corner should remain unexplored")
 	var changed_again := fog.reveal(8.0, 8.0, 2.0)
-	assert_false(changed_again, "Re-revealing the same area should report no change")
+	assert_true(changed_again.is_empty(), "Re-revealing the same area should report no change")
 
 
 func test_texture_array_packer_end_to_end() -> void:

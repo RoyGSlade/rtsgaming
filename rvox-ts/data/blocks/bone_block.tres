@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"bone_block"
+display_name = "Bone Block"
+category = &"construction"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 1.0
+path_cost = 1.2
+harvest_resource_id = &"bone"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"bone_block"
+albedo_color = Color(0.86, 0.83, 0.74, 1)
+texture_top = &"bone_block"
+texture_bottom = &"bone_block"
+texture_side = &"bone_block"

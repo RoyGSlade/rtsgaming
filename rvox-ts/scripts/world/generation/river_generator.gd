@@ -10,9 +10,9 @@ extends RefCounted
 const DIRECTIONS: Array[Vector2i] = [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]
 
 const CHANNEL_DEPTH := 2
-# 4x the original 40 — a river now needs to be able to cross a 128-wide
-# chunk (up from 32) plus meander slack, not just the old map's diagonal.
-const MAX_STEPS := 170
+# A river must be able to cross the whole map plus meander slack, so the
+# step budget scales with map width (the tuned 128-wide value was 170).
+const STEPS_PER_MAP_WIDTH := 1.33
 const SOURCE_HEIGHT_PERCENTILE := 0.8
 const NO_SOURCE := Vector2i(-1, -1)
 
@@ -52,8 +52,9 @@ func _carve_path(chunk: ChunkData, start: Vector2i, config: WorldGenConfig, wate
     var pos := start
     var visited := {}
     var steps := 0
+    var max_steps := roundi(chunk.chunk_size * STEPS_PER_MAP_WIDTH)
 
-    while steps < MAX_STEPS:
+    while steps < max_steps:
         steps += 1
         if pos.x <= 0 or pos.x >= chunk.chunk_size - 1 or pos.y <= 0 or pos.y >= chunk.chunk_size - 1:
             break

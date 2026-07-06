@@ -12,6 +12,9 @@ extends Node3D
 ## the static step_toward() so it can be unit-tested without a running scene.
 
 const ARRIVE_EPSILON := 0.05
+## Scene group all player units join, so creatures (flee/aggro scans) can
+## find them without holding references.
+const GROUP := "player_units"
 # Units sit on their own physics layer (2) so the command controller can
 # raycast for "did I click a unit" separately from "did I click the ground"
 # (terrain collision is layer 1).
@@ -76,6 +79,7 @@ var _anim_player: AnimationPlayer
 
 
 func _ready() -> void:
+	add_to_group(GROUP)
 	_build_body()
 	_snap_to_ground()
 

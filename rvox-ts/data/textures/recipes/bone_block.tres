@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"bone_block"
+resolution = 128
+pattern = 2
+base_color = Color(0.86, 0.83, 0.74, 1)
+accent_color = Color(0.72, 0.68, 0.58, 1)
+accent_density = 0.3
+noise_seed = 707
+contrast = 0.95

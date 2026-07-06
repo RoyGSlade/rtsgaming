@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"magma"
+display_name = "Magma"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 2.5
+path_cost = 999
+harvest_resource_id = &"scorched_stone"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"magma"
+albedo_color = Color(0.14, 0.1, 0.09, 1)
+light_energy = 1.8
+light_color = Color(1.0, 0.35, 0.08, 1)
+light_range = 6.0
+texture_top = &"magma"
+texture_bottom = &"magma"
+texture_side = &"magma"

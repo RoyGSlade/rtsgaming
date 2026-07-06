@@ -40,6 +40,15 @@ extends Resource
 @export_range(0.1, 16.0, 0.1) var texture_scale: float = 1.0
 @export var roughness: float = 0.9
 
+@export_group("Light Emission")
+## Blocks with light_energy > 0 are light sources (torch, lantern, brazier):
+## renderers spawn an OmniLight3D and an emissive material for them.
+@export var light_energy: float = 0.0
+@export var light_color: Color = Color(1.0, 0.72, 0.38)
+@export var light_range: float = 6.0
+## Adds a flame particle effect and light flicker on top of the fixture.
+@export var flame_effect: bool = false
+
 @export_group("Terrain Texture")
 ## Layer name into TerrainTextureAtlas for the top (+Y) face.
 @export var texture_top: StringName = &""

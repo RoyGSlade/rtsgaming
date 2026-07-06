@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"diamond_ore"
+display_name = "Diamond Ore"
+category = &"ore"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 3.6
+path_cost = 999
+harvest_resource_id = &"diamond"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"diamond_ore"
+albedo_color = Color(0.42, 0.46, 0.5, 1)
+texture_top = &"diamond_ore"
+texture_bottom = &"diamond_ore"
+texture_side = &"diamond_ore"

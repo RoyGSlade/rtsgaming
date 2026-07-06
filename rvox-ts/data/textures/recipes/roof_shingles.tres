@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"roof_shingles"
-resolution = 64
+resolution = 128
 pattern = 3
 base_color = Color(0.55, 0.22, 0.18, 1)
 accent_color = Color(0.42, 0.15, 0.12, 1)

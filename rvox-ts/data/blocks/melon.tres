@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"melon"
+display_name = "Melon"
+category = &"produce"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 0.5
+path_cost = 1.5
+harvest_resource_id = &"melon_slice"
+harvest_amount = 3
+tool_required = &""
+material_id = &"melon"
+albedo_color = Color(0.36, 0.58, 0.18, 1)
+texture_top = &"melon"
+texture_bottom = &"melon"
+texture_side = &"melon"

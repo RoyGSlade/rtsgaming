@@ -1,0 +1,45 @@
+# Shared Kimodo text-to-motion prompt library.
+# Generated ONCE as BVH files in staging/bvh/, then retargeted onto every
+# humanoid unit. One BVH per clip, named <clip>.bvh.
+#
+# Kimodo usage rules (see docs/kimodo_checklist.md):
+#   - prompts always start with "a person" (matches training data)
+#   - before export, add a constraint forcing a T-POSE AT FRAME 0
+#     (frame-0 constraints don't need a regenerate)
+#   - after adding/editing any other constraint, regenerate with the SAME SEED
+#   - export as BVH at 30 fps
+#
+# loop: true  → pipeline strips root XZ motion (bake in place) and Godot
+#               import marks the clip looping. Y root motion is kept (jumps).
+
+fps: 30
+
+clips:
+  idle:
+    prompt: a person stands and shifts weight, breathing
+    frames: 90
+    loop: true
+  walk:
+    prompt: a person walks forward confidently
+    frames: 60
+    loop: true
+  run:
+    prompt: a person runs forward
+    frames: 45
+    loop: true
+  attack_melee:
+    prompt: a person swings a weapon overhead
+    frames: 45
+    loop: false
+  attack_ranged:
+    prompt: a person aims and fires a rifle
+    frames: 60
+    loop: false
+  death:
+    prompt: a person is hit and falls backward to the ground
+    frames: 60
+    loop: false
+  gather:
+    prompt: a person kneels and works with hands
+    frames: 90
+    loop: true

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"mud_bricks"
+display_name = "Mud Bricks"
+category = &"construction"
+solid = true
+transparent = false
+buildable = true
+diggable = true
+hardness = 1.4
+path_cost = 999.0
+harvest_resource_id = &"mud_brick"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"mud_bricks"
+albedo_color = Color(0.62, 0.5, 0.35, 1)
+texture_top = &"mud_bricks"
+texture_bottom = &"mud_bricks"
+texture_side = &"mud_bricks"

@@ -21,16 +21,19 @@ func _init(map_width: int, map_depth: int) -> void:
     _image.fill(Color(0, 0, 0, 0))
     _texture = ImageTexture.create_from_image(_image)
 
-## Returns true if any previously-unexplored cell was revealed, so callers
-## can skip expensive recomposition (e.g. minimap redraw) when nothing changed.
-func reveal(world_x: float, world_z: float, radius: float) -> bool:
+## Returns the cells newly revealed this call (empty if none), so callers
+## can skip expensive recomposition (e.g. minimap redraw) when nothing
+## changed, and only touch the specific cells that did - not the whole map.
+## An empty Array is falsy in GDScript, so existing `if reveal(...):`
+## call sites work unchanged.
+func reveal(world_x: float, world_z: float, radius: float) -> Array[Vector2i]:
     var r := maxf(0.0, radius)
     var min_x := clampi(int(floor(world_x - r)), 0, width - 1)
     var max_x := clampi(int(ceil(world_x + r)), 0, width - 1)
     var min_z := clampi(int(floor(world_z - r)), 0, depth - 1)
     var max_z := clampi(int(ceil(world_z + r)), 0, depth - 1)
     var r_sq := r * r
-    var changed := false
+    var newly_revealed: Array[Vector2i] = []
     for x in range(min_x, max_x + 1):
         for z in range(min_z, max_z + 1):
             if _image.get_pixel(x, z).r > 0.5:
@@ -40,8 +43,8 @@ func reveal(world_x: float, world_z: float, radius: float) -> bool:
             if dx * dx + dz * dz <= r_sq:
                 _image.set_pixel(x, z, Color(1, 0, 0, 1))
                 _dirty = true
-                changed = true
-    return changed
+                newly_revealed.append(Vector2i(x, z))
+    return newly_revealed
 
 func is_explored(x: int, z: int) -> bool:
     if x < 0 or x >= width or z < 0 or z >= depth:

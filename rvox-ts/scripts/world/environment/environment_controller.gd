@@ -21,7 +21,7 @@ const RAIN_AMBIENT := Color("#8a969c")
 const DAY_AMBIENT_ENERGY := 0.65
 const NIGHT_AMBIENT_ENERGY := 0.16
 
-const CLEAR_FOG_DENSITY := 0.004
+const CLEAR_FOG_DENSITY := 0.0028
 const RAIN_FOG_DENSITY := 0.028
 
 var environment: Environment

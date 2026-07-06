@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"stone_bricks"
-resolution = 64
+resolution = 128
 pattern = 3
 base_color = Color(0.6, 0.58, 0.55, 1)
 accent_color = Color(0.38, 0.37, 0.35, 1)

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pine_leaves"
+display_name = "Pine Leaves"
+category = &"tree"
+solid = false
+transparent = true
+hardness = 0.2
+flammability = 0.9
+path_cost = 1.0
+harvest_resource_id = &"fiber"
+harvest_amount = 1
+tool_required = &"axe"
+material_id = &"pine_leaves"
+albedo_color = Color(0.14, 0.3, 0.17, 0.85)
+texture_top = &"pine_leaves"
+texture_bottom = &"pine_leaves"
+texture_side = &"pine_leaves"

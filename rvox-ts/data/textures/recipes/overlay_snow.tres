@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"overlay_snow"
-resolution = 64
+resolution = 128
 pattern = 1
 base_color = Color(0.95, 0.97, 1.0, 1)
 accent_color = Color(0.88, 0.92, 0.98, 1)

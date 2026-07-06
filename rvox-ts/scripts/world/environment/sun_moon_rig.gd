@@ -29,12 +29,12 @@ var daylight_factor := 1.0
 # Keyframe order: NIGHT, DAWN, MIDDAY, DUSK (wraps back to NIGHT), aligned
 # to sun_direction.y's actual phase (nadir at t=0, horizon-rising at
 # t=0.25, zenith at t=0.5, horizon-setting at t=0.75 — see _update_lighting).
-const SKY_TOP := [Color(0.01, 0.01, 0.05), Color(0.18, 0.06, 0.24), Color(0.05, 0.24, 0.68), Color(0.26, 0.06, 0.04)]
-const SKY_HORIZON := [Color(0.03, 0.05, 0.14), Color(0.92, 0.48, 0.18), Color(0.42, 0.62, 0.90), Color(0.88, 0.32, 0.04)]
-const SUN_COLOR := [Color(0.70, 0.75, 0.94), Color(1.0, 0.62, 0.22), Color(1.0, 0.96, 0.80), Color(1.0, 0.38, 0.05)]
+const SKY_TOP := [Color(0.01, 0.01, 0.05), Color(0.20, 0.11, 0.30), Color(0.05, 0.24, 0.68), Color(0.26, 0.11, 0.10)]
+const SKY_HORIZON := [Color(0.03, 0.05, 0.14), Color(0.90, 0.58, 0.34), Color(0.42, 0.62, 0.90), Color(0.86, 0.46, 0.24)]
+const SUN_COLOR := [Color(0.70, 0.75, 0.94), Color(1.0, 0.74, 0.46), Color(1.0, 0.96, 0.80), Color(1.0, 0.60, 0.34)]
 const SEA_DEEP := [Color(0.00, 0.01, 0.03), Color(0.08, 0.05, 0.12), Color(0.03, 0.14, 0.34), Color(0.10, 0.06, 0.04)]
 const SEA_SHALLOW := [Color(0.04, 0.06, 0.16), Color(0.28, 0.17, 0.24), Color(0.09, 0.38, 0.60), Color(0.24, 0.13, 0.06)]
-const FOG_COLOR := [Color(0.02, 0.03, 0.08), Color(0.80, 0.50, 0.30), Color(0.58, 0.72, 0.90), Color(0.70, 0.28, 0.05)]
+const FOG_COLOR := [Color(0.02, 0.03, 0.08), Color(0.80, 0.64, 0.50), Color(0.58, 0.72, 0.90), Color(0.76, 0.54, 0.38)]
 const MOON_COLOR := Color(0.45, 0.55, 0.9)
 
 # Resolved palette, recomputed each frame — read by EnvironmentController
@@ -68,7 +68,9 @@ func _update_lighting() -> void:
 
     var sun_height := clampf(sun_direction.y, 0.0, 1.0)
     var moon_height := clampf(moon_direction.y, 0.0, 1.0)
-    daylight_factor = sun_height
+    # Wider than raw sun_height so dawn/dusk keep usable ambient light
+    # instead of collapsing to near-night as the sun nears the horizon.
+    daylight_factor = smoothstep(-0.08, 0.35, sun_direction.y)
     sun_glow = smoothstep(-0.10, 0.06, sun_direction.y)
     moon_glow = smoothstep(0.0, 0.3, moon_height)
     night_amount = 1.0 - smoothstep(0.0, 0.3, sun_height)
@@ -76,7 +78,7 @@ func _update_lighting() -> void:
     sun.visible = sun_height > 0.01
     moon.visible = moon_height > 0.01
 
-    sun.light_energy = lerpf(0.0, 2.0, smoothstep(0.0, 0.45, sun_height)) * weather_energy_multiplier
+    sun.light_energy = lerpf(0.0, 2.0, smoothstep(0.0, 0.30, sun_height)) * weather_energy_multiplier
     moon.light_energy = lerpf(0.0, 0.28, smoothstep(0.0, 0.45, moon_height)) * weather_energy_multiplier
 
     var raw: float = time_of_day * 4.0

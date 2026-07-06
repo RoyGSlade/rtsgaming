@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"limestone"
+resolution = 128
+pattern = 2
+base_color = Color(0.78, 0.75, 0.66, 1)
+accent_color = Color(0.68, 0.64, 0.55, 1)
+accent_density = 0.3
+noise_seed = 305
+contrast = 1.0

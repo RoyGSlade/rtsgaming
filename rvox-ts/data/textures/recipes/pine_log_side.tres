@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"pine_log_side"
+resolution = 128
+pattern = 4
+base_color = Color(0.4, 0.27, 0.15, 1)
+accent_color = Color(0.28, 0.18, 0.09, 1)
+accent_density = 0.6
+noise_seed = 323
+contrast = 1.0

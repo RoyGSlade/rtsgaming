@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"red_bricks"
+display_name = "Red Bricks"
+category = &"construction"
+solid = true
+transparent = false
+buildable = true
+diggable = true
+hardness = 2.2
+path_cost = 999.0
+harvest_resource_id = &"brick"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"red_bricks"
+albedo_color = Color(0.64, 0.29, 0.2, 1)
+texture_top = &"red_bricks"
+texture_bottom = &"red_bricks"
+texture_side = &"red_bricks"

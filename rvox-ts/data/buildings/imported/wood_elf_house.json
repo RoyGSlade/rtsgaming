@@ -1,0 +1,8603 @@
+{
+  "id": "wood_elf_house",
+  "display_name": "Wood Elf House",
+  "category": "wooden-houses",
+  "era": "village",
+  "footprint": [
+    12,
+    20
+  ],
+  "health": 2000,
+  "workers_required": 1,
+  "required_functional_tags": [
+    "foundation"
+  ],
+  "blocks": [
+    {
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        7
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        9
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        10
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        11
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        7
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        9
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        10
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        11
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        7
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        9
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        10
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        11
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        7
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        8
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        9
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        10
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        11
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        7
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        11
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        5
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        6
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        7
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        11
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        12
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        13
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        14
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        5
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        14
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        6,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        4
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        5
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        14
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        15
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        7,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        5
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        14
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        8,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        5
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        6
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        7
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        8
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        9
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        10
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        12
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        13
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        14
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        9,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        7
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        9
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        10
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        11
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        12
+      ],
+      "block_id": "dirt",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        10,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        4
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        6
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        7
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        9
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        10
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        11
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        13
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        11,
+        0,
+        19
+      ],
+      "block_id": "grass",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        0,
+        1,
+        1
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        0,
+        1,
+        10
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        1,
+        5
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        1,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        1,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        1,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        1,
+        8
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        1,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        1,
+        14
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        5
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        2
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        15
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        16
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        1,
+        17
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        1,
+        0
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        1,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        1,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        1,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        1,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        1,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        15
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        1,
+        18
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        1,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        3
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        7
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        9
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        1,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        1,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        1,
+        9
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        1,
+        10
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        1,
+        12
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        1,
+        16
+      ],
+      "block_id": "grass",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        2,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        2,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        2,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        2,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        2,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        13
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        2,
+        15
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        2,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        2,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        2,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        2,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        2,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        2,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        2,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        2,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        2,
+        9
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        2,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        2,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        2,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        8
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        10
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        13
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        3,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        3,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        3,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        3,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        3,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        3,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        3,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        3,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        3,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        3,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        3,
+        13
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        3,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        8
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        13
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        3,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        12
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        3,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        3,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        3,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        3,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        4,
+        8
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        4,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        4,
+        10
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        9
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        4,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        4,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        4,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        4,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        4,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        4,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        4,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        4,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        13
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        4,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        4,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        4,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        4,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        4,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        4,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        4,
+        11
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        4,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        5,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        5,
+        9
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        5,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        5,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        6
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        13
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        5,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        5,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        7
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        9
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        10
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        5,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        5,
+        10
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        10,
+        5,
+        11
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        5,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        11,
+        5,
+        12
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        6,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        6,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        6,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        6,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        6,
+        14
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        11
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        6,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        9,
+        6,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        7,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        7,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        7,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        7,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        7,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        7,
+        17
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        7
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        9
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        10
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        12
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        7,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        7
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        8
+      ],
+      "block_id": "oak_leaves",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        7,
+        17
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        8,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        8,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        8
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        11
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        13
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        14
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        15
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        7,
+        8,
+        17
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        8,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        8,
+        8,
+        16
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    }
+  ],
+  "sockets": [],
+  "storage_slots": [],
+  "recipes": [],
+  "source_url": "https://www.grabcraft.com/minecraft/wood-elf-house/wooden-houses"
+}

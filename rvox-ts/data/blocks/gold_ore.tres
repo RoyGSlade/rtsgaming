@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"gold_ore"
+display_name = "Gold Ore"
+category = &"ore"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 2.6
+path_cost = 999
+harvest_resource_id = &"gold"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"gold_ore"
+albedo_color = Color(0.5, 0.5, 0.52, 1)
+texture_top = &"gold_ore"
+texture_bottom = &"gold_ore"
+texture_side = &"gold_ore"

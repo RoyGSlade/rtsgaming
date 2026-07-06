@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"coal_ore"
-resolution = 64
-pattern = 2
+resolution = 128
+pattern = 1
 base_color = Color(0.48, 0.48, 0.5, 1)
 accent_color = Color(0.08, 0.08, 0.09, 1)
 accent_density = 0.25

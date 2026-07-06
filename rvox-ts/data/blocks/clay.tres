@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"clay"
+display_name = "Clay"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 0.6
+fertility = 0.2
+moisture = 0.6
+path_cost = 1.1
+harvest_resource_id = &"clay"
+harvest_amount = 2
+tool_required = &"shovel"
+material_id = &"clay"
+albedo_color = Color(0.63, 0.55, 0.5, 1)
+texture_top = &"clay"
+texture_bottom = &"clay"
+texture_side = &"clay"

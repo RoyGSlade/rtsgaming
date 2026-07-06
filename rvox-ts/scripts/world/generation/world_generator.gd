@@ -16,30 +16,33 @@ func configure(config: WorldGenConfig) -> void:
     resource_generator.configure(config)
     tree_generator.configure(config)
 
+## O(columns), not O(volume): only the surface heightmap/biome are computed
+## here. Subsurface blocks (stone bands, ore veins) are never written — the
+## chunk resolves them lazily from the installed procedural source, so the
+## per-column cost is a handful of 2D noise samples regardless of map depth.
 func generate_chunk(chunk_position: Vector2i, config: WorldGenConfig, water_simulator: WaterFlowSimulator = null) -> ChunkData:
     configure(config)
     var chunk := ChunkData.new()
     chunk.setup(chunk_position, config.chunk_size, config.max_height)
+    chunk.set_procedural_source(surface_resolver, resource_generator, config)
 
     for local_x in config.chunk_size:
         for local_z in config.chunk_size:
             var global_x := chunk.get_global_x(local_x)
             var global_z := chunk.get_global_z(local_z)
             var height := height_generator.get_height(global_x, global_z, config)
-            var biome_id := biome_classifier.classify(global_x, global_z, height, config)
-
             chunk.set_surface_height(local_x, local_z, height)
-            chunk.set_biome(local_x, local_z, biome_id)
+            chunk.set_biome(local_x, local_z, biome_classifier.classify(global_x, global_z, height, config))
 
-            for y in range(0, config.max_height):
-                if y <= height:
-                    var block_id := surface_resolver.resolve_subsurface_block(y, height, config)
-                    var ore_id := resource_generator.resolve_ore(global_x, y, global_z, height, config)
-                    if ore_id != &"":
-                        block_id = ore_id
-                    chunk.set_block(local_x, y, local_z, block_id)
-
-            if tree_generator.should_place_tree(global_x, global_z, height, biome_id, config):
+    # Second pass, after every column height exists: place_oak_tree's
+    # "only fill air" check must see final neighbor terrain, or a canopy
+    # written before an uphill neighbor column would end up embedded in it.
+    for local_x in config.chunk_size:
+        for local_z in config.chunk_size:
+            var global_x := chunk.get_global_x(local_x)
+            var global_z := chunk.get_global_z(local_z)
+            var height := chunk.get_surface_height(local_x, local_z)
+            if tree_generator.should_place_tree(global_x, global_z, height, chunk.get_biome(local_x, local_z), config):
                 tree_generator.place_oak_tree(chunk, local_x, height, local_z)
 
     lake_generator.mark_lakes(chunk, config, water_simulator)

@@ -20,6 +20,11 @@ var display_name := "New Blueprint"
 ## (furnace, catapult, chair) built from stock parts on the fine grid rather
 ## than a structure built from blocks on the 1m grid.
 var template_kind := "building"
+## Which module library this building belongs to (hut, blacksmith, keep,
+## castle, ...), independent of template_kind (the document's purpose).
+## Set automatically when generated via WFC; "custom" for hand-built
+## documents until the author picks one from the Building Type dropdown.
+var building_type := "custom"
 var blocks: Dictionary = {} # "x,y,z" -> placed block data
 var components: Array[Dictionary] = []
 var markers: Array[Dictionary] = []
@@ -206,6 +211,7 @@ func to_dictionary() -> Dictionary:
 		"id": document_id,
 		"display_name": display_name,
 		"template_kind": template_kind,
+		"building_type": building_type,
 		"blocks": block_list,
 		"components": components.duplicate(true),
 		"markers": markers.duplicate(true),
@@ -244,6 +250,12 @@ func _load_dictionary(data: Dictionary) -> void:
 	document_id = str(data.get("id", data.get("blueprint_id", "new_blueprint")))
 	display_name = str(data.get("display_name", document_id.replace("_", " ").capitalize()))
 	template_kind = str(data.get("template_kind", data.get("category", "building")))
+	# Exported BuildingBlueprint JSON has no explicit building_type field but
+	# does carry generator.library when WFC-made; fall back to that so
+	# opening an exported file for editing still shows the right type.
+	var generator_variant: Variant = data.get("generator", {})
+	var inferred_type := str(generator_variant.get("library", "custom")) if generator_variant is Dictionary else "custom"
+	building_type = str(data.get("building_type", inferred_type))
 	blocks.clear()
 	for item: Variant in data.get("blocks", []):
 		if not item is Dictionary:

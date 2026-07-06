@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"birch_leaves"
+display_name = "Birch Leaves"
+category = &"tree"
+solid = false
+transparent = true
+hardness = 0.2
+flammability = 0.8
+path_cost = 1.0
+harvest_resource_id = &"fiber"
+harvest_amount = 1
+tool_required = &"axe"
+material_id = &"birch_leaves"
+albedo_color = Color(0.36, 0.52, 0.22, 0.82)
+texture_top = &"birch_leaves"
+texture_bottom = &"birch_leaves"
+texture_side = &"birch_leaves"

@@ -2,6 +2,23 @@
 *.tmp
 *.log
 .DS_Store
+__pycache__/
+*.pyc
+
+# Local ComfyUI install (23GB+: model weights, venv, custom nodes).
+# Recreate via the commands captured in its logs/; launcher is ComfyUI/run_comfyui.sh.
+ComfyUI/
+
+# Asset pipeline: per-asset stage state and generated intermediates
+# (concept images, raw meshes, Mixamo FBX, BVH clips). Final GLBs in
+# voxel-asset-pipeline/godot_import/ stay tracked.
+voxel-asset-pipeline/staging/.state/
+voxel-asset-pipeline/staging/images/*
+voxel-asset-pipeline/staging/meshes_raw/*
+voxel-asset-pipeline/staging/for_mixamo/*
+voxel-asset-pipeline/staging/rigged/*
+voxel-asset-pipeline/staging/bvh/*
+!voxel-asset-pipeline/staging/*/.gitkeep
 
 # NOTE: Godot's .godot/ cache is handled by rvox-ts/.gitignore, which keeps the
 # import cache tracked so a fresh clone/zip runs without a reimport step. Do NOT

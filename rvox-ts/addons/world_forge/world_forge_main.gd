@@ -12,6 +12,19 @@ const PartRegistryScript := preload("res://addons/world_forge/model/part_registr
 const MaterialRegistryScript := preload("res://addons/world_forge/model/material_registry.gd")
 const PartGeometryFactory := preload("res://addons/world_forge/model/part_geometry_factory.gd")
 const PartSnapResolver := preload("res://addons/world_forge/model/part_snap_resolver.gd")
+## Pipeline utilities absorbed from the retired block_building_editor addon.
+const BlueprintSerializerScript := preload("res://addons/world_forge/pipeline/blueprint_serializer.gd")
+const TextureArrayPackerScript := preload("res://addons/world_forge/pipeline/texture_array_packer.gd")
+const AssetPackImporterScript := preload("res://addons/world_forge/pipeline/external_asset_pack_importer.gd")
+const ThumbnailBackfillScript := preload("res://addons/world_forge/pipeline/blueprint_thumbnail_backfill.gd")
+## WFC building generation (shared with the runtime, so generated buildings
+## can eventually also be produced in-game).
+const ModuleLibraryScript := preload("res://scripts/buildings/generation/building_module_library.gd")
+const WFCGeneratorScript := preload("res://scripts/buildings/generation/building_wfc_generator.gd")
+## Shared fire/light effect for light-source blocks (torch, lantern, brazier).
+const LightFixtureScript := preload("res://scripts/rendering/light_fixture_effect.gd")
+## Synchronous isometric preview icon for the blueprint browser.
+const ThumbnailRendererScript := preload("res://scripts/rendering/blueprint_thumbnail_renderer.gd")
 
 ## SHAPES/COMPONENTS/MARKERS used to be hardcoded literal arrays here. They
 ## now load from data/world_forge/{shapes,components,markers}/*.tres via the
@@ -40,7 +53,13 @@ var _document: ForgeDocument
 var _history: ForgeHistory
 var _current_path := ""
 
-var _library_tree: Tree
+## Blueprint browser (see _build_library_panel/_refresh_library): each
+## visible entry is a clickable "card" Control, not a Tree row, so it can
+## show a preview thumbnail + stats instead of just a filename.
+var _library_list: VBoxContainer
+var _library_cards: Array[Button] = []
+var _selected_library_item_path := ""
+var _library_type_filter: OptionButton
 var _library_search: LineEdit
 var _viewport_container: SubViewportContainer
 var _viewport: SubViewport
@@ -62,11 +81,39 @@ var _redo_button: Button
 var _finalize_button: Button
 var _name_edit: LineEdit
 var _id_edit: LineEdit
+var _tool_button_row: HBoxContainer
+var _context_label: Label
+var _mirror_x_spin: SpinBox
+var _mirror_z_spin: SpinBox
+var _kind_selector: OptionButton
+## Which module library (hut/blacksmith/keep/castle/custom) the CURRENT
+## document is tagged as - separate from _library_type_filter, which filters
+## the browser list above.
+var _building_type_selector: OptionButton
+## Generate (WFC) tab state.
+var _gen_type: OptionButton
+var _gen_tier: OptionButton
+var _gen_seed: SpinBox
+var _gen_clear_check: CheckBox
+var _gen_result: Label
+var _gen_library_paths: PackedStringArray = PackedStringArray()
+## Tiny solid-color ItemList icons, cached by color so palette refreshes
+## don't rebuild hundreds of identical 12x12 textures.
+var _swatch_cache: Dictionary = {}
 var _autosave_timer: Timer
 var _dirty := false
 var _updating_identity := false
 
 const AUTOSAVE_PATH := "user://world_forge_autosave.json"
+
+## Header tool button order; index maps to hotkeys 1..7 in the viewport.
+const TOOL_ORDER: Array[String] = ["select", "place", "line", "fill", "box", "shell", "connected"]
+
+const ASSET_SOURCE_PATHS := {
+	"kaykit_blocks": "res://assets/external/kaykit/block_bits_source.tres",
+	"kaykit_resources": "res://assets/external/kaykit/resource_bits_source.tres",
+	"kenney_voxel": "res://assets/external/kenney/voxel_pack_source.tres",
+}
 
 var _tool := "select"
 var _place_kind := "block"
@@ -95,14 +142,30 @@ var _fine_layer := 0
 var _fine_grid_center := Vector3.ZERO
 var _brush_rotation := 0
 var _staged_blueprint_path := ""
+## Mirror placement: block edits (place/erase and the two-point tools) are
+## reflected across the X and/or Z plane so symmetric builds only have to be
+## drawn once. _mirror_x/_mirror_z are the cell columns that stay fixed -
+## the geometric plane runs through that column's center (cell + 0.5).
+var _mirror_mode := "off" # off | x | z | xz
+var _mirror_x := 0
+var _mirror_z := 0
 var _block_colors: Dictionary = {}
 var _block_catalog: Array[Dictionary] = []
+## Per-block visual info for textured rendering: generated-atlas layer name,
+## texture_scale, roughness, and an optional explicit albedo_texture, all
+## read from BlockDefinition alongside the palette in _load_block_palette().
+var _block_texture_info: Dictionary = {}
+var _block_materials: Dictionary = {}
+## block_id -> {color, energy, range, flame} for light-source blocks
+## (BlockDefinition.light_energy > 0); drives preview OmniLights + flames.
+var _block_light_info: Dictionary = {}
 var _materials: Dictionary = {}
 var _hover_mesh: Node3D
 var _gamepad_reticle: Label
 var _gamepad_prev_buttons: Dictionary = {}
 var _hover_valid_material: StandardMaterial3D
 var _hover_invalid_material: StandardMaterial3D
+var _hover_select_material: StandardMaterial3D
 var _camera_yaw := deg_to_rad(45.0)
 var _camera_pitch := deg_to_rad(38.0)
 var _camera_distance := 20.0
@@ -210,42 +273,62 @@ func _build_ui() -> void:
 
 func _build_header() -> Control:
 	var panel := PanelContainer.new()
-	panel.custom_minimum_size.y = 78.0
 	var rows := VBoxContainer.new()
 	rows.add_theme_constant_override("separation", 2)
 	panel.add_child(rows)
-	var tool_row := HBoxContainer.new()
-	tool_row.add_theme_constant_override("separation", 6)
-	rows.add_child(tool_row)
+
+	# Row 1: title, File/Pipeline menus, and a persistent context readout so
+	# the current tool/brush is always visible without hunting for the
+	# pressed toggle.
+	var menu_row := HBoxContainer.new()
+	menu_row.add_theme_constant_override("separation", 6)
+	rows.add_child(menu_row)
 	var title := Label.new()
 	title.text = "  WORLD FORGE"
 	title.add_theme_font_size_override("font_size", 18)
-	tool_row.add_child(title)
-	tool_row.add_child(VSeparator.new())
-	for entry: Array in [["Select", "select"], ["Place", "place"], ["Line", "line"], ["Fill", "fill"], ["Box", "box"], ["Shell", "shell"], ["Connected", "connected"]]:
+	menu_row.add_child(title)
+	menu_row.add_child(_build_file_menu())
+	menu_row.add_child(_build_pipeline_menu())
+	var menu_spacer := Control.new()
+	menu_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	menu_row.add_child(menu_spacer)
+	_context_label = Label.new()
+	_context_label.add_theme_color_override("font_color", Color(0.64, 0.71, 0.8))
+	menu_row.add_child(_context_label)
+	var menu_pad := Control.new()
+	menu_pad.custom_minimum_size.x = 10.0
+	menu_row.add_child(menu_pad)
+
+	# Row 2: tools (hotkeys 1..7), layers, and mirror. The mirror plane
+	# spinboxes only appear while mirroring is on.
+	var tool_row := HBoxContainer.new()
+	tool_row.add_theme_constant_override("separation", 6)
+	rows.add_child(tool_row)
+	_tool_button_row = tool_row
+	tool_row.add_child(_row_caption("  Tools"))
+	for index in TOOL_ORDER.size():
+		var tool_id := TOOL_ORDER[index]
 		var button := Button.new()
-		button.text = entry[0]
-		button.tooltip_text = "%s tool" % entry[0]
+		button.text = tool_id.capitalize()
+		button.tooltip_text = "%s tool (%d)" % [tool_id.capitalize(), index + 1]
 		button.toggle_mode = true
-		button.button_pressed = entry[1] == _tool
-		button.set_meta("tool", entry[1])
-		button.pressed.connect(_select_tool.bind(entry[1], tool_row))
+		button.button_pressed = tool_id == _tool
+		button.set_meta("tool", tool_id)
+		button.pressed.connect(_select_tool.bind(tool_id, tool_row))
 		tool_row.add_child(button)
-	var spacer := Control.new()
-	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	tool_row.add_child(spacer)
-	tool_row.add_child(Label.new())
-	(tool_row.get_child(tool_row.get_child_count() - 1) as Label).text = "Layer"
+	tool_row.add_child(VSeparator.new())
+	tool_row.add_child(_row_caption("Layer"))
 	_layer_spin = SpinBox.new()
 	_layer_spin.min_value = 0
 	_layer_spin.max_value = 128
+	_layer_spin.tooltip_text = "Structure layer (Y) placement plane"
 	_layer_spin.value_changed.connect(func(value: float) -> void:
 		_active_layer = int(value)
 		_refresh_grid()
+		_update_context()
 	)
 	tool_row.add_child(_layer_spin)
-	tool_row.add_child(Label.new())
-	(tool_row.get_child(tool_row.get_child_count() - 1) as Label).text = "Fine"
+	tool_row.add_child(_row_caption("Fine"))
 	_fine_layer_spin = SpinBox.new()
 	_fine_layer_spin.min_value = 0
 	_fine_layer_spin.max_value = FINE_CELLS_PER_UNIT - 1
@@ -254,26 +337,194 @@ func _build_header() -> Control:
 		_fine_layer = int(value)
 	)
 	tool_row.add_child(_fine_layer_spin)
+	tool_row.add_child(VSeparator.new())
+	tool_row.add_child(_row_caption("Mirror"))
+	var mirror_selector := OptionButton.new()
+	for entry: Array in [["Off", "off"], ["X", "x"], ["Z", "z"], ["X+Z", "xz"]]:
+		mirror_selector.add_item(entry[0])
+		mirror_selector.set_item_metadata(mirror_selector.item_count - 1, entry[1])
+	mirror_selector.tooltip_text = "Mirror block placement and erase across the X and/or Z plane"
+	mirror_selector.item_selected.connect(func(index: int) -> void:
+		_mirror_mode = str(mirror_selector.get_item_metadata(index))
+		var mirroring := _mirror_mode != "off"
+		_mirror_x_spin.visible = _mirror_mode == "x" or _mirror_mode == "xz"
+		_mirror_z_spin.visible = _mirror_mode == "z" or _mirror_mode == "xz"
+		_refresh_grid()
+		_set_status("Mirror: %s" % mirror_selector.get_item_text(index) if mirroring else "Mirror off")
+	)
+	tool_row.add_child(mirror_selector)
+	_mirror_x_spin = SpinBox.new()
+	_mirror_x_spin.min_value = -128
+	_mirror_x_spin.max_value = 128
+	_mirror_x_spin.tooltip_text = "Mirror plane X (the cell column that stays fixed)"
+	_mirror_x_spin.visible = false
+	_mirror_x_spin.value_changed.connect(func(value: float) -> void:
+		_mirror_x = int(value)
+		_refresh_grid()
+	)
+	tool_row.add_child(_mirror_x_spin)
+	_mirror_z_spin = SpinBox.new()
+	_mirror_z_spin.min_value = -128
+	_mirror_z_spin.max_value = 128
+	_mirror_z_spin.tooltip_text = "Mirror plane Z (the cell row that stays fixed)"
+	_mirror_z_spin.visible = false
+	_mirror_z_spin.value_changed.connect(func(value: float) -> void:
+		_mirror_z = int(value)
+		_refresh_grid()
+	)
+	tool_row.add_child(_mirror_z_spin)
 
+	# Row 3: edit actions, with the destructive/major ones pushed right.
 	var action_row := HBoxContainer.new()
 	action_row.add_theme_constant_override("separation", 6)
 	rows.add_child(action_row)
-	var action_label := Label.new()
-	action_label.text = "  EDIT"
-	action_row.add_child(action_label)
-	action_row.add_child(VSeparator.new())
+	action_row.add_child(_row_caption("  Edit"))
 	_undo_button = _header_button("Undo", _undo)
 	_redo_button = _header_button("Redo", _redo)
 	action_row.add_child(_undo_button)
 	action_row.add_child(_redo_button)
+	action_row.add_child(VSeparator.new())
 	for entry: Array in [["Copy", _copy_selection, "Ctrl+C"], ["Paste", _arm_paste, "Ctrl+V"], ["Move", _arm_move, "G"], ["Duplicate", _duplicate_selection, "Ctrl+D"], ["Rotate", _rotate_selection_or_brush, "R"], ["Replace", _replace_selection, ""], ["All", _select_all_blocks, "Ctrl+A"], ["Delete", _delete_selection, "Delete"]]:
 		var button := _header_button(entry[0], entry[1])
 		button.tooltip_text = "%s%s" % [entry[0], " (%s)" % entry[2] if not entry[2].is_empty() else ""]
 		action_row.add_child(button)
-	action_row.add_child(VSeparator.new())
+	var action_spacer := Control.new()
+	action_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	action_row.add_child(action_spacer)
 	_finalize_button = _header_button("Finalize Blueprint", _finalize_nested_blueprints)
+	_finalize_button.tooltip_text = "Bake staged nested blueprints into this document"
 	action_row.add_child(_finalize_button)
+	_update_context()
 	return panel
+
+
+## Dimmed group caption for header rows — replaces the old pattern of
+## appending an anonymous Label and fishing it back out of the child list.
+func _row_caption(text: String) -> Label:
+	var label := Label.new()
+	label.text = text
+	label.add_theme_color_override("font_color", Color(0.55, 0.6, 0.68))
+	return label
+
+
+func _build_file_menu() -> MenuButton:
+	var menu := MenuButton.new()
+	menu.text = "File"
+	menu.flat = false
+	var popup := menu.get_popup()
+	popup.add_item("New Blueprint", 0)
+	popup.add_item("Open Selected", 1)
+	popup.add_item("Save", 2)
+	popup.set_item_tooltip(popup.get_item_index(2), "Ctrl+S while the viewport has focus")
+	popup.add_item("Save As New Copy", 3)
+	popup.add_separator()
+	popup.add_item("Recover Autosave", 4)
+	popup.add_item("Validate Document", 5)
+	popup.add_separator()
+	popup.add_item("Export Building Blueprint JSON", 6)
+	popup.set_item_tooltip(popup.get_item_index(6), "Write this document as a game-ready BuildingBlueprint (res://data/buildings)")
+	popup.id_pressed.connect(func(id: int) -> void:
+		match id:
+			0: _new_document()
+			1: _open_selected_library_item()
+			2: _save_document()
+			3: _save_as_document()
+			4: _recover_autosave()
+			5: _validate_document()
+			6: _export_building_blueprint()
+	)
+	return menu
+
+
+## Asset/texture pipeline actions absorbed from the retired block editor
+## dock: procedural block textures, the terrain texture array, and external
+## asset pack imports.
+func _build_pipeline_menu() -> MenuButton:
+	var menu := MenuButton.new()
+	menu.text = "Pipeline"
+	menu.flat = false
+	var popup := menu.get_popup()
+	popup.add_item("Generate Block Textures", 0)
+	popup.add_item("Rebuild Texture Array", 1)
+	popup.add_separator()
+	popup.add_item("Import KayKit Block Bits", 2)
+	popup.add_item("Import KayKit Resource Bits", 3)
+	popup.add_item("Import Kenney Voxel Pack", 4)
+	popup.add_check_item("Allow Import Overwrite", 5)
+	popup.add_separator()
+	popup.add_item("Reload Block Palette", 6)
+	popup.add_item("Generate Missing Thumbnails", 7)
+	popup.id_pressed.connect(_on_pipeline_menu.bind(popup))
+	return menu
+
+
+func _on_pipeline_menu(id: int, popup: PopupMenu) -> void:
+	match id:
+		0:
+			var report := TextureArrayPackerScript.new().generate_all()
+			EditorInterface.get_resource_filesystem().scan()
+			_set_status("Generated %d texture(s), %d failed" % [report.generated, report.failed])
+			if report.failed > 0:
+				push_error("Texture generation errors: %s" % report.errors)
+		1:
+			var report := TextureArrayPackerScript.new().pack()
+			EditorInterface.get_resource_filesystem().scan()
+			if report.failed > 0:
+				_set_status("Texture array rebuild failed: %s" % report.errors)
+				push_error("Texture array packing errors: %s" % report.errors)
+			else:
+				_set_status("Packed %d layer(s) → %s" % [report.packed, report.atlas_path])
+		2: _run_external_import(ASSET_SOURCE_PATHS["kaykit_blocks"], _import_overwrite_enabled(popup))
+		3: _run_external_import(ASSET_SOURCE_PATHS["kaykit_resources"], _import_overwrite_enabled(popup))
+		4: _run_external_import(ASSET_SOURCE_PATHS["kenney_voxel"], _import_overwrite_enabled(popup))
+		5:
+			var index := popup.get_item_index(5)
+			popup.set_item_checked(index, not popup.is_item_checked(index))
+		6:
+			_load_block_palette()
+			_set_status("Block palette reloaded")
+		7:
+			var report: Dictionary = ThumbnailBackfillScript.generate_missing(_block_colors)
+			var failed: Array = report["failed"]
+			EditorInterface.get_resource_filesystem().scan()
+			_invalidate_library_scan()
+			_refresh_library()
+			_set_status("Thumbnails: %d generated, %d skipped, %d failed" % [
+				report["generated"], report["skipped"], failed.size(),
+			])
+			if not failed.is_empty():
+				push_error("Thumbnail render failures: %s" % ", ".join(failed))
+
+
+func _import_overwrite_enabled(popup: PopupMenu) -> bool:
+	return popup.is_item_checked(popup.get_item_index(5))
+
+
+func _run_external_import(source_path: String, allow_overwrite: bool) -> void:
+	var source := load(source_path) as AssetSourceDefinition
+	if source == null:
+		_set_status("Missing asset source: %s" % source_path)
+		return
+	var report := AssetPackImporterScript.new().import_source(source, allow_overwrite)
+	_set_status("%s: %d created, %d updated, %d skipped, %d failed" % [
+		source.display_name, report.created, report.updated, report.skipped, report.failed,
+	])
+	if report.failed > 0:
+		push_error("External asset import errors: %s" % report.errors)
+	_load_block_palette()
+
+
+## Header context readout: what a click will currently do, at a glance.
+func _update_context() -> void:
+	if _context_label == null:
+		return
+	var brush := ""
+	match _place_kind:
+		"block": brush = String(_selected_block_id)
+		"component": brush = _selected_component_id
+		"marker": brush = _selected_marker_id
+		"part": brush = String(_selected_part_id)
+	_context_label.text = "%s · %s: %s · layer %d" % [_tool.capitalize(), _place_kind, brush, _active_layer]
 
 
 func _header_button(text: String, callback: Callable) -> Button:
@@ -285,18 +536,66 @@ func _header_button(text: String, callback: Callable) -> Button:
 
 func _build_library_panel() -> Control:
 	var panel := PanelContainer.new()
-	panel.custom_minimum_size.x = 220.0
+	panel.custom_minimum_size.x = 280.0
 	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 4)
 	panel.add_child(box)
 	var heading := Label.new()
 	heading.text = " BLUEPRINTS & SCENES"
 	heading.add_theme_font_size_override("font_size", 15)
 	box.add_child(heading)
+
+	var filter_row := HBoxContainer.new()
+	filter_row.add_theme_constant_override("separation", 6)
+	box.add_child(filter_row)
 	_library_search = LineEdit.new()
-	_library_search.placeholder_text = "Search blueprints…"
+	_library_search.placeholder_text = "Search…"
 	_library_search.clear_button_enabled = true
+	_library_search.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_library_search.text_changed.connect(func(_text: String) -> void: _refresh_library())
-	box.add_child(_library_search)
+	filter_row.add_child(_library_search)
+	_library_type_filter = OptionButton.new()
+	_library_type_filter.add_item("All Types")
+	_library_type_filter.set_item_metadata(0, "")
+	for entry: Dictionary in _building_type_catalog():
+		_library_type_filter.add_item(entry["label"])
+		_library_type_filter.set_item_metadata(_library_type_filter.item_count - 1, entry["id"])
+	_library_type_filter.item_selected.connect(func(_index: int) -> void: _refresh_library())
+	filter_row.add_child(_library_type_filter)
+
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	box.add_child(scroll)
+	_library_list = VBoxContainer.new()
+	_library_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_library_list.add_theme_constant_override("separation", 3)
+	scroll.add_child(_library_list)
+
+	# Only the two actions that operate on the selected card live here;
+	# document-level actions (New/Save/Validate/...) live in the File menu.
+	var actions := HBoxContainer.new()
+	actions.add_theme_constant_override("separation", 6)
+	box.add_child(actions)
+	var open_button := Button.new()
+	open_button.text = "Open"
+	open_button.tooltip_text = "Open the selected blueprint for editing (clicking its card again also works)"
+	open_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	open_button.pressed.connect(_open_selected_library_item)
+	actions.add_child(open_button)
+	var stage_button := Button.new()
+	stage_button.text = "Stage"
+	stage_button.tooltip_text = "Stage the selected blueprint as one piece, then click the grid to place it into the current document"
+	stage_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	stage_button.pressed.connect(_stage_selected_library_item)
+	actions.add_child(stage_button)
+
+	box.add_child(HSeparator.new())
+	var current_heading := Label.new()
+	current_heading.text = " CURRENT DOCUMENT"
+	current_heading.add_theme_font_size_override("font_size", 12)
+	current_heading.add_theme_color_override("font_color", Color(0.55, 0.6, 0.68))
+	box.add_child(current_heading)
 	var identity := GridContainer.new()
 	identity.columns = 2
 	box.add_child(identity)
@@ -312,31 +611,42 @@ func _build_library_panel() -> Control:
 	_id_edit.text_submitted.connect(func(_text: String) -> void: _commit_identity())
 	_id_edit.focus_exited.connect(_commit_identity)
 	identity.add_child(_id_edit)
-	_library_tree = Tree.new()
-	_library_tree.hide_root = true
-	_library_tree.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	_library_tree.item_activated.connect(_open_selected_library_item)
-	box.add_child(_library_tree)
-	var actions := GridContainer.new()
-	actions.columns = 2
-	box.add_child(actions)
-	for pair: Array in [["New", _new_document], ["Open", _open_selected_library_item], ["Stage", _stage_selected_library_item], ["Save", _save_document], ["Save As", _save_as_document], ["Recover", _recover_autosave], ["Validate", _validate_document]]:
-		var button := Button.new()
-		button.text = pair[0]
-		button.pressed.connect(pair[1])
-		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		actions.add_child(button)
-	var type_label := Label.new()
-	type_label.text = "Template purpose"
-	box.add_child(type_label)
-	var kind := OptionButton.new()
-	for label: String in ["Building", "Encounter Camp", "Discoverable Ruin", "Generation Template", "Interior Assembly"]:
-		kind.add_item(label)
-	kind.item_selected.connect(func(index: int) -> void:
-		_document.template_kind = ["building", "encounter", "ruin", "generation", "assembly"][index]
+	identity.add_child(_small_label("Template purpose"))
+	_kind_selector = OptionButton.new()
+	for entry: Array in [["Building", "building"], ["Encounter Camp", "encounter"], ["Discoverable Ruin", "ruin"], ["Generation Template", "generation"], ["Interior Assembly", "assembly"]]:
+		_kind_selector.add_item(entry[0])
+		_kind_selector.set_item_metadata(_kind_selector.item_count - 1, entry[1])
+	_kind_selector.item_selected.connect(func(index: int) -> void:
+		_document.template_kind = str(_kind_selector.get_item_metadata(index))
 	)
-	box.add_child(kind)
+	identity.add_child(_kind_selector)
+	identity.add_child(_small_label("Building type"))
+	_building_type_selector = OptionButton.new()
+	for entry: Dictionary in _building_type_catalog():
+		_building_type_selector.add_item(entry["label"])
+		_building_type_selector.set_item_metadata(_building_type_selector.item_count - 1, entry["id"])
+	_building_type_selector.tooltip_text = "Which module library this building belongs to — set automatically by Generate, or pick one for a hand-built document"
+	_building_type_selector.item_selected.connect(func(index: int) -> void:
+		if _updating_identity:
+			return
+		_document.building_type = str(_building_type_selector.get_item_metadata(index))
+		_document.notify_changed()
+	)
+	identity.add_child(_building_type_selector)
 	return panel
+
+
+## Every module library plus a trailing "custom" catch-all, as
+## {id, label} — shared by the browser's type filter and the current
+## document's Building Type dropdown so both always list the same set.
+func _building_type_catalog() -> Array[Dictionary]:
+	var catalog: Array[Dictionary] = []
+	for path in ModuleLibraryScript.list_library_paths():
+		var library: Dictionary = ModuleLibraryScript.load_library(path)
+		var id := str(library.get("id", path.get_file().get_basename()))
+		catalog.append({"id": id, "label": str(library.get("display_name", id.capitalize()))})
+	catalog.append({"id": "custom", "label": "Custom"})
+	return catalog
 
 
 func _small_label(text: String) -> Label:
@@ -378,6 +688,7 @@ func _build_viewport_panel() -> Control:
 	_hover_mesh = Node3D.new()
 	_hover_valid_material = _ghost_material(Color(0.35, 0.65, 1.0, 0.32))
 	_hover_invalid_material = _ghost_material(Color(1.0, 0.25, 0.2, 0.38))
+	_hover_select_material = _ghost_material(Color(1.0, 0.8, 0.25, 0.3))
 	_hover_mesh.visible = false
 	_world.add_child(_hover_mesh)
 	var sun := DirectionalLight3D.new()
@@ -391,6 +702,11 @@ func _build_viewport_panel() -> Control:
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	env.ambient_light_color = Color("b8c4d4")
 	env.ambient_light_energy = 0.55
+	# Filmic tonemapping + SSAO make the textured blocks read as solid
+	# geometry instead of flat-lit color; both are cheap at this viewport
+	# size and no-ops in headless test runs.
+	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC
+	env.ssao_enabled = true
 	environment.environment = env
 	_world.add_child(environment)
 	# Gamepad aim reticle: fixed at viewport center, matching how
@@ -418,12 +734,13 @@ func _build_palette_panel() -> Control:
 	var box := VBoxContainer.new()
 	panel.add_child(box)
 	var heading := Label.new()
-	heading.text = " BLOCKS · COMPONENTS · MARKERS"
+	heading.text = " PALETTE & GENERATION"
 	heading.add_theme_font_size_override("font_size", 15)
 	box.add_child(heading)
 	var tabs := TabContainer.new()
 	tabs.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	box.add_child(tabs)
+	tabs.add_child(_build_generate_tab())
 	var blocks_tab := VBoxContainer.new()
 	blocks_tab.name = "Blocks"
 	var block_filters := HBoxContainer.new()
@@ -458,9 +775,7 @@ func _build_palette_panel() -> Control:
 	components_tab.add_child(component_search)
 	_component_list = _palette_list("ComponentList")
 	_component_list.item_selected.connect(_on_component_selected)
-	for component: Dictionary in _components:
-		_component_list.add_item(component["name"])
-		_component_list.set_item_metadata(_component_list.item_count - 1, component["id"])
+	_filter_catalog_list("", _component_list, _components)
 	component_search.text_changed.connect(_filter_catalog_list.bind(_component_list, _components))
 	components_tab.add_child(_component_list)
 	tabs.add_child(components_tab)
@@ -472,9 +787,7 @@ func _build_palette_panel() -> Control:
 	markers_tab.add_child(marker_search)
 	_marker_list = _palette_list("MarkerList")
 	_marker_list.item_selected.connect(_on_marker_selected)
-	for marker: Dictionary in _markers:
-		_marker_list.add_item(marker["name"])
-		_marker_list.set_item_metadata(_marker_list.item_count - 1, marker["id"])
+	_filter_catalog_list("", _marker_list, _markers)
 	marker_search.text_changed.connect(_filter_catalog_list.bind(_marker_list, _markers))
 	markers_tab.add_child(_marker_list)
 	tabs.add_child(markers_tab)
@@ -486,9 +799,7 @@ func _build_palette_panel() -> Control:
 	parts_tab.add_child(part_search)
 	_part_list = _palette_list("PartList")
 	_part_list.item_selected.connect(_on_part_selected)
-	for part: Dictionary in _parts:
-		_part_list.add_item(part["name"])
-		_part_list.set_item_metadata(_part_list.item_count - 1, part["id"])
+	_filter_catalog_list("", _part_list, _parts)
 	part_search.text_changed.connect(_filter_catalog_list.bind(_part_list, _parts))
 	parts_tab.add_child(_part_list)
 	tabs.add_child(parts_tab)
@@ -525,11 +836,254 @@ func _filter_catalog_list(query: String, list: ItemList, catalog: Array[Dictiona
 			continue
 		list.add_item(str(entry.get("name", entry.get("id", "Unknown"))))
 		list.set_item_metadata(list.item_count - 1, entry.get("id", ""))
+		if entry.get("color") is Color:
+			list.set_item_icon(list.item_count - 1, _swatch_icon(entry["color"]))
+
+
+## Solid-color square used as an ItemList icon (size 12, palette entries) or
+## as a placeholder blueprint-browser thumbnail (size 48, no render yet) so
+## entries can be told apart at a glance either way. Cached per color+size.
+func _swatch_icon(color: Color, size: int = 12) -> ImageTexture:
+	var key := "%s|%d" % [color.to_html(), size]
+	if _swatch_cache.has(key):
+		return _swatch_cache[key]
+	var image := Image.create(size, size, false, Image.FORMAT_RGBA8)
+	image.fill(color)
+	var texture := ImageTexture.create_from_image(image)
+	_swatch_cache[key] = texture
+	return texture
+
+
+# --- Generate (WFC) -----------------------------------------------------------
+
+## One-click WFC building generation (module libraries in
+## data/buildings/module_libraries). Generated blocks are written into the
+## current document as a single undoable transaction, so every Forge tool
+## (select/move/mirror/replace/...) works on the result immediately.
+func _build_generate_tab() -> Control:
+	var box := VBoxContainer.new()
+	box.name = "Generate"
+	box.add_theme_constant_override("separation", 6)
+	var help := Label.new()
+	help.text = "Generate a building shell with WFC as a starting point, then refine it with the normal tools and export it as a game blueprint."
+	help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	box.add_child(help)
+	var grid := GridContainer.new()
+	grid.columns = 2
+	box.add_child(grid)
+	grid.add_child(_small_label("Type"))
+	_gen_type = OptionButton.new()
+	_gen_type.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_gen_type.item_selected.connect(func(_index: int) -> void: _refresh_generate_tiers())
+	grid.add_child(_gen_type)
+	grid.add_child(_small_label("Tier"))
+	_gen_tier = OptionButton.new()
+	_gen_tier.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid.add_child(_gen_tier)
+	grid.add_child(_small_label("Seed"))
+	_gen_seed = SpinBox.new()
+	_gen_seed.min_value = 0
+	_gen_seed.max_value = 999999999
+	_gen_seed.tooltip_text = "0 = random. Any other value reproduces the exact same building."
+	_gen_seed.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	grid.add_child(_gen_seed)
+	_gen_clear_check = CheckBox.new()
+	_gen_clear_check.text = "Replace current blocks"
+	_gen_clear_check.tooltip_text = "On: the document's blocks are replaced and its name/ID follow the generated building.\nOff: generated blocks merge into whatever is already placed."
+	_gen_clear_check.button_pressed = true
+	box.add_child(_gen_clear_check)
+	var generate_button := Button.new()
+	generate_button.text = "Generate Building"
+	generate_button.custom_minimum_size.y = 34.0
+	generate_button.pressed.connect(_on_generate_building)
+	box.add_child(generate_button)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 6)
+	box.add_child(row)
+	var reroll := Button.new()
+	reroll.text = "Reroll"
+	reroll.tooltip_text = "Generate again with a fresh random seed"
+	reroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	reroll.pressed.connect(func() -> void:
+		_gen_seed.value = 0
+		_on_generate_building()
+	)
+	row.add_child(reroll)
+	var rescan := Button.new()
+	rescan.text = "Rescan"
+	rescan.tooltip_text = "Re-read module libraries from data/buildings/module_libraries"
+	rescan.pressed.connect(_refresh_generate_libraries)
+	row.add_child(rescan)
+	_gen_result = Label.new()
+	_gen_result.text = "No building generated yet."
+	_gen_result.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	box.add_child(_gen_result)
+	var export_button := Button.new()
+	export_button.text = "Export Building Blueprint JSON"
+	export_button.tooltip_text = "Write the current document as a game-ready BuildingBlueprint to res://data/buildings"
+	export_button.pressed.connect(_export_building_blueprint)
+	box.add_child(export_button)
+	var filler := Control.new()
+	filler.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	box.add_child(filler)
+	_refresh_generate_libraries()
+	return box
+
+
+func _refresh_generate_libraries() -> void:
+	_gen_library_paths = ModuleLibraryScript.list_library_paths()
+	_gen_type.clear()
+	for path in _gen_library_paths:
+		var library: Dictionary = ModuleLibraryScript.load_library(path)
+		_gen_type.add_item(String(library.get("display_name", path.get_file())))
+	_refresh_generate_tiers()
+
+
+func _refresh_generate_tiers() -> void:
+	_gen_tier.clear()
+	var library := _selected_generate_library()
+	for tier: Dictionary in library.get("tiers", []):
+		var tier_number := int(tier.get("tier", 0))
+		_gen_tier.add_item("T%d · %s" % [tier_number, String(tier.get("name", ""))], tier_number)
+
+
+func _selected_generate_library() -> Dictionary:
+	var index := _gen_type.selected
+	if index < 0 or index >= _gen_library_paths.size():
+		return {}
+	# Reload on use so JSON edits are picked up without restarting.
+	return ModuleLibraryScript.load_library(_gen_library_paths[index])
+
+
+func _on_generate_building() -> void:
+	var library := _selected_generate_library()
+	if library.is_empty():
+		_set_status("No module library selected — add JSON files under data/buildings/module_libraries")
+		return
+	var tier_number := _gen_tier.get_selected_id() if _gen_tier.selected >= 0 else 1
+	var result: Dictionary = WFCGeneratorScript.new().generate(library, tier_number, int(_gen_seed.value))
+	if result.has("error"):
+		_set_status("Generation failed: %s" % result["error"])
+		return
+	var blueprint: Dictionary = result["blueprint"]
+	var stats: Dictionary = result["stats"]
+	var replace: bool = _gen_clear_check.button_pressed
+	_transact("Generate %s" % blueprint["id"], func() -> void:
+		if replace:
+			_document.blocks.clear()
+		for block: Dictionary in blueprint["blocks"]:
+			var pos: Array = block["pos"]
+			_document.set_block(Vector3i(int(pos[0]), int(pos[1]), int(pos[2])), {
+				"block_id": String(block["block_id"]),
+				"shape_id": String(block.get("shape_id", "cube")),
+				"rotation_steps": int(block.get("rotation_steps", 0)),
+				"layer": String(block.get("layer", "structure")),
+				"tags": block.get("tags", []),
+				"build_stage": String(block.get("build_stage", "wall")),
+			})
+		# Everything the game blueprint needs beyond raw blocks (sockets,
+		# interior air cells, health, generator seed) rides along in document
+		# metadata and comes back out via _export_building_blueprint().
+		var meta: Dictionary = blueprint.duplicate(true)
+		meta.erase("blocks")
+		_document.metadata["building"] = meta
+	)
+	if replace:
+		_document.document_id = String(blueprint["id"])
+		_document.display_name = String(blueprint["display_name"])
+		_document.template_kind = "building"
+		_document.building_type = str(library.get("id", "custom"))
+		_sync_identity_fields()
+	var size: Array = stats["size"]
+	_gen_result.text = "Seed %d · %d×%d×%d · %d blocks · interior %d cells\nCost: %s" % [
+		int(stats["seed"]), int(size[0]), int(size[1]), int(size[2]),
+		int(stats["total_blocks"]), int(stats["interior_volume"]),
+		stats["block_counts"],
+	]
+	_set_status("Generated %s (%d blocks, seed %d) — undo to discard" % [blueprint["id"], int(stats["total_blocks"]), int(stats["seed"])])
+
+
+## Converts the current document into the BuildingBlueprint JSON the game
+## loads (BuildingBlueprintLoader/ConstructionSite) and saves it under
+## res://data/buildings. Metadata captured at generation time (sockets,
+## interior cells, health, generator seed) is preserved; footprint is
+## recomputed from the blocks actually present so hand edits count.
+func _export_building_blueprint() -> void:
+	_commit_identity()
+	if _document.blocks.is_empty():
+		_set_status("Nothing to export — place or generate blocks first")
+		return
+	var meta_variant: Variant = _document.metadata.get("building", {})
+	var meta: Dictionary = meta_variant if meta_variant is Dictionary else {}
+	var blocks: Array = []
+	var max_x := 0
+	var max_z := 0
+	for key: String in _document.blocks:
+		var cell := DocumentScript.key_cell(key)
+		var block: Dictionary = _document.blocks[key]
+		var block_id := str(block.get("block_id", ""))
+		if block_id.is_empty() or block_id == "air":
+			continue
+		var layer := str(block.get("layer", "wall"))
+		if layer == "structure":
+			layer = "wall"
+		blocks.append({
+			"pos": [cell.x, cell.y, cell.z],
+			"block_id": block_id,
+			"shape_id": str(block.get("shape_id", "cube")),
+			"rotation_steps": int(block.get("rotation_steps", 0)),
+			"layer": layer,
+			"tags": block.get("tags", []),
+			"build_stage": str(block.get("build_stage", layer)),
+			"requires_support": cell.y > 0,
+		})
+		max_x = maxi(max_x, cell.x)
+		max_z = maxi(max_z, cell.z)
+	blocks.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
+		return a["pos"] < b["pos"])
+	# Recomputed from the blocks actually present (not generation metadata)
+	# so hand-placed or deleted lights are reflected.
+	var lights: Array = []
+	for block: Dictionary in blocks:
+		if "light" in (block["tags"] as Array):
+			lights.append({"pos": block["pos"], "block_id": block["block_id"]})
+	var data := {
+		"id": _document.document_id,
+		"display_name": _document.display_name,
+		"category": str(meta.get("category", "production")),
+		"era": str(meta.get("era", "village")),
+		"footprint": [max_x + 1, max_z + 1],
+		"health": int(meta.get("health", 100)),
+		"workers_required": int(meta.get("workers_required", 1)),
+		"required_functional_tags": meta.get("required_functional_tags", []),
+		"blocks": blocks,
+		"sockets": meta.get("sockets", []),
+		"storage_slots": meta.get("storage_slots", []),
+		"recipes": meta.get("recipes", []),
+	}
+	if meta.has("interior_cells"):
+		data["interior_cells"] = meta["interior_cells"]
+	if meta.has("generator"):
+		data["generator"] = meta["generator"]
+	data["lights"] = lights
+	var path := "res://data/buildings/%s_blueprint.json" % _document.document_id
+	var error: Error = BlueprintSerializerScript.save_blueprint_json(path, data)
+	if error != OK:
+		_set_status("Export failed (%s): %s" % [error_string(error), path])
+		return
+	_refresh_thumbnail(blocks)
+	EditorInterface.get_resource_filesystem().scan()
+	_invalidate_library_scan()
+	_refresh_library()
+	_set_status("Exported %d blocks → %s" % [blocks.size(), path])
 
 
 func _load_block_palette() -> void:
 	_block_catalog.clear()
 	_block_colors.clear()
+	_block_texture_info.clear()
+	_block_materials.clear()
+	_block_light_info.clear()
 	var registry := BlockRegistry.new()
 	registry.load_blocks()
 	for block_id: StringName in registry.list_ids():
@@ -538,6 +1092,23 @@ func _load_block_palette() -> void:
 		var definition := registry.get_block(block_id)
 		_block_catalog.append({"id": block_id, "name": definition.display_name, "category": str(definition.category)})
 		_block_colors[block_id] = definition.albedo_color
+		if definition.light_energy > 0.0:
+			_block_light_info[block_id] = {
+				"color": definition.light_color,
+				"energy": definition.light_energy,
+				"range": definition.light_range,
+				"flame": definition.flame_effect,
+			}
+		# The editor renders each block with one triplanar texture, so pick
+		# the most representative face layer: the top if authored (grass
+		# should read as grass, not its dirt side band), else the side.
+		var layer := definition.texture_top if definition.texture_top != &"" else definition.texture_side
+		_block_texture_info[block_id] = {
+			"layer": String(layer),
+			"scale": definition.texture_scale,
+			"roughness": definition.roughness,
+			"albedo_texture": definition.albedo_texture,
+		}
 	registry.free()
 	_block_category.clear()
 	_block_category.add_item("All")
@@ -567,32 +1138,238 @@ func _refresh_block_palette() -> void:
 			continue
 		_block_list.add_item(block["name"])
 		_block_list.set_item_metadata(_block_list.item_count - 1, block["id"])
+		var swatch_color: Variant = _block_colors.get(block["id"], Color(0.5, 0.5, 0.5))
+		if swatch_color is Color:
+			_block_list.set_item_icon(_block_list.item_count - 1, _swatch_icon(swatch_color))
 
 
+## Rebuilds the blueprint browser as a scrollable list of preview cards,
+## grouped by template purpose (Buildings/Assemblies/...), filtered by the
+## search box and the Building Type dropdown. Empty groups are skipped
+## entirely rather than shown as dead headers.
 func _refresh_library() -> void:
-	if _library_tree == null:
+	if _library_list == null:
 		return
-	_library_tree.clear()
-	var root := _library_tree.create_item()
-	var categories := {}
-	for category: String in ["Buildings", "Assemblies", "Encounters", "Ruins", "Generation", "Built"]:
-		var item := _library_tree.create_item(root)
-		item.set_text(0, category)
-		categories[category] = item
+	for child: Node in _library_list.get_children():
+		child.queue_free()
+	_library_cards.clear()
+
+	var search := _library_search.text.strip_edges().to_lower() if _library_search else ""
+	var type_filter := ""
+	if _library_type_filter and _library_type_filter.selected > 0:
+		type_filter = str(_library_type_filter.get_item_metadata(_library_type_filter.selected))
+
+	var group_order := ["Buildings", "Assemblies", "Encounters", "Ruins", "Generation", "Built"]
+	var grouped := {}
+	for group in group_order:
+		grouped[group] = []
+
+	for entry: Dictionary in _scanned_library_entries():
+		if search != "" and search not in str(entry["path"]).to_lower():
+			continue
+		if type_filter != "" and entry["building_type"] != type_filter:
+			continue
+		(grouped[entry["category_label"]] as Array).append(entry)
+
+	for group in group_order:
+		var entries: Array = grouped[group]
+		if entries.is_empty():
+			continue
+		var header := Label.new()
+		header.text = group
+		header.add_theme_font_size_override("font_size", 12)
+		header.add_theme_color_override("font_color", Color(0.55, 0.6, 0.68))
+		_library_list.add_child(header)
+		for entry: Dictionary in entries:
+			var card := _make_library_card(entry)
+			_library_cards.append(card)
+			_library_list.add_child(card)
+
+
+## Resolves which module library a blueprint belongs to, for the Building
+## Type filter/dropdown. Checks, in order: an explicit "building_type" field
+## (ForgeDocument saves), generation metadata nested under a Forge document's
+## metadata.building (a document that's been through Generate but not yet
+## exported), then a top-level "generator" block (exported BuildingBlueprint
+## JSON) - falling back to "custom" for anything hand-built.
+func _entry_building_type(data: Dictionary) -> String:
+	if data.has("building_type"):
+		var explicit := str(data["building_type"])
+		if not explicit.is_empty():
+			return explicit
+	var metadata_variant: Variant = data.get("metadata", {})
+	if metadata_variant is Dictionary:
+		var building_meta: Variant = (metadata_variant as Dictionary).get("building", {})
+		if building_meta is Dictionary:
+			var generator: Variant = (building_meta as Dictionary).get("generator", {})
+			if generator is Dictionary and (generator as Dictionary).has("library"):
+				return str((generator as Dictionary)["library"])
+	var top_generator: Variant = data.get("generator", {})
+	if top_generator is Dictionary and (top_generator as Dictionary).has("library"):
+		return str((top_generator as Dictionary)["library"])
+	return "custom"
+
+
+## Bounding-box size of a blueprint's placed blocks, used for the card
+## subtitle. Works for both ForgeDocument saves and exported BuildingBlueprint
+## JSON since both store blocks as an array of {"pos": [x,y,z], ...}.
+func _entry_block_bounds(data: Dictionary) -> Vector3i:
+	var blocks_variant: Variant = data.get("blocks", [])
+	if not (blocks_variant is Array) or (blocks_variant as Array).is_empty():
+		return Vector3i.ONE
+	var min_pos := Vector3i(2147483647, 2147483647, 2147483647)
+	var max_pos := Vector3i(-2147483648, -2147483648, -2147483648)
+	for block: Variant in blocks_variant:
+		if not block is Dictionary:
+			continue
+		var pos: Array = (block as Dictionary).get("pos", [0, 0, 0])
+		if pos.size() != 3:
+			continue
+		var cell := Vector3i(int(pos[0]), int(pos[1]), int(pos[2]))
+		min_pos = Vector3i(mini(min_pos.x, cell.x), mini(min_pos.y, cell.y), mini(min_pos.z, cell.z))
+		max_pos = Vector3i(maxi(max_pos.x, cell.x), maxi(max_pos.y, cell.y), maxi(max_pos.z, cell.z))
+	return max_pos - min_pos + Vector3i.ONE
+
+
+## One clickable browser entry: a cached preview thumbnail (or a building-type
+## colored placeholder swatch until one exists) plus name and a stats line.
+## Built as a toggle Button with the visible content as a child overlay
+## (mouse_filter IGNORE on every child) so the whole row is one click target
+## while still laying out an icon + two-line label.
+func _make_library_card(entry: Dictionary) -> Button:
+	var card := Button.new()
+	card.toggle_mode = true
+	card.button_pressed = entry["path"] == _selected_library_item_path
+	card.custom_minimum_size.y = 56.0
+	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	card.focus_mode = Control.FOCUS_NONE
+	card.set_meta("path", entry["path"])
+	card.pressed.connect(_on_library_card_pressed.bind(entry["path"]))
+
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 8)
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	row.offset_left = 6.0
+	row.offset_right = -6.0
+	card.add_child(row)
+
+	var thumb := TextureRect.new()
+	thumb.custom_minimum_size = Vector2(48, 48)
+	thumb.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	thumb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var cached_texture: Texture2D = _load_thumbnail_texture(entry["thumbnail_path"])
+	thumb.texture = cached_texture if cached_texture != null else _swatch_icon(_building_type_color(entry["building_type"]), 48)
+	row.add_child(thumb)
+
+	var text_box := VBoxContainer.new()
+	text_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	text_box.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	text_box.alignment = BoxContainer.ALIGNMENT_CENTER
+	text_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(text_box)
+	var name_label := Label.new()
+	name_label.text = str(entry["display_name"])
+	name_label.add_theme_font_size_override("font_size", 14)
+	name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	text_box.add_child(name_label)
+	var subtitle := Label.new()
+	var size: Vector3i = entry["size"]
+	subtitle.text = "%s · %s · %d×%d×%d · %d blocks" % [
+		entry["building_type_label"], entry["category_label"], size.x, size.y, size.z, entry["block_count"],
+	]
+	subtitle.add_theme_font_size_override("font_size", 11)
+	subtitle.add_theme_color_override("font_color", Color(0.62, 0.68, 0.76))
+	subtitle.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	text_box.add_child(subtitle)
+
+	return card
+
+
+## Reads a cached thumbnail PNG's raw pixels directly, bypassing load()/the
+## resource-import pipeline entirely - a thumbnail just written this same
+## session has no .import sidecar yet, so load() fails until the next
+## filesystem scan settles. Returns null (not an empty texture) on any
+## failure so callers can fall back to the placeholder swatch.
+func _load_thumbnail_texture(path: String) -> Texture2D:
+	if not FileAccess.file_exists(path):
+		return null  # The common case (no thumbnail yet) — checked first so
+			# Image.load_from_file never logs an engine-level error for it.
+	var image := Image.load_from_file(ProjectSettings.globalize_path(path))
+	if image == null or image.is_empty():
+		return null
+	return ImageTexture.create_from_image(image)
+
+
+## Deterministic placeholder color per building type (stable hash -> hue),
+## so untagged/un-rendered entries are still visually distinguishable from
+## each other before a thumbnail exists.
+func _building_type_color(building_type: String) -> Color:
+	var hash_value := building_type.hash()
+	var hue := float(hash_value % 360) / 360.0
+	return Color.from_hsv(hue, 0.45, 0.62)
+
+
+func _on_library_card_pressed(path: String) -> void:
+	if _selected_library_item_path == path:
+		_open_selected_library_item()
+		return
+	_selected_library_item_path = path
+	for card in _library_cards:
+		card.button_pressed = str(card.get_meta("path")) == path
+
+
+## Disk scan + JSON parse + field resolution for every library entry -
+## memoized, since it's by far the expensive part of _refresh_library() (110+
+## files in this project) and search/type-filter changes shouldn't re-read
+## every file from disk on every keystroke. Invalidated by _invalidate_library_scan()
+## whenever a save/export could have added, removed, or renamed a file.
+##
+## static so every World Forge main-screen instance in the process shares one
+## scan: harmless for real usage (one editor session, one set of files on
+## disk) and essential for the test suite, which constructs this Control
+## repeatedly - without sharing, each instantiation re-scans all 110+ files.
+static var _library_scan_cache: Array[Dictionary] = []
+static var _library_scan_dirty := true
+
+func _scanned_library_entries() -> Array[Dictionary]:
+	if not _library_scan_dirty:
+		return _library_scan_cache
 	var paths: Array[String] = []
 	_collect_json("res://data/buildings", paths)
 	_collect_json("res://data/world_forge", paths)
 	paths.sort()
-	var filter := _library_search.text.strip_edges().to_lower() if _library_search else ""
+
+	var type_labels := {}
+	for entry: Dictionary in _building_type_catalog():
+		type_labels[entry["id"]] = entry["label"]
+	var group_key_by_kind := {"assembly": "Assemblies", "encounter": "Encounters", "ruin": "Ruins", "generation": "Generation", "built": "Built"}
+
+	_library_scan_cache.clear()
 	for path: String in paths:
-		if filter != "" and filter not in path.to_lower():
-			continue
 		var data := _read_json(path)
+		if data.is_empty():
+			continue
+		var building_type := _entry_building_type(data)
 		var kind := str(data.get("template_kind", data.get("category", "building")))
-		var category := {"assembly": "Assemblies", "encounter": "Encounters", "ruin": "Ruins", "generation": "Generation", "built": "Built"}.get(kind, "Buildings")
-		var item := _library_tree.create_item(categories[category])
-		item.set_text(0, str(data.get("display_name", path.get_file().get_basename())))
-		item.set_metadata(0, path)
+		var group: String = group_key_by_kind.get(kind, "Buildings")
+		var entry_id := str(data.get("id", path.get_file().get_basename()))
+		_library_scan_cache.append({
+			"path": path,
+			"display_name": str(data.get("display_name", entry_id.capitalize())),
+			"category_label": group,
+			"building_type": building_type,
+			"building_type_label": str(type_labels.get(building_type, building_type.capitalize())),
+			"size": _entry_block_bounds(data),
+			"block_count": (data.get("blocks", []) as Array).size(),
+			"thumbnail_path": "res://data/buildings/thumbnails/%s.png" % entry_id,
+		})
+	_library_scan_dirty = false
+	return _library_scan_cache
+
+
+func _invalidate_library_scan() -> void:
+	_library_scan_dirty = true
 
 
 func _collect_json(folder: String, output: Array[String]) -> void:
@@ -614,10 +1391,7 @@ func _read_json(path: String) -> Dictionary:
 
 
 func _selected_library_path() -> String:
-	var item := _library_tree.get_selected()
-	if item == null:
-		return ""
-	return str(item.get_metadata(0))
+	return _selected_library_item_path
 
 
 func _new_document() -> void:
@@ -677,9 +1451,20 @@ func _save_document() -> void:
 	_dirty = false
 	if _autosave_timer:
 		_autosave_timer.stop()
+	if not _document.blocks.is_empty():
+		_refresh_thumbnail(_document.blocks.values())
 	EditorInterface.get_resource_filesystem().scan()
+	_invalidate_library_scan()
 	_refresh_library()
 	_set_status("Saved %s" % _current_path)
+
+
+## Renders and caches the browser preview icon for the current document's id.
+## Purely synchronous (see BlueprintThumbnailRenderer) so it's safe to call
+## right inside Save/Export with no async/frame-timing concerns.
+func _refresh_thumbnail(blocks: Array) -> void:
+	ThumbnailRendererScript.render_and_save(blocks, _block_colors,
+			"res://data/buildings/thumbnails/%s.png" % _document.document_id)
 
 
 func _save_as_document() -> void:
@@ -720,6 +1505,17 @@ func _sync_identity_fields() -> void:
 	_updating_identity = true
 	_name_edit.text = _document.display_name
 	_id_edit.text = _document.document_id
+	if _kind_selector:
+		for index in _kind_selector.item_count:
+			if str(_kind_selector.get_item_metadata(index)) == _document.template_kind:
+				_kind_selector.selected = index
+				break
+	if _building_type_selector:
+		_building_type_selector.selected = _building_type_selector.item_count - 1  # "custom" fallback
+		for index in _building_type_selector.item_count:
+			if str(_building_type_selector.get_item_metadata(index)) == _document.building_type:
+				_building_type_selector.selected = index
+				break
 	_updating_identity = false
 
 
@@ -813,6 +1609,7 @@ func _select_tool(tool: String, toolbar: HBoxContainer) -> void:
 	for child: Node in toolbar.get_children():
 		if child is Button and child.has_meta("tool"):
 			(child as Button).button_pressed = child.get_meta("tool") == tool
+	_update_context()
 	_set_status("%s tool" % tool.capitalize())
 
 
@@ -834,6 +1631,7 @@ func _on_block_selected(index: int) -> void:
 	_selected_block_id = StringName(_block_list.get_item_metadata(index))
 	_place_kind = "block"
 	_tool = "place"
+	_update_context()
 	_set_status("Placing block: %s" % _selected_block_id)
 
 
@@ -841,6 +1639,7 @@ func _on_component_selected(index: int) -> void:
 	_selected_component_id = str(_component_list.get_item_metadata(index))
 	_place_kind = "component"
 	_tool = "place"
+	_update_context()
 	_set_status("Placing component: %s" % _selected_component_id)
 
 
@@ -848,6 +1647,7 @@ func _on_marker_selected(index: int) -> void:
 	_selected_marker_id = str(_marker_list.get_item_metadata(index))
 	_place_kind = "marker"
 	_tool = "place"
+	_update_context()
 	_set_status("Placing marker: %s" % _selected_marker_id)
 
 
@@ -855,6 +1655,7 @@ func _on_part_selected(index: int) -> void:
 	_selected_part_id = StringName(_part_list.get_item_metadata(index))
 	_place_kind = "part"
 	_tool = "place"
+	_update_context()
 	_set_status("Placing part: %s (1/8-cell grid + socket snapping)" % _selected_part_id)
 
 
@@ -889,6 +1690,12 @@ func _on_viewport_input(event: InputEvent) -> void:
 			accept_event()
 		elif event.keycode == KEY_DELETE:
 			_delete_selection()
+			accept_event()
+		elif event.ctrl_pressed and event.keycode == KEY_S:
+			_save_document()
+			accept_event()
+		elif not event.ctrl_pressed and event.keycode >= KEY_1 and event.keycode <= KEY_7:
+			_select_tool(TOOL_ORDER[event.keycode - KEY_1], _tool_button_row)
 			accept_event()
 	if event is InputEventMouseMotion:
 		var motion := event as InputEventMouseMotion
@@ -953,7 +1760,11 @@ func _on_viewport_input(event: InputEvent) -> void:
 		return
 	var cell: Vector3i = cell_value
 	if mouse_event.button_index == MOUSE_BUTTON_RIGHT:
-		_transact("Erase block", func() -> void: _document.erase_block(cell))
+		var erase_cells := _mirror_cells(cell)
+		_transact("Erase block", func() -> void:
+			for target: Vector3i in erase_cells:
+				_document.erase_block(target)
+		)
 		return
 	if mouse_event.button_index != MOUSE_BUTTON_LEFT:
 		return
@@ -1020,8 +1831,10 @@ func _fine_cell_for_point(point: Vector3) -> Vector3i:
 
 func _place_at(cell: Vector3i) -> void:
 	if _place_kind == "block":
+		var placements := _mirror_placements(cell, _make_block_data())
 		_transact("Place %s" % _selected_block_id, func() -> void:
-			_document.set_block(cell, _make_block_data())
+			for placement: Dictionary in placements:
+				_document.set_block(placement["cell"], placement["data"])
 		)
 	elif _place_kind == "component":
 		var definition := _find_definition(_components, _selected_component_id)
@@ -1089,6 +1902,66 @@ func _place_part_at_fine_cell(fine_cell: Vector3i) -> void:
 
 func _make_block_data() -> Dictionary:
 	return {"block_id": String(_selected_block_id), "shape_id": _selected_shape_id, "rotation_steps": _brush_rotation, "layer": "structure", "tags": []}
+
+
+## Which axis flips the current mirror mode implies, as [flip_x, flip_z]
+## pairs. X+Z is three copies: across X, across Z, and across both.
+func _mirror_flips() -> Array:
+	match _mirror_mode:
+		"x": return [[true, false]]
+		"z": return [[false, true]]
+		"xz": return [[true, false], [false, true], [true, true]]
+	return []
+
+
+func _mirrored_cell(cell: Vector3i, flip_x: bool, flip_z: bool) -> Vector3i:
+	var result := cell
+	if flip_x:
+		result.x = 2 * _mirror_x - cell.x
+	if flip_z:
+		result.z = 2 * _mirror_z - cell.z
+	return result
+
+
+## Reflecting a yaw-rotated shape also reflects its facing: flipping X maps
+## rotation steps r -> (4 - r) & 3, flipping Z maps r -> (2 - r) & 3, and
+## flipping both is a plain half turn, (r + 2) & 3. (Derived by pushing the
+## shape's forward vector through the reflection - a mirrored stair must
+## face back toward the mirror plane, not away from it.)
+func _mirrored_block_data(data: Dictionary, flip_x: bool, flip_z: bool) -> Dictionary:
+	var copy := data.duplicate(true)
+	var steps := int(copy.get("rotation_steps", 0))
+	if flip_x and flip_z:
+		steps = posmod(steps + 2, 4)
+	elif flip_x:
+		steps = posmod(4 - steps, 4)
+	elif flip_z:
+		steps = posmod(2 - steps, 4)
+	copy["rotation_steps"] = steps
+	return copy
+
+
+## A block edit at `cell` plus its mirrored copies as {cell, data} entries,
+## deduplicated - a cell sitting on the mirror plane maps onto itself and
+## must not be written twice in one transaction.
+func _mirror_placements(cell: Vector3i, data: Dictionary) -> Array[Dictionary]:
+	var placements: Array[Dictionary] = [{"cell": cell, "data": data}]
+	var seen := {ForgeDocument.cell_key(cell): true}
+	for flip: Array in _mirror_flips():
+		var mirrored := _mirrored_cell(cell, flip[0], flip[1])
+		var key := ForgeDocument.cell_key(mirrored)
+		if seen.has(key):
+			continue
+		seen[key] = true
+		placements.append({"cell": mirrored, "data": _mirrored_block_data(data, flip[0], flip[1])})
+	return placements
+
+
+func _mirror_cells(cell: Vector3i) -> Array[Vector3i]:
+	var cells: Array[Vector3i] = []
+	for placement: Dictionary in _mirror_placements(cell, {}):
+		cells.append(placement["cell"])
+	return cells
 
 
 func _select_single(cell: Vector3i) -> void:
@@ -1175,25 +2048,35 @@ func _select_all_blocks() -> void:
 
 func _select_connected(cell: Vector3i) -> void:
 	_clear_selection()
+	for connected: Vector3i in _connected_cells(cell):
+		_selected_cells[ForgeDocument.cell_key(connected)] = true
+	_refresh_world()
+	_set_status("Selected %d connected structural blocks" % _selected_cells.size())
+
+
+## Flood fill over face-adjacent structural blocks starting at `cell`.
+## Shared by the Connected tool's click (_select_connected, no limit) and
+## its hover preview (_update_connected_preview, capped so hovering a huge
+## structure can't stall the editor every mouse move).
+func _connected_cells(cell: Vector3i, limit: int = 1 << 30) -> Array[Vector3i]:
+	var cells: Array[Vector3i] = []
 	if not _document.has_block(cell):
-		_refresh_world()
-		return
+		return cells
 	var open: Array[Vector3i] = [cell]
 	var visited := {}
 	var directions := [Vector3i.LEFT, Vector3i.RIGHT, Vector3i.UP, Vector3i.DOWN, Vector3i.FORWARD, Vector3i.BACK]
-	while not open.is_empty():
+	while not open.is_empty() and cells.size() < limit:
 		var current: Vector3i = open.pop_back()
 		var key := ForgeDocument.cell_key(current)
 		if visited.has(key):
 			continue
 		visited[key] = true
-		_selected_cells[key] = true
+		cells.append(current)
 		for direction: Vector3i in directions:
 			var neighbor: Vector3i = current + direction
 			if _document.has_block(neighbor):
 				open.append(neighbor)
-	_refresh_world()
-	_set_status("Selected %d connected structural blocks" % _selected_cells.size())
+	return cells
 
 
 func _handle_two_point_tool(cell: Vector3i) -> void:
@@ -1203,29 +2086,37 @@ func _handle_two_point_tool(cell: Vector3i) -> void:
 		return
 	var start: Vector3i = _anchor_cell
 	_anchor_cell = null
-	if _tool == "line":
-		var cells := _line_cells(start, cell)
-		_transact("Draw line", func() -> void:
-			for target: Vector3i in cells:
-				_document.set_block(target, _make_block_data())
-		)
-	elif _tool == "fill":
-		_transact("Fill rectangle", func() -> void:
-			for x: int in range(mini(start.x, cell.x), maxi(start.x, cell.x) + 1):
-				for z: int in range(mini(start.z, cell.z), maxi(start.z, cell.z) + 1):
-					_document.set_block(Vector3i(x, _active_layer, z), _make_block_data())
-		)
-	else:
-		var hollow := _tool == "shell"
-		var label := "Build hollow shell" if hollow else "Fill box"
-		_transact(label, func() -> void:
-			for x: int in range(mini(start.x, cell.x), maxi(start.x, cell.x) + 1):
-				for y: int in range(mini(start.y, cell.y), maxi(start.y, cell.y) + 1):
-					for z: int in range(mini(start.z, cell.z), maxi(start.z, cell.z) + 1):
-						if hollow and x not in [start.x, cell.x] and y not in [start.y, cell.y] and z not in [start.z, cell.z]:
-							continue
-						_document.set_block(Vector3i(x, y, z), _make_block_data())
-		)
+	var cells := _tool_pattern_cells(_tool, start, cell)
+	var label: String = {"line": "Draw line", "fill": "Fill rectangle", "box": "Fill box", "shell": "Build hollow shell"}.get(_tool, "Place blocks")
+	_transact(label, func() -> void:
+		for target: Vector3i in cells:
+			for placement: Dictionary in _mirror_placements(target, _make_block_data()):
+				_document.set_block(placement["cell"], placement["data"])
+	)
+
+
+## Every cell the given two-point tool would fill between start and finish.
+## Shared by the actual edit (_handle_two_point_tool) and the live hover
+## preview (_update_two_point_preview) so the preview is exactly what a
+## click would place. Fill stays a single-layer rectangle on _active_layer,
+## matching its original behavior.
+func _tool_pattern_cells(tool: String, start: Vector3i, finish: Vector3i) -> Array[Vector3i]:
+	if tool == "line":
+		return _line_cells(start, finish)
+	var cells: Array[Vector3i] = []
+	if tool == "fill":
+		for x: int in range(mini(start.x, finish.x), maxi(start.x, finish.x) + 1):
+			for z: int in range(mini(start.z, finish.z), maxi(start.z, finish.z) + 1):
+				cells.append(Vector3i(x, _active_layer, z))
+		return cells
+	var hollow := tool == "shell"
+	for x: int in range(mini(start.x, finish.x), maxi(start.x, finish.x) + 1):
+		for y: int in range(mini(start.y, finish.y), maxi(start.y, finish.y) + 1):
+			for z: int in range(mini(start.z, finish.z), maxi(start.z, finish.z) + 1):
+				if hollow and x not in [start.x, finish.x] and y not in [start.y, finish.y] and z not in [start.z, finish.z]:
+					continue
+				cells.append(Vector3i(x, y, z))
+	return cells
 
 
 func _line_cells(start: Vector3i, finish: Vector3i) -> Array[Vector3i]:
@@ -1927,8 +2818,11 @@ func _gamepad_erase() -> void:
 		return
 	var cell_value := _mouse_to_cell(reticle)
 	if cell_value != null:
-		var cell: Vector3i = cell_value
-		_transact("Erase block", func() -> void: _document.erase_block(cell))
+		var erase_cells := _mirror_cells(cell_value)
+		_transact("Erase block", func() -> void:
+			for target: Vector3i in erase_cells:
+				_document.erase_block(target)
+		)
 
 
 ## Switches which palette tab is active (Block -> Component -> Marker ->
@@ -1992,9 +2886,16 @@ func _update_hover(mouse: Vector2) -> void:
 	for child: Node in _hover_mesh.get_children():
 		child.queue_free()
 	var requested: Vector3i = value
+	if _tool in ["line", "fill", "box", "shell"] and _anchor_cell != null:
+		_update_two_point_preview(requested)
+		return
+	if _tool == "connected":
+		_update_connected_preview(requested)
+		return
 	if _place_kind == "block":
 		_hover_mesh.position = Vector3(requested)
 		_hover_mesh.add_child(ShapeFactory.create_shape(_selected_shape_id, _brush_rotation, 0, _hover_valid_material, 0.08))
+		_add_mirror_ghosts(requested)
 	elif _place_kind == "component":
 		var definition := _find_definition(_components, _selected_component_id)
 		var snap: Dictionary = SnapResolver.find_snapped_origin(_document, requested, definition, _brush_rotation, _components)
@@ -2008,6 +2909,74 @@ func _update_hover(mouse: Vector2) -> void:
 	else:
 		_hover_mesh.position = Vector3(requested)
 		_hover_mesh.add_child(ShapeFactory.create_shape("plate", _brush_rotation, 0, _hover_valid_material, 0.08))
+
+
+## The hover ghost of every mirrored copy the active mirror mode would
+## place alongside the block under the cursor. Added as children of
+## _hover_mesh (which sits at the hovered cell), so each ghost is offset
+## by the mirrored cell's delta from the hovered one.
+func _add_mirror_ghosts(cell: Vector3i) -> void:
+	for flip: Array in _mirror_flips():
+		var mirrored := _mirrored_cell(cell, flip[0], flip[1])
+		if mirrored == cell:
+			continue
+		var data := _mirrored_block_data(_make_block_data(), flip[0], flip[1])
+		var ghost: Node3D = ShapeFactory.create_shape(_selected_shape_id, int(data["rotation_steps"]), 0, _hover_valid_material, 0.08)
+		ghost.position += Vector3(mirrored - cell)
+		_hover_mesh.add_child(ghost)
+
+
+## Hard cap on ghost instances per preview rebuild. Previews use one
+## MultiMesh so even a large box stays a single draw call, but there is no
+## point quantizing beyond this - a 6000-cell preview already reads as
+## "the whole region".
+const PREVIEW_CELL_LIMIT := 6000
+
+
+## Live ghost of everything a two-point tool would place once the second
+## point is clicked - pattern cells from the anchor to the hovered cell,
+## mirrored copies included.
+func _update_two_point_preview(cell: Vector3i) -> void:
+	var seen := {}
+	var cells: Array[Vector3i] = []
+	for target: Vector3i in _tool_pattern_cells(_tool, _anchor_cell, cell):
+		if cells.size() >= PREVIEW_CELL_LIMIT:
+			break
+		for expanded: Vector3i in _mirror_cells(target):
+			var key := ForgeDocument.cell_key(expanded)
+			if seen.has(key):
+				continue
+			seen[key] = true
+			cells.append(expanded)
+	_hover_mesh.position = Vector3.ZERO
+	_hover_mesh.add_child(_cells_multimesh(cells, _hover_valid_material))
+	_set_status("%s preview: %d blocks — click to confirm, Esc to cancel" % [_tool.capitalize(), cells.size()])
+
+
+## Hovering with the Connected tool highlights the flood-fill region a
+## click would select, so "what counts as connected" is visible up front.
+func _update_connected_preview(cell: Vector3i) -> void:
+	var cells := _connected_cells(cell, PREVIEW_CELL_LIMIT)
+	_hover_mesh.visible = not cells.is_empty()
+	if cells.is_empty():
+		return
+	_hover_mesh.position = Vector3.ZERO
+	_hover_mesh.add_child(_cells_multimesh(cells, _hover_select_material))
+
+
+func _cells_multimesh(cells: Array[Vector3i], material: StandardMaterial3D) -> MultiMeshInstance3D:
+	var mesh := BoxMesh.new()
+	mesh.size = Vector3.ONE * 0.98
+	mesh.material = material
+	var multimesh := MultiMesh.new()
+	multimesh.transform_format = MultiMesh.TRANSFORM_3D
+	multimesh.mesh = mesh
+	multimesh.instance_count = cells.size()
+	for index: int in cells.size():
+		multimesh.set_instance_transform(index, Transform3D(Basis(), Vector3(cells[index]) + Vector3.ONE * 0.5))
+	var instance := MultiMeshInstance3D.new()
+	instance.multimesh = multimesh
+	return instance
 
 
 ## Part-mode hover: resolves on the fine grid (not the coarse structure
@@ -2048,10 +3017,12 @@ func _refresh_world() -> void:
 	_refresh_grid()
 	for key: String in _document.blocks:
 		var block: Dictionary = _document.blocks[key]
-		var color: Color = _block_colors.get(StringName(block.get("block_id", "stone")), Color("8b949e"))
-		if _selected_cells.has(key):
-			color = color.lerp(Color("58a6ff"), 0.65)
-		_add_block_shape(ForgeDocument.key_cell(key), block, color)
+		var block_id := StringName(block.get("block_id", "stone"))
+		var material := _block_render_material(block_id, _selected_cells.has(key))
+		var cell := ForgeDocument.key_cell(key)
+		_add_block_shape(cell, block, material)
+		if _block_light_info.has(block_id):
+			_add_light_fixture(cell, _block_light_info[block_id])
 	for component: Dictionary in _document.components:
 		_add_component_visual(component)
 	for marker: Dictionary in _document.markers:
@@ -2093,6 +3064,29 @@ func _refresh_grid() -> void:
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	instance.material_override = material
 	_content_root.add_child(instance)
+	if _mirror_mode != "off":
+		# Mirror plane indicator: the geometric plane runs through the center
+		# of the fixed cell column (_mirror_x/_mirror_z + 0.5). A child of the
+		# grid node so it's rebuilt/cleared together with the grid.
+		var mirror_mesh := ImmediateMesh.new()
+		mirror_mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+		var height := _active_layer + 0.01
+		if _mirror_mode in ["x", "xz"]:
+			mirror_mesh.surface_add_vertex(Vector3(_mirror_x + 0.5, height, -radius))
+			mirror_mesh.surface_add_vertex(Vector3(_mirror_x + 0.5, height, radius))
+		if _mirror_mode in ["z", "xz"]:
+			mirror_mesh.surface_add_vertex(Vector3(-radius, height, _mirror_z + 0.5))
+			mirror_mesh.surface_add_vertex(Vector3(radius, height, _mirror_z + 0.5))
+		mirror_mesh.surface_end()
+		var mirror_instance := MeshInstance3D.new()
+		mirror_instance.name = "MirrorPlaneGizmo"
+		mirror_instance.mesh = mirror_mesh
+		var mirror_material := StandardMaterial3D.new()
+		mirror_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		mirror_material.albedo_color = Color(1.0, 0.62, 0.25, 0.8)
+		mirror_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		mirror_instance.material_override = mirror_material
+		instance.add_child(mirror_instance)
 
 
 ## Shows/hides the local Workshop fine-grid overlay (only relevant while
@@ -2155,10 +3149,18 @@ func _add_cube(cell: Vector3i, color: Color, scale: float) -> void:
 	_content_root.add_child(instance)
 
 
-func _add_block_shape(cell: Vector3i, block: Dictionary, color: Color) -> void:
+## Spawns the shared flicker-light/flame effect on a light-source block.
+func _add_light_fixture(cell: Vector3i, info: Dictionary) -> void:
+	var fixture: Node3D = LightFixtureScript.new()
+	fixture.position = Vector3(cell) + Vector3(0.5, 0.55, 0.5)
+	_content_root.add_child(fixture)
+	fixture.configure(info["color"], float(info["energy"]), float(info["range"]), bool(info["flame"]))
+
+
+func _add_block_shape(cell: Vector3i, block: Dictionary, material: StandardMaterial3D) -> void:
 	var shape_id := str(block.get("shape_id", "cube"))
 	var connections: int = ShapeFactory.connection_mask_for(_document, cell, shape_id)
-	var visual: Node3D = ShapeFactory.create_shape(shape_id, int(block.get("rotation_steps", 0)), connections, _material(color))
+	var visual: Node3D = ShapeFactory.create_shape(shape_id, int(block.get("rotation_steps", 0)), connections, material)
 	visual.position += Vector3(cell)
 	_content_root.add_child(visual)
 
@@ -2255,12 +3257,72 @@ func _find_nested_at(cell: Vector3i) -> String:
 	return ""
 
 
+const GENERATED_TEXTURE_DIR := "res://data/textures/generated"
+
+
+## Textured, triplanar-mapped material for a placed block: the block's
+## generated albedo + normal layer wrapped in world-space triplanar mapping
+## so every shape (stairs, fences, panes) gets textured continuously across
+## cells with no UV authoring. Falls back to the old flat palette color when
+## the block has no texture layer, or the PNG isn't imported (headless
+## tests). Selection is a blue albedo tint over the texture, replacing the
+## flat-color lerp.
+func _block_render_material(block_id: StringName, selected: bool) -> StandardMaterial3D:
+	var key := "%s|%s" % [block_id, "sel" if selected else "std"]
+	if _block_materials.has(key):
+		return _block_materials[key]
+	var info: Dictionary = _block_texture_info.get(block_id, {})
+	var albedo: Texture2D = info.get("albedo_texture")
+	var normal: Texture2D = null
+	var layer := str(info.get("layer", ""))
+	if not layer.is_empty():
+		if albedo == null:
+			var albedo_path := "%s/%s.png" % [GENERATED_TEXTURE_DIR, layer]
+			if ResourceLoader.exists(albedo_path, "Texture2D"):
+				albedo = load(albedo_path)
+		var normal_path := "%s/%s_normal.png" % [GENERATED_TEXTURE_DIR, layer]
+		if ResourceLoader.exists(normal_path, "Texture2D"):
+			normal = load(normal_path)
+	if albedo == null:
+		var color: Color = _block_colors.get(block_id, Color("8b949e"))
+		if selected:
+			color = color.lerp(Color("58a6ff"), 0.65)
+		if _block_light_info.has(block_id) and not selected:
+			# Light-source fixtures glow with their own light color.
+			var glow: Dictionary = _block_light_info[block_id]
+			var material := StandardMaterial3D.new()
+			material.albedo_color = color
+			material.roughness = 0.6
+			material.emission_enabled = true
+			material.emission = glow["color"]
+			material.emission_energy_multiplier = 0.9
+			_block_materials[key] = material
+			return material
+		return _material(color)
+	var material := StandardMaterial3D.new()
+	material.albedo_texture = albedo
+	material.albedo_color = Color.WHITE.lerp(Color("58a6ff"), 0.6) if selected else Color.WHITE
+	if normal != null:
+		material.normal_enabled = true
+		material.normal_texture = normal
+		material.normal_scale = 0.7
+	material.uv1_triplanar = true
+	material.uv1_world_triplanar = true
+	material.uv1_scale = Vector3.ONE * float(info.get("scale", 1.0))
+	material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC
+	material.roughness = float(info.get("roughness", 0.9))
+	_block_materials[key] = material
+	return material
+
+
 func _material(color: Color) -> StandardMaterial3D:
 	var key := color.to_html(true)
 	if _materials.has(key):
 		return _materials[key]
 	var material := StandardMaterial3D.new()
 	material.albedo_color = color
+	if color.a < 0.999:
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	material.roughness = 0.88
 	_materials[key] = material
 	return material
