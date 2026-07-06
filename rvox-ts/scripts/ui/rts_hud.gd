@@ -14,6 +14,8 @@ extends Control
 
 signal building_chosen(entry: Dictionary)
 signal unit_train_requested(entry: Dictionary)
+## Emitted when the player clicks "New Run" on the results screen.
+signal new_run_requested
 
 const BuildingCatalogScript := preload("res://scripts/buildings/building_catalog.gd")
 const BuildingPreviewScript := preload("res://scripts/ui/building_preview.gd")
@@ -67,6 +69,17 @@ const UNIT_ENTRIES := [
 ## Assigned by GameMain so the dock can show the current unit selection.
 var command_controller: RtsCommandController
 
+## The authoritative economy, once RunCoordinator builds it. Untyped and
+## duck-typed on purpose so a fresh checkout parses this script before the new
+## EconomyController class_name is registered. While null the HUD falls back to
+## its own placeholder `stock` dict, so nothing breaks if the run setup is
+## skipped. See DEMO_PLAN.md §4 ("HUD reads, never owns").
+var economy = null
+
+## The run director, once RunCoordinator builds it. Untyped/duck-typed for the
+## same fresh-checkout reason as `economy`. Drives the objective/phase panel.
+var director = null
+
 var stock := {}
 var placed_counts := {}
 var trained_counts := {}
@@ -81,6 +94,14 @@ var _status_label: Label
 var _selection_label: Label
 var _overview_rows := {}
 var _overview_units_label: Label
+var _phase_label: Label
+var _objective_label: Label
+var _raid_label: Label
+var _raid_flash := 0.0
+var _construction_label: Label
+var _results_panel: PanelContainer
+var _results_title: Label
+var _results_body: Label
 
 
 func _ready() -> void:
@@ -90,13 +111,19 @@ func _ready() -> void:
 	_catalog = BuildingCatalogScript.new()
 	_catalog.load_catalog()
 	_build_resource_bar()
+	_build_objective_panel()
 	_build_bottom_dock()
 	_build_overview_panel()
 	_refresh_resource_bar()
 	_refresh_overview()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	# Blink the raid warning for a few seconds after it fires, then hold steady.
+	if _raid_flash > 0.0 and _raid_label != null:
+		_raid_flash -= delta
+		_raid_label.visible = _raid_flash <= 0.0 or fmod(_raid_flash, 0.5) > 0.25
+
 	if command_controller == null or _selection_label == null:
 		return
 	var selected := command_controller.get_selected()
@@ -106,6 +133,155 @@ func _process(_delta: float) -> void:
 		var kind := "Swordsman" if "soldier" in selected.model_path else "Worker"
 		var state := "moving" if selected.is_moving() else "idle"
 		_selection_label.text = "Selected: %s (%s)" % [kind, state]
+
+
+## Switch the resource bar and cost checks over to the authoritative economy.
+## Called by GameMain once RunCoordinator has built the controller.
+func bind_economy(new_economy) -> void:
+	economy = new_economy
+	if economy != null:
+		if not economy.stock_changed.is_connected(_on_economy_stock_changed):
+			economy.stock_changed.connect(_on_economy_stock_changed)
+		if not economy.build_site_added.is_connected(_on_build_site_added):
+			economy.build_site_added.connect(_on_build_site_added)
+		if not economy.building_completed.is_connected(_on_building_completed):
+			economy.building_completed.connect(_on_building_completed)
+		for site in economy.build_sites():
+			_on_build_site_added(site)
+	_refresh_resource_bar()
+
+
+## Show block-by-block construction progress ("Building Storage Yard: 3/5").
+func _on_build_site_added(site) -> void:
+	site.block_placed.connect(func(placed: int, total: int) -> void:
+		if _construction_label != null:
+			_construction_label.text = "Building %s: %d/%d" % [String(site.building_id).capitalize(), placed, total])
+
+
+func _on_building_completed(building_id: StringName) -> void:
+	if _construction_label != null:
+		_construction_label.text = "%s complete" % String(building_id).capitalize()
+
+
+func _on_economy_stock_changed(_item_id: StringName, _amount: int) -> void:
+	_refresh_resource_bar()
+
+
+## Bind the run director so the objective panel shows phase, day/night, and
+## objective progress, and raid warnings flash when a wave spawns.
+func bind_director(new_director) -> void:
+	director = new_director
+	if director == null:
+		return
+	if not director.phase_changed.is_connected(_on_phase_changed):
+		director.phase_changed.connect(_on_phase_changed)
+	if not director.objective_updated.is_connected(_on_objective_updated):
+		director.objective_updated.connect(_on_objective_updated)
+	if not director.raid_incoming.is_connected(_on_raid_incoming):
+		director.raid_incoming.connect(_on_raid_incoming)
+	if not director.run_ended.is_connected(_on_run_ended):
+		director.run_ended.connect(_on_run_ended)
+	_on_phase_changed(director.phase, director.day, director.is_night)
+	_on_objective_updated(director.swords_produced, director.swordsmen_trained)
+
+
+func _phase_text(phase: int, day: int, is_night: bool) -> String:
+	match phase:
+		0: return "Generating world…"     # Phase.GENERATION
+		1: return "Briefing"              # Phase.BRIEFING
+		2: return "Day %d — build & gather" % day   # Phase.DAY
+		3: return "Night %d — hold the line" % day  # Phase.NIGHT
+		4: return "Run over"              # Phase.RESOLUTION
+	return ""
+
+
+func _on_phase_changed(phase: int, day: int, is_night: bool) -> void:
+	if _phase_label == null:
+		return
+	_phase_label.text = _phase_text(phase, day, is_night)
+	_phase_label.add_theme_color_override("font_color",
+		Color(0.6, 0.7, 1.0) if is_night else Color(1.0, 0.9, 0.6))
+
+
+func _on_objective_updated(swords: int, swordsmen: int) -> void:
+	if _objective_label == null:
+		return
+	_objective_label.text = "Objective: Swords %d/3 · Swordsmen %d/3" % [swords, swordsmen]
+
+
+func _on_raid_incoming(night: int, size: int, target: StringName) -> void:
+	if _raid_label == null:
+		return
+	_raid_label.text = "⚔ RAID %d — %d raiders inbound (%s)" % [night, size, target]
+	_raid_flash = 3.0
+
+
+func _on_run_ended(outcome: int) -> void:
+	if _phase_label == null:
+		return
+	# Outcome.WIN == 1, Outcome.LOSS == 2.
+	var won := outcome == 1
+	_phase_label.text = "VICTORY — dawn holds" if won else "DEFEAT"
+	_phase_label.add_theme_color_override("font_color",
+		Color(0.5, 1.0, 0.6) if won else Color(1.0, 0.45, 0.45))
+
+
+## Show the end-of-run results overlay with the outcome, the run's tally, and
+## any banked blueprint unlock. Called by GameMain from RunCoordinator.run_resolved.
+func show_results(outcome: int, unlock_id: StringName) -> void:
+	if _results_panel == null:
+		_build_results_panel()
+	var won := outcome == 1
+	_results_title.text = "VICTORY" if won else "DEFEAT"
+	_results_title.add_theme_color_override("font_color",
+		Color(0.5, 1.0, 0.6) if won else Color(1.0, 0.45, 0.45))
+	var swords: int = director.swords_produced if director != null else 0
+	var swordsmen: int = director.swordsmen_trained if director != null else 0
+	var body := "Swords forged: %d\nSwordsmen trained: %d" % [swords, swordsmen]
+	if won:
+		body += "\n\nBlueprint unlocked: %s" % (String(unlock_id).capitalize() if unlock_id != &"" else "— (all earned)")
+	else:
+		body += "\n\nThe settlement fell. Try a new seed."
+	_results_body.text = body
+	_results_panel.visible = true
+
+
+func _on_new_run_pressed() -> void:
+	if _results_panel != null:
+		_results_panel.visible = false
+	new_run_requested.emit()
+
+
+func _build_results_panel() -> void:
+	_results_panel = PanelContainer.new()
+	var style := _panel_style()
+	style.bg_color = Color(0.06, 0.07, 0.10, 0.96)
+	_results_panel.add_theme_stylebox_override("panel", style)
+	add_child(_results_panel)
+
+	var col := VBoxContainer.new()
+	col.add_theme_constant_override("separation", 10)
+	col.custom_minimum_size = Vector2(320, 0)
+	_results_panel.add_child(col)
+
+	_results_title = Label.new()
+	_results_title.add_theme_font_size_override("font_size", 28)
+	_results_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	col.add_child(_results_title)
+
+	_results_body = Label.new()
+	_results_body.add_theme_font_size_override("font_size", 15)
+	_results_body.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	col.add_child(_results_body)
+
+	var new_run := Button.new()
+	new_run.text = "New Run"
+	new_run.custom_minimum_size = Vector2(0, 40)
+	new_run.pressed.connect(_on_new_run_pressed)
+	col.add_child(new_run)
+
+	_results_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	_results_panel.visible = false
 
 
 ## Called by GameMain when the placement controller confirms a placement.
@@ -122,6 +298,8 @@ func on_building_placed(entry: Dictionary, _world_position: Vector3) -> void:
 
 
 func _can_afford(cost: Dictionary) -> bool:
+	if economy != null:
+		return economy.can_afford(cost)
 	for resource in cost:
 		if int(stock.get(resource, 0)) < int(cost[resource]):
 			return false
@@ -129,6 +307,9 @@ func _can_afford(cost: Dictionary) -> bool:
 
 
 func _pay(cost: Dictionary) -> void:
+	if economy != null:
+		economy.pay(cost)
+		return
 	for resource in cost:
 		stock[resource] = int(stock.get(resource, 0)) - int(cost[resource])
 
@@ -229,7 +410,48 @@ func _build_resource_bar() -> void:
 
 func _refresh_resource_bar() -> void:
 	for resource in _resource_labels:
-		_resource_labels[resource].text = "%s %d" % [RESOURCE_NAMES[resource], int(stock.get(resource, 0))]
+		var amount := int(stock.get(resource, 0))
+		if economy != null:
+			amount = economy.get_stock(StringName(resource))
+		_resource_labels[resource].text = "%s %d" % [RESOURCE_NAMES[resource], amount]
+
+
+## Phase / objective / raid readout, centered just under the resource bar.
+func _build_objective_panel() -> void:
+	var panel := PanelContainer.new()
+	panel.add_theme_stylebox_override("panel", _panel_style())
+	add_child(panel)
+
+	var col := VBoxContainer.new()
+	col.add_theme_constant_override("separation", 2)
+	panel.add_child(col)
+
+	_phase_label = Label.new()
+	_phase_label.add_theme_font_size_override("font_size", 15)
+	_phase_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_phase_label.text = "Briefing"
+	col.add_child(_phase_label)
+
+	_objective_label = Label.new()
+	_objective_label.add_theme_font_size_override("font_size", 13)
+	_objective_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_objective_label.text = "Objective: Swords 0/3 · Swordsmen 0/3"
+	col.add_child(_objective_label)
+
+	_raid_label = Label.new()
+	_raid_label.add_theme_font_size_override("font_size", 13)
+	_raid_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_raid_label.add_theme_color_override("font_color", Color(1.0, 0.5, 0.5))
+	col.add_child(_raid_label)
+
+	_construction_label = Label.new()
+	_construction_label.add_theme_font_size_override("font_size", 13)
+	_construction_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_construction_label.add_theme_color_override("font_color", Color(0.75, 0.85, 0.7))
+	col.add_child(_construction_label)
+
+	panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	panel.offset_top = 44.0
 
 
 func _build_bottom_dock() -> void:

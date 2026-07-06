@@ -16,6 +16,10 @@ const RAIN_SUN_DIM := 0.55
 const DynamicResolutionControllerScript := preload("res://scripts/rendering/dynamic_resolution_controller.gd")
 const RtsHudScript := preload("res://scripts/ui/rts_hud.gd")
 const BuildingPlacementControllerScript := preload("res://scripts/buildings/building_placement_controller.gd")
+const RunCoordinatorScript := preload("res://scripts/mission/run_coordinator.gd")
+const VillagerControllerScript := preload("res://scripts/workers/villager_controller.gd")
+const RaidControllerScript := preload("res://scripts/mission/raid_controller.gd")
+const BuildControllerScript := preload("res://scripts/workers/build_controller.gd")
 
 var _minimap_generator := MinimapGenerator.new()
 # Cached minimap state: _minimap_base_image holds the unmasked terrain
@@ -41,6 +45,19 @@ var _creatures: Array[Creature] = []
 var _rts_hud: RtsHudScript
 var _placement_controller: BuildingPlacementControllerScript
 var _buildings_root: Node3D
+var _loading_overlay: ColorRect
+var _loading_label: Label
+## Owns the run's economy, scenario, and director; built after the HUD so it can
+## hand the authoritative economy to the resource bar. Typed via the preload
+## const for the same fresh-checkout reason as the others above.
+var _run_coordinator: RunCoordinatorScript
+## Autonomous gatherers driven by WorkerBrain; (re)bound whenever the economy
+## is rebuilt. Typed via the preload const for the fresh-checkout reason above.
+var _villager_controller: VillagerControllerScript
+## Spawns and resolves raider waves on the director's raid_incoming.
+var _raid_controller: RaidControllerScript
+## Spawns builders that raise placed buildings block by block.
+var _build_controller: BuildControllerScript
 ## Units spawned from the HUD's Units tab, re-seated on regenerate like the
 ## two starter units.
 var _trained_units: Array[Unit] = []
@@ -90,9 +107,11 @@ func _ready() -> void:
 	rain_controller.rain_intensity_changed.connect(_on_rain_intensity_changed)
 	minimap.gui_input.connect(_on_minimap_gui_input)
 	_setup_display()
+	_setup_loading_overlay()
 	_setup_units()
 	_setup_creatures()
 	_setup_rts_ui()
+	_setup_run_coordinator()
 	if world.current_chunk != null:
 		_on_world_generated(world.get_summary())
 	call_deferred("_focus_camera")
@@ -107,6 +126,45 @@ func _setup_units() -> void:
 	add_child(_command_controller)
 	_spawn_worker(world.get_world_center())
 	_spawn_soldier(world.get_world_center() + SOLDIER_SPAWN_OFFSET)
+
+
+## Full-screen "Generating world…" overlay shown while the initial terrain
+## meshes across frames (DEMO_PLAN.md §2/§13 — visible loading progress). Hidden
+## when the world finishes materializing; re-shown on regenerate.
+func _setup_loading_overlay() -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 100
+	add_child(layer)
+	_loading_overlay = ColorRect.new()
+	_loading_overlay.color = Color(0.04, 0.05, 0.07, 1.0)
+	_loading_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	layer.add_child(_loading_overlay)
+	_loading_label = Label.new()
+	_loading_label.add_theme_font_size_override("font_size", 22)
+	_loading_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_loading_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_loading_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_loading_label.text = "Generating world…"
+	_loading_overlay.add_child(_loading_label)
+	world.generation_progress.connect(_on_generation_progress)
+	world.generation_ready.connect(_on_generation_ready)
+	world.world_generated.connect(_on_generation_started)
+	_loading_overlay.visible = world.is_generating()
+
+
+func _on_generation_started(_summary: Dictionary) -> void:
+	if _loading_overlay != null:
+		_loading_overlay.visible = world.is_generating()
+
+
+func _on_generation_progress(done: int, total: int) -> void:
+	if _loading_label != null:
+		_loading_label.text = "Generating world… %d%%" % int(100.0 * float(done) / float(maxi(1, total)))
+
+
+func _on_generation_ready() -> void:
+	if _loading_overlay != null:
+		_loading_overlay.visible = false
 
 
 ## Adaptive render-scale controller (holds framerate on weak GPUs) plus, on
@@ -208,6 +266,63 @@ func _setup_rts_ui() -> void:
 	_rts_hud.building_chosen.connect(_placement_controller.begin)
 	_placement_controller.building_placed.connect(_rts_hud.on_building_placed)
 	_rts_hud.unit_train_requested.connect(_on_unit_train_requested)
+	_rts_hud.new_run_requested.connect(_regenerate_world)
+
+
+## Builds the run coordinator (economy + scenario + director) and hands the
+## authoritative economy to the HUD's resource bar. Connected before add_child
+## so the economy_ready emitted during the coordinator's _ready isn't missed.
+func _setup_run_coordinator() -> void:
+	_run_coordinator = RunCoordinatorScript.new()
+	_run_coordinator.name = "RunCoordinator"
+	_run_coordinator.world = world
+	_run_coordinator.economy_ready.connect(_on_economy_ready)
+	_run_coordinator.swordsman_trained.connect(_on_swordsman_trained)
+	_run_coordinator.run_resolved.connect(_on_run_resolved)
+	add_child(_run_coordinator)
+
+
+## A forged sword became a swordsman: spawn a real sword-and-shield soldier at
+## the camp, near the given position. Tracked like other trained units.
+func _on_swordsman_trained(spawn_position: Vector3) -> void:
+	var unit := Unit.new()
+	_apply_soldier_loadout(unit)
+	unit.ground_sampler = world.get_ground_height
+	add_child(unit)
+	_trained_units.append(unit)
+	var angle := randf() * TAU
+	var spot := spawn_position + Vector3(cos(angle), 0.0, sin(angle)) * randf_range(2.0, 4.0)
+	unit.global_position = Vector3(spot.x, world.get_ground_height(spot.x, spot.z), spot.z)
+
+
+## Run ended: show the results overlay (reward already banked by the coordinator).
+func _on_run_resolved(outcome: int, unlock_id: StringName) -> void:
+	if _rts_hud != null:
+		_rts_hud.show_results(outcome, unlock_id)
+
+
+func _on_economy_ready(economy) -> void:
+	if _rts_hud != null:
+		_rts_hud.bind_economy(economy)
+		_rts_hud.bind_director(_run_coordinator.director)
+	if _villager_controller == null:
+		_villager_controller = VillagerControllerScript.new()
+		_villager_controller.name = "Villagers"
+		add_child(_villager_controller)
+	_villager_controller.bind(economy, world, _run_coordinator.stockpile_position)
+
+	if _build_controller == null:
+		_build_controller = BuildControllerScript.new()
+		_build_controller.name = "Builders"
+		add_child(_build_controller)
+	_build_controller.bind(economy, world, _run_coordinator.stockpile_position)
+
+	if _raid_controller == null:
+		_raid_controller = RaidControllerScript.new()
+		_raid_controller.name = "Raids"
+		add_child(_raid_controller)
+	_raid_controller.bind(_run_coordinator.director, world,
+		_run_coordinator.stockpile_position, _run_coordinator.raider_camp_position)
 
 
 ## Spawns a unit from the HUD's Units tab near the world center. The HUD has
@@ -237,13 +352,28 @@ func _process(_delta: float) -> void:
 		_reveal_minimap_cells(revealed)
 
 
+## Debug fast-forward for playtesting (reach night/raids without waiting the
+## full day). F toggles a global time scale; strip for release (DEMO_PLAN §13).
+const DEBUG_TIME_SCALE := 20.0
+
+
 func _unhandled_key_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_R:
-		_regenerate_world()
+	if not (event is InputEventKey and event.pressed and not event.echo):
+		return
+	match (event as InputEventKey).keycode:
+		KEY_R:
+			_regenerate_world()
+		KEY_F:
+			Engine.time_scale = 1.0 if Engine.time_scale > 1.0 else DEBUG_TIME_SCALE
+			print("[debug] time_scale = %s" % Engine.time_scale)
 
 
 func _focus_camera() -> void:
-	camera_rig.focus(world.get_world_center())
+	# Frame the camp when a scenario placed one; fall back to the map centre.
+	var target := world.get_world_center()
+	if _run_coordinator != null and _run_coordinator.manifest != null and _run_coordinator.manifest.valid:
+		target = _run_coordinator.stockpile_position
+	camera_rig.focus(target)
 
 
 ## Left-click on the minimap jumps the camera rig's ground position to the
