@@ -149,36 +149,31 @@ func _rebuild() -> void:
 ## building block-by-block from the opening moments (DEMO_PLAN.md §5), plus a
 ## watchtower that strengthens raid defense once complete.
 func _spawn_starter_building() -> void:
-	var yard_pos := stockpile_position + Vector3(7.0, 0.0, 0.0)
-	yard_pos.y = world.get_ground_height(yard_pos.x, yard_pos.z)
-	economy.register_build_site(BuildSite.new(&"storage_yard", 5, {&"wood": 2}, yard_pos))
-	var tower_pos := stockpile_position + Vector3(-7.0, 0.0, 4.0)
-	tower_pos.y = world.get_ground_height(tower_pos.x, tower_pos.z)
-	economy.register_build_site(BuildSite.new(&"watchtower", 4, {&"stone": 3}, tower_pos))
+	_place_building(&"storage_yard", Vector3(7.0, 0.0, 0.0))
+	_place_building(&"watchtower", Vector3(-7.0, 0.0, 4.0))
 
 
 ## The production buildings must be built before they can produce — the smelter
 ## and forge come online (register their stations) only on completion.
 func _spawn_production_buildings() -> void:
-	var smelter_pos := stockpile_position + Vector3(5.0, 0.0, -6.0)
-	smelter_pos.y = world.get_ground_height(smelter_pos.x, smelter_pos.z)
-	economy.register_build_site(BuildSite.new(&"smelter", 6, {&"stone": 3}, smelter_pos))
-	var forge_pos := stockpile_position + Vector3(-5.0, 0.0, -6.0)
-	forge_pos.y = world.get_ground_height(forge_pos.x, forge_pos.z)
-	economy.register_build_site(BuildSite.new(&"forge", 6, {&"wood": 2, &"stone": 2}, forge_pos))
+	_place_building(&"smelter", Vector3(5.0, 0.0, -6.0))
+	_place_building(&"forge", Vector3(-5.0, 0.0, -6.0))
 
 
-## A finished building activates its machines. The forge runs two recipes
-## (handles and swords), so it registers two stations.
+## Register a build site for a catalog building at an offset from the camp.
+func _place_building(building_id: StringName, offset: Vector3) -> void:
+	var pos := stockpile_position + offset
+	pos.y = world.get_ground_height(pos.x, pos.z)
+	economy.register_build_site(DemoBuildings.make_site(building_id, pos))
+
+
+## A finished building activates its machines (from the catalog). The forge runs
+## two recipes (handles and swords), so it registers two stations.
 func _on_building_completed(building_id: StringName) -> void:
 	if economy == null:
 		return
-	match building_id:
-		&"smelter":
-			_activate_station(&"smelt_iron_ingot")
-		&"forge":
-			_activate_station(&"make_wood_handle")
-			_activate_station(&"craft_iron_sword")
+	for recipe_id in DemoBuildings.stations_for(building_id):
+		_activate_station(StringName(recipe_id))
 
 
 func _activate_station(recipe_id: StringName) -> void:

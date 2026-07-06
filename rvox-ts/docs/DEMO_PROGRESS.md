@@ -4,8 +4,35 @@ Running report of work against [DEMO_PLAN.md](DEMO_PLAN.md), maintained by the
 `/loop` session. Newest iteration on top. Nothing here is committed — all
 changes sit in the working tree for review.
 
-Test baseline at session start: **110/110** passing. Current: **201/201**.
+Test baseline at session start: **110/110** passing. Current: **206/206**.
 Live boot: **VICTORY run + block-by-block construction both verified in-engine.**
+
+---
+
+## Iteration 18 — data-driven building catalog (gameplan Priority 1)
+
+### ✅ Finished
+
+Centralized the scattered per-building numbers into one data-driven catalog:
+[demo_buildings.gd](../scripts/buildings/demo_buildings.gd) defines each
+building's block count, per-block material cost, the stations it activates on
+completion, and whether it's a watchtower — one entry per building.
+- `RunCoordinator` now places build sites and activates stations *from the
+  catalog* (`DemoBuildings.make_site` / `stations_for`), and `RaidController`
+  reads `is_watchtower` from it — no more hardcoded costs/ids across three files.
+- Tests: [test_demo_buildings.gd](../tests/test_demo_buildings.gd) — **5 tests**
+  (block/material/station/watchtower lookups, `make_site`, and defensive copies
+  so the shared const can't be mutated). Full suite **206/206**; boot-verified
+  the catalog-driven buildings still construct with no run errors.
+
+Adding a building is now one catalog entry — the groundwork for HUD placement
+reading the same source for cost/blocks.
+
+### 🔜 Next
+
+1. **HUD placement → BuildSite** — a "build" click creates a catalog-driven site
+   the villagers raise (needs your playtest for feel).
+2. Real World Forge blueprint blocks; difficulty tuning; threaded meshing.
 
 ---
 

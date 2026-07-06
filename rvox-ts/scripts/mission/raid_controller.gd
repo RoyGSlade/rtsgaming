@@ -46,7 +46,7 @@ func bind(new_director: MissionDirector, new_world: WorldRuntime, camp: Vector3,
 
 
 func _on_building_completed(building_id: StringName) -> void:
-	if building_id == &"watchtower":
+	if DemoBuildings.is_watchtower(building_id):
 		_watchtowers += 1
 
 
