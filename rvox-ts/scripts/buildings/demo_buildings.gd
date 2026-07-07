@@ -8,11 +8,13 @@ extends RefCounted
 ## the HUD, and the raid controller all read from here so costs stay consistent
 ## and a new building is one entry, not code scattered across files.
 
+const DEFAULT_COLOR := Color(0.6, 0.55, 0.5)
+
 const CATALOG := {
-	&"storage_yard": {"blocks": 5, "material": {&"wood": 2}, "stations": [], "is_watchtower": false},
-	&"watchtower": {"blocks": 4, "material": {&"stone": 3}, "stations": [], "is_watchtower": true},
-	&"smelter": {"blocks": 6, "material": {&"stone": 3}, "stations": [&"smelt_iron_ingot"], "is_watchtower": false},
-	&"forge": {"blocks": 6, "material": {&"wood": 2, &"stone": 2}, "stations": [&"make_wood_handle", &"craft_iron_sword"], "is_watchtower": false},
+	&"storage_yard": {"blocks": 5, "material": {&"wood": 2}, "stations": [], "is_watchtower": false, "color": Color(0.55, 0.42, 0.26)},
+	&"watchtower": {"blocks": 4, "material": {&"stone": 3}, "stations": [], "is_watchtower": true, "color": Color(0.5, 0.52, 0.55)},
+	&"smelter": {"blocks": 6, "material": {&"stone": 3}, "stations": [&"smelt_iron_ingot"], "is_watchtower": false, "color": Color(0.5, 0.32, 0.28)},
+	&"forge": {"blocks": 6, "material": {&"wood": 2, &"stone": 2}, "stations": [&"make_wood_handle", &"craft_iron_sword"], "is_watchtower": false, "color": Color(0.6, 0.38, 0.22)},
 }
 
 
@@ -35,6 +37,12 @@ static func stations_for(id: StringName) -> Array:
 
 static func is_watchtower(id: StringName) -> bool:
 	return bool(CATALOG.get(id, {}).get("is_watchtower", false))
+
+
+## Display color for the finished building (BuildController renders it once the
+## blocks are all placed).
+static func color(id: StringName) -> Color:
+	return CATALOG.get(id, {}).get("color", DEFAULT_COLOR)
 
 
 ## Build a construction site for a building id at a world position.

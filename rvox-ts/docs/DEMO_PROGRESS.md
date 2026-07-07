@@ -4,8 +4,33 @@ Running report of work against [DEMO_PLAN.md](DEMO_PLAN.md), maintained by the
 `/loop` session. Newest iteration on top. Nothing here is committed — all
 changes sit in the working tree for review.
 
-Test baseline at session start: **110/110** passing. Current: **206/206**.
+Test baseline at session start: **110/110** passing. Current: **207/207**.
 Live boot: **VICTORY run + block-by-block construction both verified in-engine.**
+
+---
+
+## Iteration 19 — finished-building visual (construction payoff, §5)
+
+### ✅ Finished
+
+Completed the block-building visual: when a builder places the last block, the
+rising construction blocks are replaced by a single solid building **coloured by
+type** (from the catalog), so the site reads as a finished structure instead of
+a pile of generic cubes.
+- Added a per-building `color` to [demo_buildings.gd](../scripts/buildings/demo_buildings.gd);
+  [build_controller.gd](../scripts/workers/build_controller.gd) clears the blocks
+  and drops the coloured building on `site.completed` (watchtowers taller).
+- Tests: [test_demo_buildings.gd](../tests/test_demo_buildings.gd) grows to
+  **6** (buildings are visually distinct; unknown → default color). Full suite
+  **207/207**; boot-verified construction runs ("Building Watchtower: 1/4") with
+  no run errors. (The blocks→solid snap needs a building to finish — visible in
+  a full playtest / with the F fast-forward.)
+
+### 🔜 Next (increasingly playtest-dependent — best with you driving)
+
+1. **HUD placement → construction** — needs decisions on payment timing and
+   auto-vs-player-placed buildings that want playtest.
+2. Real World Forge blueprint blocks; difficulty tuning; threaded meshing.
 
 ---
 

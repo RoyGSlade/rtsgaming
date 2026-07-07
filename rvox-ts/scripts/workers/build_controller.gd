@@ -58,6 +58,7 @@ func _on_build_site_added(site: BuildSite) -> void:
 	add_child(root)
 	_site_roots[site] = root
 	site.block_placed.connect(func(placed: int, _total: int) -> void: _add_block_mesh(site, placed))
+	site.completed.connect(func() -> void: _on_site_completed(site))
 
 
 ## Add one block mesh, arranged in a small rising 3-wide footprint so the
@@ -81,6 +82,26 @@ func _add_block_mesh(site: BuildSite, placed: int) -> void:
 	var gy := int(index / 9.0)
 	block.global_position = site.position + Vector3(
 		(gx - 1) * BLOCK_SIZE, gy * BLOCK_SIZE + BLOCK_SIZE * 0.5, (gz - 1) * BLOCK_SIZE)
+
+
+## On completion, clear the rising construction blocks and drop a single solid
+## building coloured by type, so the site reads as a finished structure.
+func _on_site_completed(site: BuildSite) -> void:
+	var root: Node3D = _site_roots.get(site)
+	if root == null:
+		return
+	for child in root.get_children():
+		child.queue_free()
+	var building := MeshInstance3D.new()
+	var box := BoxMesh.new()
+	var height := 2.6 if DemoBuildings.is_watchtower(site.building_id) else 1.8
+	box.size = Vector3(2.6, height, 2.6)
+	building.mesh = box
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = DemoBuildings.color(site.building_id)
+	building.material_override = mat
+	building.position = site.position + Vector3(0.0, height * 0.5, 0.0)
+	root.add_child(building)
 
 
 func _spawn_builder(index: int) -> void:

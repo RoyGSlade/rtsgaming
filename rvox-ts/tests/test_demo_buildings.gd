@@ -30,6 +30,11 @@ func test_watchtower_flag() -> void:
 	assert_false(DemoBuildings.is_watchtower(&"forge"), "Forge is not a watchtower")
 
 
+func test_each_building_has_a_color() -> void:
+	assert_ne(DemoBuildings.color(&"forge"), DemoBuildings.color(&"watchtower"), "Buildings are visually distinct")
+	assert_eq(DemoBuildings.color(&"unknown"), DemoBuildings.DEFAULT_COLOR, "Unknown falls back to the default color")
+
+
 func test_make_site_uses_catalog_values() -> void:
 	var site := DemoBuildings.make_site(&"forge", Vector3(1, 2, 3))
 	assert_eq(site.building_id, &"forge", "Site carries the id")
