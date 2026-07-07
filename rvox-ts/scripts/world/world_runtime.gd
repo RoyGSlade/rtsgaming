@@ -2,6 +2,12 @@ class_name WorldRuntime
 extends Node3D
 
 signal world_generated(summary: Dictionary)
+## Initial terrain meshing is spread across frames instead of one synchronous
+## block, so startup doesn't freeze (DEMO_PLAN.md §2/§12). These report that
+## progress; `world_generated` still fires up front with the chunk *data* ready
+## (heightmap/biomes), which is all unit spawns and the minimap need.
+signal generation_progress(done: int, total: int)
+signal generation_ready()
 
 const TEXTURE_ATLAS_PATH := "res://data/textures/terrain_texture_atlas.tres"
 
@@ -32,6 +38,9 @@ const PRESETTLE_TICKS := 200
 # drain a few per frame rather than spiking one frame.
 const REGION_SIZE := 32
 const MAX_REGION_REMESH_PER_FRAME := 2
+# Faster drain during the initial fill so the world finishes materializing
+# quickly, while still spread across frames rather than one long freeze.
+const INITIAL_REMESH_PER_FRAME := 6
 
 var current_chunk: ChunkData
 var _generator := WorldGenerator.new()
@@ -50,6 +59,8 @@ var _water_rebuild_accumulator := 0.0
 var _water_dirty_since_rebuild := false
 var _region_instances: Dictionary = {} # Vector2i region coord -> MeshInstance3D
 var _dirty_regions: Dictionary = {} # Vector2i region coord -> true
+var _initial_meshing := false
+var _initial_total := 0
 
 
 func _ready() -> void:
@@ -132,12 +143,18 @@ func _process(delta: float) -> void:
 		_water_dirty_since_rebuild = false
 		_rebuild_water_visuals()
 
+	var cap := INITIAL_REMESH_PER_FRAME if _initial_meshing else MAX_REGION_REMESH_PER_FRAME
 	var remeshed := 0
-	while not _dirty_regions.is_empty() and remeshed < MAX_REGION_REMESH_PER_FRAME:
+	while not _dirty_regions.is_empty() and remeshed < cap:
 		var region_coord: Vector2i = _dirty_regions.keys()[0]
 		_dirty_regions.erase(region_coord)
 		_remesh_region(region_coord)
 		remeshed += 1
+	if _initial_meshing:
+		generation_progress.emit(_initial_total - _dirty_regions.size(), _initial_total)
+		if _dirty_regions.is_empty():
+			_initial_meshing = false
+			generation_ready.emit()
 
 
 func _rebuild_water_visuals() -> void:
@@ -177,6 +194,9 @@ func _build_all_regions() -> void:
 	terrain_mesh.mesh = null
 
 	var regions_per_axis := ceili(float(config.chunk_size) / float(REGION_SIZE))
+	# Create the region nodes now but queue their (expensive) mesh+collision
+	# build to drain across frames in _process, so generation never blocks the
+	# main thread in one long freeze. See generation_progress/generation_ready.
 	for rx in regions_per_axis:
 		for rz in regions_per_axis:
 			var instance := MeshInstance3D.new()
@@ -184,7 +204,9 @@ func _build_all_regions() -> void:
 			instance.material_override = _terrain_material
 			terrain_mesh.add_child(instance)
 			_region_instances[Vector2i(rx, rz)] = instance
-			_remesh_region(Vector2i(rx, rz))
+			_dirty_regions[Vector2i(rx, rz)] = true
+	_initial_total = _dirty_regions.size()
+	_initial_meshing = _initial_total > 0
 
 
 func _region_rect(region_coord: Vector2i) -> Rect2i:
@@ -248,6 +270,11 @@ func refresh_overlay_state() -> void:
 func regenerate_with_seed(new_seed: int) -> void:
 	config.world_seed = new_seed
 	generate_world()
+
+
+## True while the initial terrain is still meshing across frames.
+func is_generating() -> bool:
+	return _initial_meshing
 
 
 func get_world_center() -> Vector3:
