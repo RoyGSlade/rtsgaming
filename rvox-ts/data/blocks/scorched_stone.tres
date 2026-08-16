@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"scorched_stone"
+display_name = "Scorched Stone"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 2.2
+path_cost = 999
+harvest_resource_id = &"scorched_stone"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"scorched_stone"
+albedo_color = Color(0.32, 0.18, 0.14, 1)
+texture_top = &"scorched_stone"
+texture_bottom = &"scorched_stone"
+texture_side = &"scorched_stone"

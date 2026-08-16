@@ -33,6 +33,10 @@ var touch_enabled := false
 ## The camera rig, queried to suppress commands mid pinch/twist (its first
 ## finger emulates a mouse click that would otherwise select/move).
 var camera_rig: RtsCameraController
+## Assigned by GameMain. While a building ghost is being placed, all pointer
+## input belongs to placement, so select/move commands stay quiet. Untyped to
+## avoid a hard parse dependency on the placement script.
+var placement_controller: Node
 
 var _selected: Unit
 var _tap_pending := false
@@ -41,6 +45,8 @@ var _tap_travel := 0.0
 
 func _unhandled_input(event: InputEvent) -> void:
 	if camera == null:
+		return
+	if placement_controller != null and placement_controller.is_active():
 		return
 	if touch_enabled:
 		_handle_touch_input(event)

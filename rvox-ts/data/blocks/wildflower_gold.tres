@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wildflower_gold"
+display_name = "Gold Wildflowers"
+category = &"terrain"
+solid = false
+transparent = true
+walkable = true
+buildable = false
+diggable = true
+hardness = 0.2
+fertility = 0.6
+moisture = 0.4
+path_cost = 1.0
+harvest_resource_id = &"wildflower"
+harvest_amount = 1
+tool_required = &""
+material_id = &"wildflower_gold"
+albedo_color = Color(0.92, 0.6, 0.12, 1)
+texture_top = &"wildflower_gold"
+texture_bottom = &"wildflower_gold"
+texture_side = &"wildflower_gold"

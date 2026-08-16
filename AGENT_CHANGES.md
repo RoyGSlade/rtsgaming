@@ -2,6 +2,35 @@
 
 This file is the running handoff log for changes made by coding agents. Add the newest entry at the top and include the intent, files touched, verification performed, and any known follow-up work.
 
+## 2026-07-06 — First-pass RTS management HUD with placeholder building placement
+
+### Intent
+
+Give the RTS a starting management layer per the gameplan (Phase 8 seeded early): a resource bar, a Buildings/Units build menu, a 3D preview of the selected building, ghost placement on the terrain, and an at-a-glance MVP checklist. Buildings are colored box placeholders until the blueprint editor produces real ones.
+
+### Changes
+
+- `rvox-ts/data/buildings/building_catalog.json`: data-driven catalog of the 10 MVP buildings (footprint, height, cost, category, placeholder color, description) — matches the "data-driven buildings" architecture priority.
+- `rvox-ts/scripts/buildings/building_catalog.gd`: JSON loader; entries stay plain Dictionaries.
+- `rvox-ts/scripts/buildings/placeholder_building.gd`: box+roof+Label3D stand-in, reused for HUD preview, placement ghost (green/red translucent), and placed sites.
+- `rvox-ts/scripts/buildings/building_placement_controller.gd`: grid-snapped ghost follows the terrain; validity = in chunk bounds, ground flat within 1.5 blocks, no footprint overlap; LMB places, RMB/Esc cancels; emits `building_placed`.
+- `rvox-ts/scripts/ui/building_preview.gd`: SubViewport panel that spins the selected building's placeholder.
+- `rvox-ts/scripts/ui/rts_hud.gd`: whole HUD built in code (GameMain.tscn untouched) — top-center resource bar (placeholder stock dictionary until the economy runtime exists), bottom dock with preview/info column + Buildings and Units tabs (worker/swordsman trainable now; the six other gameplan roles listed as planned), right-side MVP checklist, current-selection readout. Costs are deducted only when placement is confirmed.
+- `rvox-ts/scripts/core/game_main.gd`: wires HUD ↔ placement ↔ command controller; `_apply_soldier_loadout()` extracted so trained swordsmen share the starter soldier's model/attachments; trained units and placed buildings re-seat on world regenerate.
+- `rvox-ts/scripts/core/rts_command_controller.gd`: suppresses select/move commands while a placement ghost is active.
+
+### Verification
+
+- `Godot_v4.7 --headless --check-only` passes on all five new and two edited scripts.
+- Editor filesystem scan via godot-ai registered the 5 new global classes; no new editor errors (one pre-existing `lantern_pos` parse error in `building_wfc_generator.gd` was already there and flagged separately).
+- Not play-tested — user prefers to test gameplay themselves.
+
+### Follow-up
+
+- Replace placeholder boxes with real blueprint meshes once the building editor produces them; placement should then also check water/resource nodes and reserve construction materials.
+- Move the resource stock out of the HUD into an economy/storage runtime (StorageInventory) when gathering lands.
+- Unit training should route through barracks/houses instead of instant spawn at world center.
+
 ## 2026-07-04 — Track Godot import cache so a fresh download runs
 
 ### Intent

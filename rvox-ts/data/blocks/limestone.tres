@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"limestone"
+display_name = "Limestone"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 1.8
+path_cost = 1.35
+harvest_resource_id = &"limestone"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"limestone"
+albedo_color = Color(0.78, 0.75, 0.66, 1)
+texture_top = &"limestone"
+texture_bottom = &"limestone"
+texture_side = &"limestone"

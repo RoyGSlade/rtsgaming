@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+
+<head>  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="google-site-verification" content="7sjLXDzjt7NHNE7JFUO3kwSuuQ4NXD7i2yPY5sm1-H4" />
+  <meta name="p:domain_verify" content="13a0cae17c1f9880ac86ae94ca4ada1e"/>
+  <meta property="fb:admins" content="921279664577442"/>
+<meta property="fb:app_id" content="921279664577442"/>
+   <link rel="shortcut icon" href="https://www.grabcraft.com/favicon.ico" />   
+    <title>Rustic Medieval Town House 11 - Blueprints for MineCraft Houses, Castles, Towers, and more | GrabCraft</title>
+  <meta name="keywords" content="Wold's biggest Minecraft models, objects, stuff, builds, blueprints library." />
+<meta name="description" content="This is page where all your Minecraft objects, builds, blueprints and objects come together. See how it is made!" />
+  
+  
+  <script type="text/javascript">
+    var WWW_URL = 'https://www.grabcraft.com/';
+    var REL_WWW_URL = '/';
+  </script>
+  
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/south-street/jquery-ui.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Aldrich:400,600,700,300|Lato:400,600,700,300|Open+Sans:400,600,700,300|Poiret+One:100,200,300,400,500,600,700|Dosis:400,500,600">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/manager/css/lytebox.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/assets/touchbox/css/touchbox.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/css/dragdealer.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/css/messages.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/template/default/css/menus.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/template/default/css/responsive.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/template/default/css/style.css?v=3">
+<link rel="stylesheet" href="/css/shop.css">
+<link rel="stylesheet" href="/css/content.blocks.css">
+<script src="https://www.grabcraft.com/js/custom-script.js"></script>
+<script src="https://www.grabcraft.com/js/dragdealer.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="https://www.grabcraft.com/js/es5-shim.min.js"></script>
+<script src="https://www.grabcraft.com/js/es5-sham.min.js"></script>
+<script src="//publisher.eboundservices.com/adsInternalReferral/adsInternalReferral.js?ver=20180207"></script>
+<script src="https://www.grabcraft.com/manager/js/lytebox.js"></script>
+<script src="https://www.grabcraft.com/js/translator.js"></script>
+<script src="https://www.grabcraft.com/js/menus.js"></script>
+<script src="https://www.grabcraft.com/js/jquery.cookie.js"></script>
+<script src="https://www.grabcraft.com/js/general.js"></script>
+<script src="https://www.grabcraft.com/assets/touchbox/js/touchbox.js"></script>
+<script src="https://www.grabcraft.com/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/shop.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfO2N0UAAAAAGyurHQ5MDLo2bAkRycWgW1Uivh-"></script>
+
+ 
+  
+  <script>
+(function(w, d) {
+w.adthrive = w.adthrive || {};
+w.adthrive.cmd = w.adthrive.cmd || [];
+w.adthrive.plugin = 'adthrive-ads-1.0.40-manual';
+w.adthrive.host = 'ads.adthrive.com';
+var s = d.createElement('script');
+s.async = true;
+s.referrerpolicy='no-referrer-when-downgrade';
+s.src = 'https://' + w.adthrive.host + '/sites/5f4f980a3b647d069851e702/ads.min.js?referrer=' + w.encodeURIComponent(w.location.href);
+var n = d.getElementsByTagName('script')[0];
+n.parentNode.insertBefore(s, n);
+})(window, document);
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7HWP6N');</script>
+<!-- End Google Tag Manager -->
+  
+  
+  
+  <script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-65422543-1', 'auto');
+			  ga('send', 'pageview');
+
+$(document).on('tab-select', function() {
+    ga('send', 'pageview', location.pathname + location.search + location.hash);
+});</script>
+
+  
+
+ </head>
+
+
+<body id="page-minecraft" class="sidebar_off shop">
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/et_EE/all.js#xfbml=1&appId=921279664577442";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> 
+  <div id="background_header"></div>
+<div id="page">
+
+	<div class="container">
+        
+        <div class="visible-sm visible-xs visible-xxs menu-icon-wrapper">
+            <i class="fa fa-bars toggle-menu closed"></i>    
+        </div>
+        
+        <div id="main-menu-wrapper">
+            <div class="main-menu-wrap menu-wrap"  id="main-menu-wrap" ><ul class="menu level_1 multilevel-menu parent-menu drop-enabled horizontal-menu drop-right" id="main-menu"><li class="menu-24  level_1 first"><a href="/home/" >Home&nbsp;</a></li><li class="menu-20  level_1 selected"><a href="/minecraft/" >Objects&nbsp;</a><ul class="menu level_2 block child-menu" ><li class="cats-3 level_2 selected first"><a href="/minecraft/buildings" >BUILDINGS&nbsp;(4322)</a><ul class="menu level_3 block child-menu subsub" ><li class="cats-4 level_3 first"><a href="/minecraft/castles" >Castles&nbsp;(24)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-158 level_4 first last"><a href="/minecraft/medieval-castles" >Medieval Castles&nbsp;(20)</a></li></ul></li><li class="cats-46 level_3"><a href="/minecraft/churches" >Churches&nbsp;(77)</a></li><li class="cats-56 level_3"><a href="/minecraft/famous-films" >Famous Firms&nbsp;(141)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-60 level_4 first"><a href="/minecraft/cafes" >Cafés&nbsp;(23)</a></li><li class="cats-57 level_4"><a href="/minecraft/hotels" >Hotels&nbsp;(26)</a></li><li class="cats-58 level_4"><a href="/minecraft/restaurants" >Restaurants&nbsp;(60)</a></li><li class="cats-133 level_4"><a href="/minecraft/malls" >Malls&nbsp;(21)</a></li><li class="cats-160 level_4 last"><a href="/minecraft/service-stations" >Service Stations&nbsp;(11)</a></li></ul></li><li class="cats-52 level_3"><a href="/minecraft/fictional" >Fictional&nbsp;(26)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-53 level_4 first"><a href="/minecraft/movies" >Movies&nbsp;(3)</a></li><li class="cats-54 level_4"><a href="/minecraft/cartoons" >Cartoons&nbsp;(17)</a></li><li class="cats-161 level_4 last"><a href="/minecraft/video-games" >Video Games&nbsp;(6)</a></li></ul></li><li class="cats-10 level_3 selected"><a href="/minecraft/houses" >Houses&nbsp;(3019)</a><ul class="menu level_4 block child-menu subsub" ><li class="cats-42 level_4 first"><a href="/minecraft/wooden-houses" >Wooden Houses&nbsp;(211)</a></li><li class="cats-44 level_4"><a href="/minecraft/stone-houses" >Stone Houses&nbsp;(78)</a></li><li class="cats-45 level_4"><a href="/minecraft/modern-houses" >Modern Houses&nbsp;(346)</a></li><li class="cats-101 level_4 selected"><a href="/minecraft/medieval-houses" >Medieval Houses&nbsp;(1227)</a></li><li class="cats-43 level_4"><a href="/minecraft/quartz-houses" >Quartz Houses&nbsp;(24)</a></li><li class="cats-157 level_4"><a href="/minecraft/brick-houses" >Brick Houses&nbsp;(36)</a></li><li class="cats-159 level_4"><a href="/minecraft/tree-houses" >Tree Houses&nbsp;(32)</a></li><li class="cats-163 level_4"><a href="/minecraft/survival-houses" >Survival Houses&nbsp;(34)</a></li><li class="cats-191 level_4"><a href="/minecraft/starter-houses" >Starter Houses&nbsp;(19)</a></li><li class="cats-193 level_4 last"><a href="/minecraft/other-193" >Other&nbsp;(1011)</a></li></ul></li><li class="cats-48 level_3"><a href="/minecraft/sightseeing-buildings" >Sightseeing buildings&nbsp;(396)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-49 level_4 first"><a href="/minecraft/towers" >Towers&nbsp;(125)</a></li><li class="cats-50 level_4"><a href="/minecraft/skyscrapers" >Skyscrapers&nbsp;(11)</a></li><li class="cats-51 level_4"><a href="/minecraft/stadiums" >Stadiums&nbsp;(3)</a></li><li class="cats-162 level_4 last"><a href="/minecraft/miscellaneous-162" >Miscellaneous&nbsp;(196)</a></li></ul></li><li class="cats-143 level_3"><a href="/minecraft/farm-buildings" >Farm Buildings&nbsp;(227)</a></li><li class="cats-167 level_3"><a href="/minecraft/military-buildings" >Military Buildings&nbsp;(341)</a></li><li class="cats-195 level_3 last"><a href="/minecraft/ruins" >Ruins&nbsp;(53)</a></li></ul></li><li class="cats-96 level_2"><a href="/minecraft/outdoors" >OUTDOORS&nbsp;(928)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-97 level_3 first"><a href="/minecraft/parks" >Parks&nbsp;(22)</a></li><li class="cats-99 level_3"><a href="/minecraft/gardens" >Gardens&nbsp;(18)</a></li><li class="cats-98 level_3"><a href="/minecraft/bridges" >Bridges&nbsp;(42)</a></li><li class="cats-144 level_3"><a href="/minecraft/roads" >Roads&nbsp;(45)</a></li><li class="cats-190 level_3 last"><a href="/minecraft/other-190" >Other&nbsp;(800)</a></li></ul></li><li class="cats-5 level_2"><a href="/minecraft/statues" >STATUES&nbsp;(386)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-9 level_3 first"><a href="/minecraft/items" >Items&nbsp;(35)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-70 level_4 first"><a href="/minecraft/logos" >Logos&nbsp;(2)</a></li><li class="cats-71 level_4"><a href="/minecraft/tools" >Tools&nbsp;</a></li><li class="cats-72 level_4"><a href="/minecraft/minecraft-items" >Minecraft Items&nbsp;(22)</a><ul class="menu level_5 child-menu subsub" ><li class="cats-73 level_5 first"><a href="/minecraft/armor" >Armor&nbsp;</a></li><li class="cats-74 level_5"><a href="/minecraft/tools-1" >Tools&nbsp;</a></li><li class="cats-75 level_5 last"><a href="/minecraft/blocks" >Blocks&nbsp;</a></li></ul></li><li class="cats-151 level_4 last"><a href="/minecraft/miscellaneous-151" >Miscellaneous&nbsp;(11)</a></li></ul></li><li class="cats-65 level_3"><a href="/minecraft/animals" >Animals&nbsp;(71)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-66 level_4 first"><a href="/minecraft/farm-animals-1" >Farm Animals&nbsp;(11)</a></li><li class="cats-67 level_4"><a href="/minecraft/wild-animals-1" >Wild Animals&nbsp;(28)</a></li><li class="cats-68 level_4"><a href="/minecraft/fictional-animals-1" >Fictional Animals&nbsp;(25)</a></li><li class="cats-69 level_4"><a href="/minecraft/birds-1" >Birds&nbsp;(3)</a></li><li class="cats-145 level_4"><a href="/minecraft/pets" >Pets&nbsp;(3)</a></li><li class="cats-146 level_4 last"><a href="/minecraft/insects" >Insects&nbsp;(1)</a></li></ul></li><li class="cats-76 level_3"><a href="/minecraft/fictional-characters" >Fictional Characters&nbsp;(142)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-78 level_4 first"><a href="/minecraft/cartoon-characters" >Cartoon Characters&nbsp;(34)</a></li><li class="cats-147 level_4"><a href="/minecraft/comic-book-characters" >Comic Book Characters&nbsp;(10)</a></li><li class="cats-79 level_4"><a href="/minecraft/minecraft-creatures" >Minecraft Creatures&nbsp;(31)</a></li><li class="cats-80 level_4"><a href="/minecraft/movie-characters" >Movie Characters&nbsp;(20)</a></li><li class="cats-77 level_4"><a href="/minecraft/superheroes" >Superheroes&nbsp;(8)</a></li><li class="cats-150 level_4"><a href="/minecraft/supervillains" >Supervillains&nbsp;(3)</a></li><li class="cats-149 level_4"><a href="/minecraft/tv-series-characters" >TV Series Characters&nbsp;(1)</a></li><li class="cats-148 level_4"><a href="/minecraft/video-game-characters" >Video Game Characters&nbsp;(6)</a></li><li class="cats-196 level_4 last"><a href="/minecraft/new-category" >Mythological Creatures&nbsp;(16)</a></li></ul></li><li class="cats-81 level_3"><a href="/minecraft/miscellaneous" >Miscellaneous&nbsp;</a><ul class="menu level_4 child-menu subsub" ><li class="cats-82 level_4 first"><a href="/minecraft/memes" >Memes&nbsp;</a></li><li class="cats-83 level_4 last"><a href="/minecraft/emoji" >Emoji&nbsp;</a></li></ul></li><li class="cats-152 level_3 last"><a href="/minecraft/famous-characters" >Famous Characters&nbsp;(66)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-153 level_4 first"><a href="/minecraft/youtubers" >Youtubers&nbsp;(66)</a></li><li class="cats-154 level_4"><a href="/minecraft/gamers" >Gamers&nbsp;</a></li><li class="cats-155 level_4"><a href="/minecraft/reality-show-characters" >Reality Show Characters&nbsp;</a></li><li class="cats-166 level_4 last"><a href="/minecraft/singers" >Singers&nbsp;</a></li></ul></li></ul></li><li class="cats-168 level_2"><a href="/minecraft/pixel-art-168" >PIXEL ART&nbsp;(295)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-169 level_3 first"><a href="/minecraft/fictional-characters-169" >Fictional Characters&nbsp;(163)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-176 level_4 first"><a href="/minecraft/superheroes-176" >Superheroes&nbsp;(72)</a></li><li class="cats-179 level_4"><a href="/minecraft/tv-series-characters-179" >TV Series Characters&nbsp;(10)</a></li><li class="cats-180 level_4"><a href="/minecraft/video-game-characters-180" >Video Game Characters&nbsp;(32)</a></li><li class="cats-183 level_4"><a href="/minecraft/cartoon-characters-183" >Cartoon Characters&nbsp;(43)</a></li><li class="cats-184 level_4"><a href="/minecraft/comic-book-characters-184" >Comic Book Characters&nbsp;(3)</a></li><li class="cats-185 level_4 last"><a href="/minecraft/movie-characters-185" >Movie Characters&nbsp;(3)</a></li></ul></li><li class="cats-170 level_3"><a href="/minecraft/items-170" >Items&nbsp;(86)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-172 level_4 first"><a href="/minecraft/logos-172" >Logos&nbsp;(46)</a></li><li class="cats-173 level_4"><a href="/minecraft/minecraft-items-173" >Minecraft Items&nbsp;(24)</a></li><li class="cats-177 level_4 last"><a href="/minecraft/fictional-items" >Fictional Items&nbsp;(16)</a></li></ul></li><li class="cats-171 level_3"><a href="/minecraft/miscellaneous-171" >Miscellaneous&nbsp;(45)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-174 level_4 first"><a href="/minecraft/memes-174" >Memes&nbsp;(5)</a></li><li class="cats-175 level_4"><a href="/minecraft/emoji-175" >Emoji&nbsp;(12)</a></li><li class="cats-178 level_4 last"><a href="/minecraft/other" >Other&nbsp;(28)</a></li></ul></li><li class="cats-181 level_3 last"><a href="/minecraft/famous-characters-181" >Famous Characters&nbsp;(1)</a></li></ul></li><li class="cats-85 level_2"><a href="/minecraft/transportation" >TRANSPORTATION&nbsp;(1550)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-86 level_3 first"><a href="/minecraft/cars" >Cars&nbsp;(106)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-90 level_4 first"><a href="/minecraft/rally" >Rally&nbsp;(3)</a></li><li class="cats-91 level_4"><a href="/minecraft/sports-cars" >Sports Cars&nbsp;(32)</a></li><li class="cats-92 level_4 last"><a href="/minecraft/family-cars" >Family Cars&nbsp;(44)</a></li></ul></li><li class="cats-87 level_3"><a href="/minecraft/ships" >Ships&nbsp;(227)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-93 level_4 first"><a href="/minecraft/sailing-ships" >Sailing Ships&nbsp;(51)</a></li><li class="cats-94 level_4"><a href="/minecraft/cruise-ships" >Cruise Ships&nbsp;(3)</a></li><li class="cats-137 level_4"><a href="/minecraft/historical-ships" >Historical Ships&nbsp;(30)</a></li><li class="cats-140 level_4"><a href="/minecraft/boats" >Boats&nbsp;(92)</a></li><li class="cats-192 level_4"><a href="/minecraft/submarines" >Submarines&nbsp;(3)</a></li><li class="cats-194 level_4"><a href="/minecraft/warships" >Warships&nbsp;(15)</a></li><li class="cats-198 level_4 last"><a href="/minecraft/airships" >Airships&nbsp;(25)</a></li></ul></li><li class="cats-88 level_3"><a href="/minecraft/emergency-vehicles" >Emergency Vehicles&nbsp;(167)</a></li><li class="cats-100 level_3"><a href="/minecraft/planes" >Planes&nbsp;(207)</a></li><li class="cats-156 level_3"><a href="/minecraft/buses" >Buses&nbsp;(22)</a></li><li class="cats-164 level_3"><a href="/minecraft/working-vehicles" >Working Vehicles&nbsp;(247)</a></li><li class="cats-165 level_3"><a href="/minecraft/other-transportation" >Other Transportation&nbsp;(503)</a></li><li class="cats-197 level_3 last"><a href="/minecraft/spaceships" >Spaceships&nbsp;(71)</a></li></ul></li><li class="cats-186 level_2 last"><a href="/minecraft/working-mechanisms" >Working Mechanisms&nbsp;(86)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-187 level_3 first"><a href="/minecraft/machines" >Machines&nbsp;(48)</a></li><li class="cats-188 level_3"><a href="/minecraft/items-188" >Items&nbsp;(22)</a></li><li class="cats-189 level_3 last"><a href="/minecraft/secret-passageways" >Secret Passageways&nbsp;(8)</a></li></ul></li></ul></li><li class="menu-33  level_1"><a href="/blog/" >Blog&nbsp;</a></li><li class="menu-26  level_1"><a href="/feedback/" >Feedback&nbsp;</a></li><li class="menu-28  level_1 last"><a href="/blog/how-to-build-houses-in-minecraft-using-blueprints/id/12" >How to use GrabCraft&nbsp;</a></li></ul></div>
+        </div>
+		<div id="wrapper">
+			
+			<div id="header">
+			
+                <a href="/" id="logo_header">&nbsp;</a>	
+                
+                <form method="post" action="" onsubmit="return submitSearch();" id="search_form">
+<div id="search-box">
+	
+    <p class="input_label">SEARCH, GRAB AND CRAFT IN PASSION&nbsp;</p>
+    					
+	<input type="text" name="search" id="search" placeholder="Search..." value="" maxlength="40" />
+	
+	<input type="submit" id="searchsubmit" value="&nbsp;" />
+	
+</div>
+</form>                
+			</div> <!-- /#header -->
+			
+			<div id="main">
+			     
+                <div class="row">
+                
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 sidebar-wrapper">
+                        
+                        <div id="sidebar" class="sidebar syncHeight">
+
+    <div class="secondary-menu-wrap menu-wrap"  id="secondary-menu-wrap" ><ul class="menu level_1 multilevel-menu parent-menu vertical-menu drop-down" id="secondary-menu"><li class="cats-3 level_1 selected first"><a href="/minecraft/buildings" >BUILDINGS&nbsp;(4322)</a><ul class="menu level_2 block child-menu" ><li class="cats-4 level_2 first"><a href="/minecraft/castles" >Castles&nbsp;(24)</a></li><li class="cats-46 level_2"><a href="/minecraft/churches" >Churches&nbsp;(77)</a></li><li class="cats-56 level_2"><a href="/minecraft/famous-films" >Famous Firms&nbsp;(141)</a></li><li class="cats-52 level_2"><a href="/minecraft/fictional" >Fictional&nbsp;(26)</a></li><li class="cats-10 level_2 selected"><a href="/minecraft/houses" >Houses&nbsp;(3019)</a><ul class="menu level_3 block child-menu subsub" ><li class="cats-42 level_3 first"><a href="/minecraft/wooden-houses" >Wooden Houses&nbsp;(211)</a></li><li class="cats-44 level_3"><a href="/minecraft/stone-houses" >Stone Houses&nbsp;(78)</a></li><li class="cats-45 level_3"><a href="/minecraft/modern-houses" >Modern Houses&nbsp;(346)</a></li><li class="cats-101 level_3 selected"><a href="/minecraft/medieval-houses" >Medieval Houses&nbsp;(1227)</a></li><li class="cats-43 level_3"><a href="/minecraft/quartz-houses" >Quartz Houses&nbsp;(24)</a></li><li class="cats-157 level_3"><a href="/minecraft/brick-houses" >Brick Houses&nbsp;(36)</a></li><li class="cats-159 level_3"><a href="/minecraft/tree-houses" >Tree Houses&nbsp;(32)</a></li><li class="cats-163 level_3"><a href="/minecraft/survival-houses" >Survival Houses&nbsp;(34)</a></li><li class="cats-191 level_3"><a href="/minecraft/starter-houses" >Starter Houses&nbsp;(19)</a></li><li class="cats-193 level_3 last"><a href="/minecraft/other-193" >Other&nbsp;(1011)</a></li></ul></li><li class="cats-48 level_2"><a href="/minecraft/sightseeing-buildings" >Sightseeing buildings&nbsp;(396)</a></li><li class="cats-143 level_2"><a href="/minecraft/farm-buildings" >Farm Buildings&nbsp;(227)</a></li><li class="cats-167 level_2"><a href="/minecraft/military-buildings" >Military Buildings&nbsp;(341)</a></li><li class="cats-195 level_2 last"><a href="/minecraft/ruins" >Ruins&nbsp;(53)</a></li></ul></li><li class="cats-96 level_1"><a href="/minecraft/outdoors" >OUTDOORS&nbsp;(928)</a></li><li class="cats-5 level_1"><a href="/minecraft/statues" >STATUES&nbsp;(386)</a></li><li class="cats-168 level_1"><a href="/minecraft/pixel-art-168" >PIXEL ART&nbsp;(295)</a></li><li class="cats-85 level_1"><a href="/minecraft/transportation" >TRANSPORTATION&nbsp;(1550)</a></li><li class="cats-186 level_1 last"><a href="/minecraft/working-mechanisms" >Working Mechanisms&nbsp;(86)</a></li></ul></div>
+    
+    <div class="sidebar-commericals">
+        
+                
+        <div class="sidebar-right-wrapper">
+        
+            <div class="fb-page" data-href="https://www.facebook.com/GrabCraft" data-width="300" data-height="240" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/GrabCraft"><a href="https://www.facebook.com/GrabCraft">GrabCraft</a></blockquote></div></div>
+            
+            <div class="default-wrapper">
+            
+            </div>
+        
+        </div>
+        
+    </div>
+    
+</div>
+                            
+                    </div>
+                    
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 content-wrapper">
+                        
+                        <div id="content-area" class="content-area syncHeight">
+
+        
+        	
+    
+	<div id="content" itemscope itemtype="http://schema.org/Thing">
+	
+		<h1 id="content-title" itemprop="name">Rustic Medieval Town House 11</h1>
+		
+		<div class="wrap"><div id="product">
+    <div id="product-tabs">
+        
+        <div class="row">
+        
+                                                              
+        
+                        
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 no-padding">
+        		<div class="product-tab active" id="general" style="width: 100%;">
+                    
+                    <p>Object Details</p>
+                
+                </div>
+            </div>
+        
+                                                              
+        
+                        
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 no-padding">
+        		<div class="product-tab " id="model3d" style="width: 100%;">
+                    
+                    <p>3D Model</p>
+                
+                </div>
+            </div>
+        
+                                                              
+        
+                        
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 no-padding">
+        		<div class="product-tab " id="blueprints" style="width: 100%;">
+                    
+                    <p>Blueprints</p>
+                
+                </div>
+            </div>
+        
+                                                              
+        
+                        
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12 no-padding">
+        		<div class="product-tab " id="comments" style="width: 100%;">
+                    
+                    <p>Comments</p>
+                
+                </div>
+            </div>
+        
+            
+        </div>
+    
+    </div>
+    
+        
+    <div id="tab-contents">
+            
+        <div class="tab-content general">
+            
+                            
+                <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+<script>
+function toggleOtherMaterials(link) {
+    $('.other').toggle();
+    syncHeight('.syncHeight');
+    if ($('.other').is(':visible')) {
+        $(link).html($(link).data('label-hide'));
+    } else {
+        $(link).html($(link).data('label-show'));        
+    }
+}
+</script>
+
+<style>
+
+.other {
+    display:none;
+}
+
+</style>
+
+
+<div class="default-wrapper">
+    <div class="col-sm-6 col-xs-12 parameters">
+        <h3>
+            <i class="fa fa-user"></i>Author:&nbsp;lJellel<br />
+            <i class="fa fa-cubes"></i>Block count:&nbsp;696<br />
+            <i class="fa fa-eye"></i>Views:&nbsp;3996        </h3>
+    </div>
+</div>
+
+
+<div id="info">
+
+    <div class="general-content left col-lg-7 col-md-7 col-sm-6 col-xs-12">
+
+		            
+            <div class="description" itemprop="description">
+                This is adorable ... yellow flowers blooming in the middle of the Rustic Medieval streets. I wish there were more of those flowers around, how about a huge flower bed in front of the house? Well if You like this house here then You can work here a lot ... You can make it look as You want really, one floor, maybe two, basement? It is a pretty house so make the best of Your imagination and bring it to  life.             </div>
+            
+                
+        <a href="#blueprints" class="button more-info">View Blueprints</a>
+        
+        <h2 id="data_header">Blocks you'll need:</h2>
+         
+        <div id="materials_chart"></div>
+        
+        <table id="materials_list">
+        
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Oak Wood Stairs" style="background: #8b6b4e;" title="Oak Wood Stairs"></div>
+                </td>
+                <td class="name">
+                    <b>Oak Wood Stairs</b>
+                </td>
+                <td class="count">
+                    <b>164</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Sandstone" style="background: #999166;" title="Sandstone"></div>
+                </td>
+                <td class="name">
+                    <b>Sandstone</b>
+                </td>
+                <td class="count">
+                    <b>116</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Grass" style="background: #11b029;" title="Grass"></div>
+                </td>
+                <td class="name">
+                    <b>Grass</b>
+                </td>
+                <td class="count">
+                    <b>102</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Spruce Wood" style="background: #634830;" title="Spruce Wood"></div>
+                </td>
+                <td class="name">
+                    <b>Spruce Wood</b>
+                </td>
+                <td class="count">
+                    <b>79</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Cobblestone" style="background: #595959;" title="Cobblestone"></div>
+                </td>
+                <td class="name">
+                    <b>Cobblestone</b>
+                </td>
+                <td class="count">
+                    <b>52</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Dirt" style="background: #78543f;" title="Dirt"></div>
+                </td>
+                <td class="name">
+                    <b>Dirt</b>
+                </td>
+                <td class="count">
+                    <b>50</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Oak Wood Slab" style="background: #b88830;" title="Oak Wood Slab"></div>
+                </td>
+                <td class="name">
+                    <b>Oak Wood Slab</b>
+                </td>
+                <td class="count">
+                    <b>36</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list " style="background: #b88830;" title=""></div>
+                </td>
+                <td class="name">
+                    <b></b>
+                </td>
+                <td class="count">
+                    <b>28</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Wooden Trapdoor" style="background: #553c2d;" title="Wooden Trapdoor"></div>
+                </td>
+                <td class="name">
+                    <b>Wooden Trapdoor</b>
+                </td>
+                <td class="count">
+                    <b>20</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Glass Pane" style="background: #ded5d5;" title="Glass Pane"></div>
+                </td>
+                <td class="name">
+                    <b>Glass Pane</b>
+                </td>
+                <td class="count">
+                    <b>18</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Spruce wood" style="background: #634830;" title="Spruce wood"></div>
+                </td>
+                <td class="name">
+                    <b>Spruce wood</b>
+                </td>
+                <td class="count">
+                    <b>18</b>
+                </td>
+            </tr>
+                
+                    
+            <tr >
+                <td class="icon">
+                    <div class="material-list Dandelion" style="background: #000000;" title="Dandelion"></div>
+                </td>
+                <td class="name">
+                    <b>Dandelion</b>
+                </td>
+                <td class="count">
+                    <b>8</b>
+                </td>
+            </tr>
+                
+                    
+            <tr class="other">
+                <td class="icon">
+                    <div class="material-list Oak Door" style="background: #a67c53;" title="Oak Door"></div>
+                </td>
+                <td class="name">
+                    <b>Oak Door</b>
+                </td>
+                <td class="count">
+                    <b>2</b>
+                </td>
+            </tr>
+                
+                    
+            <tr class="other">
+                <td class="icon">
+                    <div class="material-list Torch" style="background: #c9b62c;" title="Torch"></div>
+                </td>
+                <td class="name">
+                    <b>Torch</b>
+                </td>
+                <td class="count">
+                    <b>2</b>
+                </td>
+            </tr>
+                
+                    
+            <tr class="other">
+                <td class="icon">
+                    <div class="material-list Oak Wood Plank" style="background: #b88830;" title="Oak Wood Plank"></div>
+                </td>
+                <td class="name">
+                    <b>Oak Wood Plank</b>
+                </td>
+                <td class="count">
+                    <b>1</b>
+                </td>
+            </tr>
+                
+                    <tr>
+                <td class="icon">
+                    <div class="material-list Other materials" style="background: #ff0066;" title="Other materials"></div>
+                </td>
+                <td class="name">
+                    <b><a href="javascript:;" onclick="toggleOtherMaterials(this);" data-label-show="View Other Materials" data-label-hide="Group Other Materials" >View Other Materials</a></b>
+                </td>
+                <td class="count">
+                    <b>5</b>
+                </td>
+            </tr>
+                    
+        </table>
+            
+    </div>
+	
+    <div class="general-content right col-lg-5 col-md-5 col-sm-6 col-xs-12">
+    
+        
+<div id="product_images" class="">
+
+	<div id="main_pics">
+		<a href="https://www.grabcraft.com/files/products/large/large_rustic-medieval-town-house-11-21448.png" rel="lytebox[0]" class="image default_image" id="image_1" ><img src="https://www.grabcraft.com/files/products/medium/medium_rustic-medieval-town-house-11-21448.png" itemprop="image" border="0" alt="" title=""  /></a><a href="https://www.grabcraft.com/files/products/large/large_rustic-medieval-town-house-11-21449.png" rel="lytebox[0]" class="image default_image" id="image_2" ><img src="https://www.grabcraft.com/files/products/medium/medium_rustic-medieval-town-house-11-21449.png" itemprop="image" border="0" alt="" title=""  /></a><a href="https://www.grabcraft.com/files/products/large/large_rustic-medieval-town-house-11-21450.png" rel="lytebox[0]" class="image default_image" id="image_3" ><img src="https://www.grabcraft.com/files/products/medium/medium_rustic-medieval-town-house-11-21450.png" itemprop="image" border="0" alt="" title=""  /></a>	</div>
+	
+		
+		<div id="thumbnails">
+			<img src="https://www.grabcraft.com/files/products/thumb/thumb_rustic-medieval-town-house-11-21448.png" class="image default_image " data-nr="1" border="0" alt="" title=""  /><img src="https://www.grabcraft.com/files/products/thumb/thumb_rustic-medieval-town-house-11-21449.png" class="image default_image " data-nr="2" border="0" alt="" title=""  /><img src="https://www.grabcraft.com/files/products/thumb/thumb_rustic-medieval-town-house-11-21450.png" class="image default_image third" data-nr="3" border="0" alt="" title=""  />	
+		</div>
+		
+		<script>
+			$('#product_images #thumbnails img').click(function(){
+				
+				var nr = $(this).data('nr');
+				
+				$('#product_images #main_pics .image').hide();
+				$('#product_images #main_pics #image_' + nr).fadeIn();	
+			});
+		</script>
+	
+	
+</div>        
+        <div class="visible-lg visible-sm visible-xs hide-xxs">
+                    </div>
+        
+        <table id="object_properties">
+    
+        <tr>
+                          <td class="parameter">Skill level</td>
+                          <td class="value skill_level">1</td>
+                      </tr><tr>
+                          <td class="parameter">Object added</td>
+                          <td class="value date_added">09 Jan 2018</td>
+                      </tr><tr>
+                          <td class="parameter">Width</td>
+                          <td class="value dimension-x">9</td>
+                      </tr><tr>
+                          <td class="parameter">Height</td>
+                          <td class="value dimension-y">14</td>
+                      </tr><tr>
+                          <td class="parameter">Depth</td>
+                          <td class="value dimension-z">15</td>
+                      </tr><tr>
+                          <td class="parameter">Tags</td>
+                          <td class="value tags"> medieval house, medieval, medieval rustic, medieval rustic house, rustic, rustic house, unfurnished, unfurnished house</td>
+                      </tr><tr>
+                          <td class="parameter">Block Count</td>
+                          <td class="value block_count">696</td>
+                      </tr>  <tr>
+                            <td colspan="2" style="text-align: center;" class="parameter">Object materials</td>
+                        </tr>  <tr>
+                                <td class="parameter">Sandstone</td>
+                                <td class="value">116
+                                    <div class="material-list" style="background:#999166; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Grass</td>
+                                <td class="value">90
+                                    <div class="material-list" style="background:#11b029; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (West, Normal)</td>
+                                <td class="value">77
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (East, Normal)</td>
+                                <td class="value">77
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Cobblestone</td>
+                                <td class="value">52
+                                    <div class="material-list" style="background:#595959; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Spruce Wood</td>
+                                <td class="value">51
+                                    <div class="material-list" style="background:#634830; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Dirt</td>
+                                <td class="value">50
+                                    <div class="material-list" style="background:#78543f; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Slab (Bottom)</td>
+                                <td class="value">36
+                                    <div class="material-list" style="background:#b88830; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Spruce Wood (facing north/south)</td>
+                                <td class="value">28
+                                    <div class="material-list" style="background:#634830; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter"> Oak Wood Slab (Upper)</td>
+                                <td class="value">28
+                                    <div class="material-list" style="background:#b88830; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Glass Pane</td>
+                                <td class="value">18
+                                    <div class="material-list" style="background:#ded5d5; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Spruce wood (facing east/west) </td>
+                                <td class="value">18
+                                    <div class="material-list" style="background:#634830; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Grass</td>
+                                <td class="value">12
+                                    <div class="material-list" style="background:#155406; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Dandelion</td>
+                                <td class="value">8
+                                    <div class="material-list" style="background:#000000; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (South from block, Open, Bottom half)</td>
+                                <td class="value">3
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (West from block, Closed, Top Half)</td>
+                                <td class="value">3
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (South from block, Closed, Top Half)</td>
+                                <td class="value">3
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (West from block, Open, Bottom half)</td>
+                                <td class="value">3
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (North, Upside-down)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (West, Upside-down)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (North from block, Open, Bottom half)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (West from block, Closed, Bottom half)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (South, Upside-down)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (South from block, Closed, Bottom half)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Wooden Trapdoor (East from block, Open, Bottom half)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#553c2d; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (East, Upside-down)</td>
+                                <td class="value">2
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Door (Facing North, Closed, Lower)</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#a67c53; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Torch (Facing East)</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#c9b62c; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Door (Hinge Left, Unpowered, Upper</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#a67c53; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (North, Normal)</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Torch (Facing West)</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#c9b62c; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Plank</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#b88830; float: right;"></div>
+                                </td>
+                            </tr>  <tr>
+                                <td class="parameter">Oak Wood Stairs (South, Normal)</td>
+                                <td class="value">1
+                                    <div class="material-list" style="background:#8b6b4e; float: right;"></div>
+                                </td>
+                            </tr>    
+        </table>
+        
+                
+                    
+                        
+            <a href="#comments" class="button more-info">Add your comment</a>
+            
+            
+    </div>
+    
+</div> <!-- /#info -->
+
+<script>
+    $(function () {
+        // Create the chart
+        $('#materials_chart').highcharts({
+            chart: {
+                type: 'pie'
+            },
+            
+            title: {
+                text: '',
+                style: {
+                    display: 'none'
+                }
+            },
+            subtitle: {
+                text: '',
+                style: {
+                    display: 'none'
+                }
+            },
+            
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: false,
+                        format: '{point.name}: {point.y:,.0f}'
+                    },
+                    showInLegend: false
+                }
+            },
+            
+            tooltip: {
+                //headerFormat: '<span style="font-size:12px">{series.name}</span>',
+                //pointFormat: '<span style="color:{#000000}">{point.name}</span>: <b>{point.y:,.0f}</b> of total'
+                //pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:,.0f}</b> of total<br/>'
+            },
+            series: [{
+                name: "Blocks",
+                colorByPoint: true,
+                data: [{"id":"53:1","color":"#8b6b4e","name":"Oak Wood Stairs","y":164},{"id":"24:0","color":"#999166","name":"Sandstone","y":116},{"id":"2:0","color":"#11b029","name":"Grass","y":102},{"id":"17:1","color":"#634830","name":"Spruce Wood","y":79},{"id":"4:0","color":"#595959","name":"Cobblestone","y":52},{"id":"3:0","color":"#78543f","name":"Dirt","y":50},{"id":"126:0","color":"#b88830","name":"Oak Wood Slab","y":36},{"id":"126:8","color":"#b88830","name":"","y":28},{"id":"96:5","color":"#553c2d","name":"Wooden Trapdoor","y":20},{"id":"102:0","color":"#ded5d5","name":"Glass Pane","y":18},{"id":"17:5","color":"#634830","name":"Spruce wood","y":18},{"id":"37:0","color":"#000000","name":"Dandelion","y":8},{"id":"0:0","name":"Other materials","y":5,"color":"#ff0066"}]            }]
+            
+        });
+        
+        setTimeout(function() {
+            var tagsSelector = $('.value.tags');
+            var tags = tagsSelector.html();
+	    if (tags.length > 2) {
+            if(tags.length > 2) {
+                $.ajax({
+                    method: 'POST',
+                    data: { object_tags: tags },
+                    success: function(html) {
+                        tagsSelector.html( html );
+                    }
+                });
+            }
+	    }
+        },500);                                         
+    });
+</script>
+
+
+                        
+                        
+            
+                        
+            </div> <!-- /#product -->
+        
+            
+        <div class="tab-content model3d">
+            
+                        
+                        
+                        
+                <div class="banners" id="banners_8"><div class="banner text"><div class="wrap"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Blueprint lehe ülabanner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1540855427582260"
+     data-ad-slot="3519617437"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></div> <!-- /.banners -->
+<div id="model3dcontainer" style="width: 944px; height: 400px;">
+    <br /><br /><br /><br /><br />Generating model...
+</div>
+<div id="info">
+    (left click: forward, right click: backward, Movement: W, A, S, D, R, F, Toggle mouse tracking - C)
+</div>
+<div id="model3d-slider" class="dragdealer" style="margin-top: 10px;margin-bottom: 35px;">
+    <div id="slider-progress" class="slider-progress">
+    </div>
+    <div class="handle">
+        <div class="handle_label btn btn-default btn-sm">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Level            <span id="level3d_number">7</span>
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </div>
+    </div>
+</div>
+
+<style>
+    .handle {
+        border: 8px solid #C6C6C6;
+        height: 22px;
+        width: 22px;
+        border-radius: 11px;
+        margin-top: -6px;
+    }
+    .dragdealer {
+        height: 10px;
+        background-color: #777777;
+        border-radius: 5px;
+    }
+    .handle_label {
+        position: relative;
+        margin-top: 17px;
+        margin-left: -50px;
+        width: 100px;
+    }
+    .slider-progress {
+        width: 0%;
+        height: 100%;
+        background-color: #1f78dc;
+        border-radius: 5px;
+    }
+</style>
+
+<script src="/js/three.min.js"></script>
+<script src="/js/FirstPersonControls.js"></script>
+<!--<script src="/js/ImprovedNoise.js"></script>-->
+<script src="/js/Detector.js"></script>
+
+<script src="https://www.grabcraft.com/js/RenderObject/myRenderObject_6829.js"></script>
+
+<script>
+    var containerWidth = 944;
+    var containerHeight = 400;
+    var container;
+    var camera, controls, scene, renderer;
+    var mesh;
+
+    var previousCameraPosition = undefined;
+
+    var worldWidth = 10,
+            worldDepth = 10,
+            worldHalfWidth = worldWidth / 2,
+            worldHalfDepth = worldDepth / 2,
+            objectHeight = 1,
+            currentModelLevel = objectHeight;
+
+    var clock = new THREE.Clock();
+
+    function getNeighbour(arr, x, y, z, cube) {
+        if (arr[y] === undefined) {
+            return undefined;
+        }
+
+        if (arr[y][x] === undefined) {
+            return undefined;
+        }
+
+        if (arr[y][x][z] === undefined) {
+            return undefined;
+        }
+
+        if ((cube.transparent || arr[y][x][z].transparent) && arr[y][x][z].mat_id !== cube.mat_id) {
+            return undefined;
+        }
+
+        return arr[y][x][z];
+    }
+
+    var redrawModel = function() {
+        previousCameraPosition = new Object();
+        previousCameraPosition.x = camera.position.x;
+        previousCameraPosition.y = camera.position.y;
+        previousCameraPosition.z = camera.position.z;
+        previousCameraPosition.lat = controls.lat;
+        previousCameraPosition.lon = controls.lon;
+        previousCameraPosition.tracking = controls.mouseIgnore;
+        init();
+        animate();
+    }
+
+    $(document).on('tabsactivate', '.model3d', function(event, ui){        
+        drag3D = new Dragdealer('model3d-slider', {
+            steps: objectHeight,
+            snap: true,
+            animationCallback: levelChange,
+        });    
+        drag3D.setStep(currentModelLevel, 1);
+    });
+
+    var redrawTimer;
+
+    var levelChange = function(x, y) {
+        clearTimeout(redrawTimer);
+        if (typeof drag3D !== 'undefined') {
+            $("#slider-progress").css('width', Math.round(x*100) + '%');
+            var stepNumber = 1 + Math.round(x*(objectHeight-1));
+            $("#level3d_number").html(stepNumber);
+            currentModelLevel = stepNumber;
+            redrawTimer = setTimeout(function(){
+                redrawModel();
+            }, 200);            
+        }
+    }
+
+    var getDimensions = function() {
+        var maxY = 0;
+        var maxX = 0;
+        var maxZ = 0;
+
+        for (var cy in myRenderObject) {
+            if (parseInt(cy) > maxY) {
+                maxY = parseInt(cy);
+            }
+            for (var cx in myRenderObject[cy]) {
+                if (parseInt(cx) > maxX) {
+                    maxX = parseInt(cx);
+                }
+
+                for (var cz in myRenderObject[cy][cx]) {
+                    if (parseInt(cz) > maxZ) {
+                        maxZ = parseInt(cz);
+                    }
+                }
+            }
+        }
+
+        worldWidth = maxX;
+        worldDepth = maxZ;
+        objectHeight = maxY;
+        currentModelLevel = objectHeight;
+        worldHalfWidth = worldWidth / 2;
+        worldHalfDepth = worldDepth / 2;
+    };
+
+    $(document).ready(function () {
+        if (!Detector.webgl) {
+            Detector.addGetWebGLMessage();
+            document.getElementById('model3dcontainer').innerHTML = "";
+        }
+
+        getDimensions();
+        
+        init();
+        animate();        
+    });
+
+    function init() {
+        if (worldWidth <= 0 || worldDepth <= 0 || objectHeight <= 0) {
+            return;
+        }
+
+        container = document.getElementById('model3dcontainer');
+
+        camera = new THREE.PerspectiveCamera(60, containerWidth / containerHeight, 1, 20000);
+        if (previousCameraPosition === undefined) {
+            camera.position.set(0, objectHeight * 100, ((worldWidth > objectHeight) ? worldWidth : objectHeight) * -1.5 * 100);
+        } else {
+            camera.position.set(previousCameraPosition.x, previousCameraPosition.y, previousCameraPosition.z);
+        }
+        camera.lookAt(new THREE.Vector3(worldWidth * 100 / 2, objectHeight * 100 / 2, worldDepth * 100 / 2));
+
+        controls = new THREE.FirstPersonControls(camera, container);
+
+        controls.movementSpeed = 1000;
+        controls.lookSpeed = 0.125;
+        controls.lookVertical = true;
+
+        if (previousCameraPosition === undefined) {
+            controls.lon = 75;
+            controls.lat = -20;    
+        } else {
+            controls.lon = previousCameraPosition.lon;
+            controls.lat = previousCameraPosition.lat;
+            controls.mouseIgnore = previousCameraPosition.tracking;
+        }        
+
+        controls.viewHalfX = containerWidth / 2;
+        controls.viewHalfY = containerHeight / 2;
+
+        parentOffsetTop = $(container).parent().offset().top;
+        parentOffsetLeft = $(container).parent().offset().left;
+
+        scene = new THREE.Scene();
+
+        // sides
+
+        var matrix = new THREE.Matrix4();
+
+        var pxGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        pxGeometry.attributes.uv.array[ 1 ] = 0.5;
+        pxGeometry.attributes.uv.array[ 3 ] = 0.5;
+        pxGeometry.rotateY(-Math.PI / 2);
+        pxGeometry.translate(-50, 0, 0);
+
+        var nxGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        nxGeometry.attributes.uv.array[ 1 ] = 0.5;
+        nxGeometry.attributes.uv.array[ 3 ] = 0.5;
+        nxGeometry.rotateY(Math.PI / 2);
+        nxGeometry.translate(50, 0, 0);
+
+        var pyGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        pyGeometry.attributes.uv.array[ 5 ] = 0.5;
+        pyGeometry.attributes.uv.array[ 7 ] = 0.5;
+        pyGeometry.rotateX(Math.PI / 2);
+        pyGeometry.translate(0, -50, 0);
+
+        var nyGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        nyGeometry.attributes.uv.array[ 5 ] = 0.5;
+        nyGeometry.attributes.uv.array[ 7 ] = 0.5;
+        nyGeometry.rotateX(-Math.PI / 2); //?? may be need to change
+        nyGeometry.translate(0, 50, 0);
+
+        var pzGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        pzGeometry.attributes.uv.array[ 1 ] = 0.5;
+        pzGeometry.attributes.uv.array[ 3 ] = 0.5;
+        pzGeometry.rotateY(Math.PI);
+        pzGeometry.translate(0, 0, -50);
+
+        var nzGeometry = new THREE.PlaneBufferGeometry(100, 100);
+        nzGeometry.attributes.uv.array[ 1 ] = 0.5;
+        nzGeometry.attributes.uv.array[ 3 ] = 0.5;
+        nzGeometry.translate(0, 0, 50);
+
+        //
+
+        var materialGeometries = Array();
+        var materialCodes = Array();
+        var materialColors = Array();
+        var materialTextures = Array();
+        var materialTransparency = Array();
+
+        // BufferGeometry cannot be merged yet.
+    //              var tmpGeometry = new THREE.Geometry();
+        var pxTmpGeometry = new THREE.Geometry().fromBufferGeometry(pxGeometry);
+        var nxTmpGeometry = new THREE.Geometry().fromBufferGeometry(nxGeometry);
+        var pyTmpGeometry = new THREE.Geometry().fromBufferGeometry(pyGeometry);
+        var nyTmpGeometry = new THREE.Geometry().fromBufferGeometry(nyGeometry);
+        var pzTmpGeometry = new THREE.Geometry().fromBufferGeometry(pzGeometry);
+        var nzTmpGeometry = new THREE.Geometry().fromBufferGeometry(nzGeometry);
+
+        for (var y = 1; y <= currentModelLevel; y++) {
+            if (myRenderObject[y] === undefined) {
+                continue;
+            }
+            var level = myRenderObject[y];
+            for (var x = 1; x <= worldWidth; x++) {
+                if (level[x] === undefined) {
+                    continue;
+                }
+                var row = level[x];
+                for (var z = 1; z <= worldDepth; z++) {
+                    if (row[z] === undefined) {
+                        continue;
+                    }
+                    var currentCube = row[z];
+
+                    if (materialGeometries[currentCube.mat_id] === undefined) {
+                        materialGeometries[currentCube.mat_id] = new THREE.Geometry();
+                        materialCodes[currentCube.mat_id] = currentCube.rgb;
+                        materialColors[currentCube.mat_id] = currentCube.hex;
+                        materialTextures[currentCube.mat_id] = currentCube.file;
+                        if (currentCube.transparent) {
+                            materialTransparency[currentCube.mat_id] = currentCube.opacity;
+                        }
+                    }
+
+                    var tmpGeometry = materialGeometries[currentCube.mat_id];
+
+                    matrix.makeTranslation(
+                            currentCube.x * 100,
+                            currentCube.y * 100,
+                            currentCube.z * 100
+                            );
+
+                    var c_py = getNeighbour(myRenderObject, x, y - 1, z, currentCube);
+                    var c_ny = getNeighbour(myRenderObject, x, y + 1, z, currentCube);
+                    if (y == currentModelLevel) {
+                        c_ny = undefined;
+                    }
+                    var c_px = getNeighbour(myRenderObject, x - 1, y, z, currentCube);
+                    var c_nx = getNeighbour(myRenderObject, x + 1, y, z, currentCube);
+                    var c_pz = getNeighbour(myRenderObject, x, y, z - 1, currentCube);
+                    var c_nz = getNeighbour(myRenderObject, x, y, z + 1, currentCube);
+
+                    // merge y geometry
+                    if (undefined === c_py) {
+                        tmpGeometry.merge(pyTmpGeometry, matrix);
+                    }
+                    if (undefined === c_ny) {
+                        tmpGeometry.merge(nyTmpGeometry, matrix);
+                    }
+
+                    // merge x geometry
+                    if (undefined === c_px) {
+                        tmpGeometry.merge(pxTmpGeometry, matrix);
+                    }
+                    if (undefined === c_nx) {
+                        tmpGeometry.merge(nxTmpGeometry, matrix);
+                    }
+
+                    // merge z geometry
+                    if (undefined === c_pz) {
+                        tmpGeometry.merge(pzTmpGeometry, matrix);
+                    }
+                    if (undefined === c_nz) {
+                        tmpGeometry.merge(nzTmpGeometry, matrix);
+                    }
+                }
+            }
+        }
+
+
+
+        var matId;
+        for (matId in materialGeometries) {
+            if (matId != parseInt(matId)) {
+                continue;
+            }
+            var tmpGeometry = materialGeometries[matId];
+            var rgbColor = materialCodes[matId];
+
+            var geometry = new THREE.BufferGeometry().fromGeometry(tmpGeometry);
+            geometry.computeBoundingSphere();
+
+            var material = new THREE.MeshLambertMaterial({color: new THREE.Color("rgb(" + rgbColor[0] + "," + rgbColor[1] + "," + rgbColor[2] + ")")});
+
+            if (materialTextures[matId] !== '' && materialTextures[matId] !== null) {
+                var texture = THREE.ImageUtils.loadTexture('/files/products/' + materialTextures[matId]);
+                material = new THREE.MeshLambertMaterial( { map: texture} );
+            }
+
+            if (undefined !== materialTransparency[matId]) {
+                material.transparent = true;
+                material.opacity = materialTransparency[matId];
+            }
+
+            var mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+        }
+
+        var ambientLight = new THREE.AmbientLight(0xcccccc);
+        scene.add(ambientLight);
+
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(-1, 1, -0.5).normalize();
+        scene.add(directionalLight);
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setClearColor(0xbfd1e5);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(containerWidth, containerHeight);
+
+        container.innerHTML = "";
+
+        container.appendChild(renderer.domElement);
+
+        //
+
+        window.addEventListener('resize', onWindowResize, false);
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = containerWidth / containerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(containerWidth, containerHeight);
+
+        controls.handleResize();
+
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+    }
+
+    function render() {
+        controls.update(clock.getDelta());
+        renderer.render(scene, camera);
+    }
+
+</script>            
+            
+                        
+            </div> <!-- /#product -->
+        
+            
+        <div class="tab-content blueprints">
+            
+                        
+                        
+            
+                        
+                
+<style>
+    div.blueprint-container {
+        position: relative;
+    }
+    div.blueprint-container #transparentMap {
+        border: medium none;
+        position: absolute;
+        z-index: 30;
+        left: 0px;
+    }
+</style>
+<div style="display:inline-block;">
+    <div class="blueprint-container">
+                <div class="compass-container" style="">
+            <span id="horizontal-dir" style="">
+                <span id="east" class="pull-right">W</span>
+                <span id="west" class="pull-left">E</span>
+            </span>
+            <span id="vertical-dir" style="">
+                <span id="north" class="pull-left">S</span>
+                <span id="south" class="pull-right">N</span>
+            </span>
+        </div>
+        <div id="vertical-ruler">
+                <span class="block_count">15 Blocks</span>
+        </div>
+        <div id="horizontal-ruler">
+                <span class="block_count">9 Blocks</span>
+        </div>
+        
+                <img src="/images/transparent.gif" usemap="#layerMap" id="transparentMap" />
+        <img src="https://bprints.grabcraft.com/6829/Y/combined/1.png" id="current_image" />
+        <map name="layerMap" id="layerMap">
+
+        </map>
+    </div>
+		<div id="slider-container">
+			<h3>Drag slider < Left | Right > to see different levels:</h3>
+			<div id="blueprint-slider" class="dragdealer" style="margin-top: 10px;margin-bottom: 35px;">
+				<div id="blueprint-slider-progress" class="slider-progress">
+			</div>
+			<div class="handle">
+				<div class="handle_label btn btn-default btn-sm">
+					<i class="glyphicon glyphicon-chevron-left"></i>
+					Level					<span id="level_number">1</span>
+					<i class="glyphicon glyphicon-chevron-right"></i>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <a href="#general" class="button more-info">Back to Object view</a>
+</div>
+
+
+<script>
+
+$(function () {
+    var dimY = 14;
+    var dimX = 9;
+    var dimZ = 15;
+    heightBlocks = dimY+dimZ;
+    widthBlocks = dimY+dimX;
+        
+    $('#current_image').load(function(){
+        $("#transparentMap").width($(this).width()).height($(this).height());
+        resizeRulers();
+        setTimeout(function() {
+            resizeCompass();
+            compassPlacement();
+        }, 500);
+    });
+
+    $(document).on('mouseenter', '.material', function () {
+        box = $(this)[0];
+        var relatedBoxes = $(this).data('related');
+
+        highlightRect(box);
+        if (relatedBoxes) {
+            var classes = relatedBoxes.split(',');
+            $.each(classes, function(key, val){
+                var relBox = $("."+val)[0];
+                if (relBox) {
+                    highlightRect(relBox);
+                }
+            });
+        }
+    });
+    $(document).on('mouseout', '.material', function(){
+        $('.hover-box').remove();
+    });
+    
+    function resizeCompass() {
+        if (dimY > 1) {
+            width = $("#current_image").width()/widthBlocks;
+            size = $("#transparentMap").width() - width*dimX - 40;
+        }
+        else {
+            width = $("#current_image").width()/(dimX+dimZ);
+            size = $("#transparentMap").width() - width*dimX - 80;
+        }
+        console.log("Compass size: " + size);
+        //Downscale compass on small screens or when surrounding space is less than 180px
+        if ($("#transparentMap").width() < 400 || size < 180) {
+            $(".compass-container").width(size).height(size);
+        }
+        if (size > 350) {
+            $(".compass-container").width(100).height(100);
+        }
+    }    
+    
+    function resizeRulers() {        
+        height = $("#current_image").height()/heightBlocks;
+        width = $("#current_image").width()/widthBlocks;
+        $("#vertical-ruler").height(height*dimZ);
+        $("#horizontal-ruler").width(width*dimX);
+    }
+    
+    function compassPlacement() {
+        if ($("#transparentMap").width() !== $(".blueprint-container").width()) {
+            realign = $(".blueprint-container").width() - $("#transparentMap").width();
+            $(".compass-container").css("right", "+=" + realign);
+            console.log("Compass replaced");
+            resizeCompass();
+        }
+    }
+    
+    $(window).resize(function() {        
+        resizeCompass(); 
+        resizeRulers();
+    });
+});
+
+var drag = undefined;
+var base_url = "https://bprints.grabcraft.com/6829/Y/combined/";
+var current_position = 1;
+var totalPositions = 14;
+
+$(document).on('tabsactivate', '.blueprints', function(event, ui){
+    $("#current_image").trigger('load');
+    drag = new Dragdealer('blueprint-slider', {
+        steps: 14,
+        snap: true,
+        animationCallback: animationDone,
+    });    
+    drag.setStep(current_position, 1);
+    loadLayerMap(current_position);
+});
+
+var timeoutFunction;
+
+var animationDone = function(x, y) {
+    clearTimeout(timeoutFunction);
+    
+    if (typeof drag !== 'undefined') {
+        var stepNumber = 1 + Math.round(x*(totalPositions-1));
+        $("#level_number").html(stepNumber);                
+        $("#blueprint-slider-progress").css('width', Math.round(x*100) + '%');
+        current_position = stepNumber;
+
+        timeoutFunction = setTimeout(function(){
+            $("#current_image").attr('src', base_url + stepNumber + ".png");
+            loadLayerMap(stepNumber);
+        }, 200);
+    }
+        
+}
+
+function loadLayerMap(layerNr) {
+    if (layerMap[layerNr]) {
+        var map = layerMap[layerNr];
+        if (map.length) {
+            $("#layerMap").html('');
+            $.each(map, function(key, elem){
+                var related = Array();
+                if (elem.y1) {
+                    related.push('top_' + key);
+                    var topElem = '<area shape="rect" coords="'+elem.x+','+elem.y1+','+(elem.x+elem.s)+','+(elem.y1+elem.s)+'" title="'+elem.h+'" class="material top_'+key+'" data-related="side_'+key+',data_'+key+'" href="javascript:;">';
+                    $("#layerMap").append(topElem);
+                }
+                if (elem.x2) {
+                    related.push('side_' + key);
+                    var sideElem = '<area shape="rect" coords="'+elem.x2+','+elem.y+','+(elem.x2+elem.s)+','+(elem.y+elem.s)+'" title="'+elem.h+'" class="material side_'+key+'" data-related="top_'+key+',data_'+key+'" href="javascript:;">';
+                    $("#layerMap").append(sideElem);
+                }
+
+                var mapElement = '<area shape="rect" coords="'+elem.x+','+elem.y+','+(elem.x+elem.s)+','+(elem.y+elem.s)+'" title="'+elem.h+'" data-related="'+related.join()+'" class="data_'+key+' material" href="javascript:;">';
+                $("#layerMap").append(mapElement);
+            });
+        }
+    }
+}
+
+function highlightRect(rect) {
+    var coords = rect.coords.split(',');
+                
+    var left = coords[0];
+    var top = coords[1];
+    var right = coords[2];
+    var bottom = coords[3];
+    var width = right-left;                    
+    var height = bottom-top;
+    
+    $(".blueprint-container").append('<div class="hover-box" style="border: 1px solid red; z-index: 29; position:absolute; top: '+top+'px;left: '+left+'px;height:'+height+'px;width:'+width+'px;"></div>');                    
+}
+
+</script>
+
+<script src="https://www.grabcraft.com/js/LayerMap/LayerMap_6514.js"></script>            
+                        
+            </div> <!-- /#product -->
+        
+            
+        <div class="tab-content comments">
+            
+                        
+                        
+                <h2>Comments</h2>
+
+<div id="add-comment-feedback"></div>
+
+<div id="comments-box">
+
+    </div>
+
+
+<div id="comment-form-wrapper">    
+    <form method="POST">
+		<input type="hidden" name="referer" value="" />		
+        <input type="text" name="name" value="" placeholder="Name" />
+        <textarea name="comment" placeholder="Comment"></textarea>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+</div>
+
+<script>
+
+$(function() {
+    
+
+    $('.product-tab').click(function() {
+        setTimeout(function() {
+            syncHeight('.syncHeight');
+        },400);
+    });
+        
+    $('#comment-form-wrapper form').submit(function() {
+        var comment_author = $('input[name=name]');
+        var comment_text = $('textarea[name=comment]');
+		var referer = $('input[name=referer]');
+
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LfO2N0UAAAAAGyurHQ5MDLo2bAkRycWgW1Uivh-', {action: 'comment'}).then(function(token) {
+                $.ajax({
+                    method: 'POST',
+                    data: { 
+                        model_id: "6514", 
+                        model_name: "Rustic Medieval Town House 11",
+                        comment_author: comment_author.val(),
+                        comment_text: comment_text.val(),
+                        comment_captcha: token,
+                        referer: referer.val()
+                    },
+                    success: function(html) {
+                        var response = html;
+                        var dateTime = new Date(); 
+                        var currentTime = dateTime.getFullYear() + '-' + (dateTime.getMonth() + 1) + '-' + dateTime.getDate() + ' ' + dateTime.getHours() + ':' + dateTime.getMinutes() + ':' + dateTime.getSeconds();
+                        
+                        syncHeight('.syncHeight');
+                        
+                        $("html, body").animate({ scrollTop: 0 }, "slow");
+                        
+                        var saveFeedback = $('#add-comment-feedback');
+                        var content = '';
+                        
+                        if(response.request_response == 'right') {
+                            content = 'Comment successfully saved';
+                            const author_element = $('<span class="author"></span>').text(comment_author.val());
+                            const content_element = $('<p class="comment"></p>').text(comment_text.val());
+                            $( '#comments-box' ).prepend('<div class="comment-box"><div class="comment-info">' + author_element.get(0).outerHTML + '<span class="created">' + currentTime + '</span></div>' + content_element.get(0).outerHTML + '</div></div>');
+                            
+                            comment_author.val('');
+                            comment_text.val('');
+                        } else {
+                            console.log(response.request_response + ' : ' + 'right');
+                            content = response.error;
+                        }
+                        
+                        syncHeight('.syncHeight');
+                        
+                        saveFeedback.html(content);
+                        saveFeedback.fadeIn(700);
+                        setTimeout(function() {
+                            saveFeedback.fadeOut(700);
+                            location.reload();
+                        },4500);
+                        
+                    }
+                });
+            });
+        });
+        
+        return false;
+    });
+});
+
+</script>            
+                        
+            
+                        
+            </div> <!-- /#product -->
+        
+        
+			<!-- USED MEMORY TO RENDER: 4.73MB -->
+    </div>
+        
+</div>
+<div id="ajax_response"></div>
+
+<script>
+    $(document).ready(function() {
+        $(window).on('hashchange',function(){ 
+            chooseTabToShow();
+            syncHeight('.syncHeight');
+        });
+        
+        chooseTabToShow();
+        
+        $('#content-title').insertBefore("#tab-contents");
+        
+        $('.product-tab').click(function() {
+            
+            var showTab = $(this).attr('id');
+            
+            window.location.hash = showTab;
+            
+            $('.product-tab').each(function() {
+                if($(this).attr('id') == showTab) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+            
+            $('.tab-content').each(function() {
+                if( ! $(this).hasClass(showTab)) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+            
+        });
+        
+        $.ajax({
+            method: 'POST',
+            url: 'ajax/Shop/content/38.68.124.161/6514',
+            //dataType: 'json',
+            data: { 
+                user_ip: '38.68.124.161',
+                product_id: 6514            },
+            success: function(html) {
+                console.log(html);
+            }
+        });
+    });
+
+</script></div>
+	   
+               
+	</div>
+	
+</div>                        
+                    </div>
+                </div>
+			
+			</div> <!-- /#main -->	
+			
+            <div id="signup_modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <p class="close_modal">Close</p>
+            </div>
+            
+            <div class="modal-body">
+                <h2>Attention! Some serious Minecraft Blueprints around here!</h2>
+                <p class="modal-intro">Sign up for the weekly newsletter to be the first to know about the most recent and dangerous floorplans!</p>
+                
+                <input type="text" name="modal_email" placeholder="E-mail" />
+                <input type="text" name="modal_name" placeholder="Name" />
+                <input type="submit" name="submit" onclick="submitModalNewsletterForm();" value="Get Ideas!" />
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+        $(function() {
+            var cookieValue     = $.cookie("has_seen_signup_modal");
+            var cookieSessionId = $.cookie("session_id");
+            var sessionId       = $.cookie("PHPSESSID");
+            
+            console.log(sessionId);
+            
+            if(cookieValue != "1") {
+                if(sessionId != cookieSessionId) {
+                    setTimeout(function() {
+                        $('#signup_modal').modal('show');
+                    },20000);
+                }
+            }
+                        
+            $.cookie("session_id", sessionId);
+            
+            $('.close_modal').click(function() {
+                $('#signup_modal').modal('hide');
+            });
+        });
+    
+
+</script>            
+			<div id="footer">
+                
+                <div id="registration-feedback"></div>
+                
+                <div class="container">
+                    
+                    <div class="row">
+                        
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-content-blocks"><div class="links-block">
+	<h3 class="block-title">Quicklinks</h3>
+	
+	    
+    <ul>
+    
+                    
+            <li><a href="/blog/how-to-build-houses-in-minecraft-using-blueprints/id/12" >How to use GrabCraft</a></li>
+            
+                
+    </ul>
+    
+    	
+</div><div class="links-block">
+	<h3 class="block-title">Legal</h3>
+	
+	    
+    <ul>
+    
+                    
+            <li><a href="/terms-of-use-privacy-policy/" >Terms of Service and Privacy Policy</a></li>
+            
+                
+    </ul>
+    
+    	
+</div></div>                        </div>
+                        
+                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                            
+                            <div id="news-letter">
+                                
+                                <form id="order-newsletter" method="post">
+                                    <h3 class="newsletter-title">Sign up for newsletter</h3>
+                                    <input type="text" name="email" placeholder="E-mail" />
+                                    <input type="text" name="name" placeholder="Name" />
+                                    <input type="submit" name="submit" value="Get Ideas!" />
+                                </form>
+                                
+                            </div>
+                            
+                        </div>
+                
+                    </div>
+                    
+                    <div class="default-wrapper">
+                        <div id="law_text">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG.</div>
+                    </div>
+                
+                </div>
+                
+			</div> <!-- /#footer -->
+		
+		</div> <!-- /#wrapper -->
+	
+	</div> <!-- /#container -->
+
+</div> <!-- /#page -->
+<div id="background_footer"></div><script>
+		
+	windowSizeInfo();	
+	$(window).resize(function(){
+		windowSizeInfo();
+	});
+	
+	function windowSizeInfo()
+	{
+		var w = window.innerWidth;
+		var screen_type;
+		
+		if(w >= 1200) { screen_type = 'lg'; }
+		else if(w >= 992) { screen_type = 'md'; }
+		else if(w >= 768) { screen_type = 'sm'; }
+		else if(w >= 480) { screen_type = 'xs'; }
+		else { screen_type = 'xxs'; }		
+			
+		$('body').removeClass('screen-lg screen-md screen-sm screen-xs screen-xxs').addClass('screen-' + screen_type);		
+	}
+    
+    $(window).scroll(function() {
+        if($(window).scrollTop() > 0) {
+            $('#header').addClass('sticky');
+            $('#header').removeClass('usual');
+        } else {
+            $('#header').removeClass('sticky');
+            $('#header').addClass('usual');
+            
+            
+        }
+    })
+    
+    $(function() {
+        $('i.fa-bars.toggle-menu').click(function() {
+            if($(this).hasClass('open')) {
+                $('#main-menu-wrapper').hide(400);
+                $(this).removeClass('open');
+                $(this).addClass('closed');
+            } else {
+                $('#main-menu-wrapper').show(400);
+                $(this).addClass('open');
+                $(this).removeClass('closed');
+            }
+        })
+    });
+	
+</script>
+
+<script type="text/javascript" async src="https://btloader.com/tag?o=5698917485248512&upapi=true"></script>
+
+
+
+</body>
+
+</html>

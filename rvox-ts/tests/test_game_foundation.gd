@@ -17,7 +17,16 @@ func test_world_generation_is_deterministic() -> void:
 	var first := generator.generate_chunk(Vector2i.ZERO, config)
 	var second := generator.generate_chunk(Vector2i.ZERO, config)
 	assert_eq(first.surface_heightmap, second.surface_heightmap, "Same seed must produce the same heights")
-	assert_eq(first.blocks, second.blocks, "Same seed must produce the same block volume")
+	assert_eq(first.edits, second.edits, "Same seed must produce the same block edits")
+	# The subsurface is procedural-on-demand now (no dense volume), so
+	# determinism there means get_block resolves identically per cell.
+	var volume_matches := true
+	for x in config.chunk_size:
+		for z in config.chunk_size:
+			for y in config.max_height:
+				if first.get_block(x, y, z) != second.get_block(x, y, z):
+					volume_matches = false
+	assert_true(volume_matches, "Same seed must resolve the same block volume")
 
 
 func test_forge_blueprint_loads_and_validates() -> void:

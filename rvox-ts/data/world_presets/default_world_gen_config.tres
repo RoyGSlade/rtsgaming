@@ -6,7 +6,7 @@
 script = ExtResource("1")
 world_seed = 1337
 world_size = Vector2i(256, 256)
-chunk_size = 128
+chunk_size = 256
 max_height = 48
 water_level = 17
 height_scale = 72.0
@@ -28,4 +28,4 @@ wildlife_density = 0.05
 generate_trees = true
 generate_ores = true
 generate_water = true
-river_count = 3
+river_count = 6

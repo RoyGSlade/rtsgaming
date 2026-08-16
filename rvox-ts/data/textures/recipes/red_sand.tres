@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"red_sand"
+resolution = 128
+pattern = 1
+base_color = Color(0.78, 0.46, 0.28, 1)
+accent_color = Color(0.66, 0.36, 0.22, 1)
+accent_density = 0.22
+noise_seed = 313
+contrast = 1.0

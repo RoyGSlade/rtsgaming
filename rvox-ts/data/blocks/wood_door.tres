@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wood_door"
+display_name = "Wooden Door"
+category = &"construction"
+solid = false
+transparent = true
+walkable = true
+buildable = true
+diggable = true
+hardness = 1.0
+flammability = 0.8
+path_cost = 1.2
+shape_id = &"door"
+rule_tags = PackedStringArray("flammable")
+construction_item_id = &"wood_door"
+construction_item_count = 1
+durability = 60.0
+harvest_resource_id = &"wood"
+harvest_amount = 2
+tool_required = &"axe"
+material_id = &"wood_planks"
+albedo_color = Color(0.45, 0.3, 0.16, 1)
+texture_top = &"wood_planks"
+texture_bottom = &"wood_planks"
+texture_side = &"wood_planks"

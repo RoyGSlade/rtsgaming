@@ -1,0 +1,338 @@
+{
+  "id": "keep",
+  "display_name": "Keep",
+  "category": "military",
+  "era": "village",
+  "modules": [
+    {
+      "id": "deep_footing",
+      "block_id": "deep_stone",
+      "roles": [
+        "foundation"
+      ],
+      "layer": "foundation",
+      "build_stage": "foundation",
+      "weight": 1.0,
+      "sockets_h": [
+        "footing"
+      ]
+    },
+    {
+      "id": "brick_post",
+      "block_id": "stone_bricks",
+      "roles": [
+        "corner"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 1.0,
+      "sockets_up": [
+        "post"
+      ],
+      "sockets_down": [
+        "post"
+      ],
+      "tags": [
+        "frame"
+      ]
+    },
+    {
+      "id": "brick_wall",
+      "block_id": "stone_bricks",
+      "roles": [
+        "wall"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 5.0,
+      "sockets_h": [
+        "wall"
+      ],
+      "sockets_up": [
+        "wall"
+      ],
+      "sockets_down": [
+        "wall"
+      ]
+    },
+    {
+      "id": "rough_wall",
+      "block_id": "stone",
+      "roles": [
+        "wall"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 3.0,
+      "sockets_h": [
+        "wall"
+      ],
+      "sockets_up": [
+        "wall"
+      ],
+      "sockets_down": [
+        "wall"
+      ]
+    },
+    {
+      "id": "arrow_slit",
+      "block_id": "air",
+      "roles": [
+        "wall"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 0.8,
+      "min_y": 2,
+      "sockets_h": [
+        "wall"
+      ],
+      "sockets_up": [
+        "wall"
+      ],
+      "sockets_down": [
+        "wall"
+      ],
+      "forbid_h": [
+        "arrow_slit"
+      ],
+      "forbid_v": [
+        "arrow_slit"
+      ],
+      "tags": [
+        "window"
+      ]
+    },
+    {
+      "id": "stone_floor",
+      "block_id": "stone",
+      "roles": [
+        "floor"
+      ],
+      "layer": "floor",
+      "build_stage": "floor",
+      "weight": 1.0,
+      "sockets_h": [
+        "floor"
+      ]
+    },
+    {
+      "id": "interior_air",
+      "block_id": "air",
+      "roles": [
+        "interior"
+      ],
+      "layer": "interior",
+      "build_stage": "wall",
+      "weight": 1.0,
+      "sockets_h": [
+        "air"
+      ],
+      "sockets_up": [
+        "air"
+      ],
+      "sockets_down": [
+        "air"
+      ],
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "id": "stone_deck",
+      "block_id": "stone",
+      "roles": [
+        "roof"
+      ],
+      "layer": "roof",
+      "build_stage": "roof",
+      "weight": 1.0,
+      "sockets_h": [
+        "roof"
+      ],
+      "sockets_up": [
+        "roof"
+      ],
+      "sockets_down": [
+        "roof"
+      ]
+    },
+    {
+      "id": "merlon",
+      "block_id": "stone_bricks",
+      "roles": [
+        "parapet"
+      ],
+      "layer": "roof",
+      "build_stage": "roof",
+      "weight": 1.0,
+      "sockets_h": [
+        "parapet"
+      ],
+      "forbid_h": [
+        "merlon"
+      ],
+      "tags": [
+        "battlement"
+      ]
+    },
+    {
+      "id": "crenel_gap",
+      "block_id": "air",
+      "roles": [
+        "parapet"
+      ],
+      "layer": "roof",
+      "build_stage": "roof",
+      "weight": 1.0,
+      "sockets_h": [
+        "parapet"
+      ],
+      "forbid_h": [
+        "crenel_gap"
+      ],
+      "tags": [
+        "battlement"
+      ]
+    },
+    {
+      "id": "support_column",
+      "block_id": "stone_bricks",
+      "roles": [
+        "column"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 1.0,
+      "sockets_up": [
+        "column"
+      ],
+      "sockets_down": [
+        "column"
+      ],
+      "tags": [
+        "support"
+      ]
+    }
+  ],
+  "tiers": [
+    {
+      "tier": 1,
+      "name": "Watchpost",
+      "size": {
+        "width": [
+          5,
+          5
+        ],
+        "depth": [
+          5,
+          5
+        ],
+        "wall_height": [
+          4,
+          4
+        ]
+      },
+      "roof": "parapet",
+      "chimney": false,
+      "health": 600,
+      "workers_required": 1,
+      "modules": [
+        "deep_footing",
+        "brick_post",
+        "brick_wall",
+        "stone_floor",
+        "interior_air",
+        "stone_deck",
+        "merlon",
+        "crenel_gap"
+      ],
+      "lighting": {
+        "wall_torch": "torch",
+        "spacing": 4
+      }
+    },
+    {
+      "tier": 2,
+      "name": "Tower Keep",
+      "size": {
+        "width": [
+          7,
+          8
+        ],
+        "depth": [
+          7,
+          8
+        ],
+        "wall_height": [
+          6,
+          7
+        ]
+      },
+      "roof": "parapet",
+      "chimney": false,
+      "health": 1200,
+      "workers_required": 2,
+      "modules": [
+        "deep_footing",
+        "brick_post",
+        "brick_wall",
+        "rough_wall",
+        "arrow_slit",
+        "stone_floor",
+        "interior_air",
+        "stone_deck",
+        "merlon",
+        "crenel_gap",
+        "support_column"
+      ],
+      "lighting": {
+        "wall_torch": "torch",
+        "spacing": 4,
+        "entrance": "lantern"
+      },
+      "stories": 2
+    },
+    {
+      "tier": 3,
+      "name": "Castle Keep",
+      "size": {
+        "width": [
+          12,
+          15
+        ],
+        "depth": [
+          12,
+          15
+        ],
+        "wall_height": [
+          8,
+          9
+        ]
+      },
+      "roof": "parapet",
+      "chimney": false,
+      "health": 2500,
+      "workers_required": 4,
+      "modules": [
+        "deep_footing",
+        "brick_post",
+        "brick_wall",
+        "rough_wall",
+        "arrow_slit",
+        "stone_floor",
+        "interior_air",
+        "stone_deck",
+        "merlon",
+        "crenel_gap",
+        "support_column"
+      ],
+      "lighting": {
+        "wall_torch": "torch",
+        "spacing": 5,
+        "entrance": "lantern"
+      },
+      "stories": 2
+    }
+  ]
+}

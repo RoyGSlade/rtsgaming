@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pine_planks"
+display_name = "Pine Planks"
+category = &"construction"
+solid = true
+transparent = false
+buildable = true
+diggable = true
+hardness = 1.1
+flammability = 0.85
+path_cost = 999.0
+harvest_resource_id = &"wood"
+harvest_amount = 1
+tool_required = &"axe"
+material_id = &"pine_planks"
+albedo_color = Color(0.58, 0.42, 0.26, 1)
+texture_top = &"pine_planks"
+texture_bottom = &"pine_planks"
+texture_side = &"pine_planks"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"obsidian"
+resolution = 128
+pattern = 5
+base_color = Color(0.12, 0.1, 0.17, 1)
+accent_color = Color(0.28, 0.22, 0.4, 1)
+accent_density = 0.18
+noise_seed = 310
+contrast = 1.1

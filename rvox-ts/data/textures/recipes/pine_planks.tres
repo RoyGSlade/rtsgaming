@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"pine_planks"
+resolution = 128
+pattern = 4
+base_color = Color(0.58, 0.42, 0.26, 1)
+accent_color = Color(0.45, 0.31, 0.18, 1)
+accent_density = 0.35
+noise_seed = 325
+contrast = 1.0

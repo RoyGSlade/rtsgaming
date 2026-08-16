@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"wheat"
+display_name = "Wheat"
+category = &"produce"
+solid = false
+transparent = true
+walkable = true
+buildable = false
+diggable = true
+hardness = 0.15
+fertility = 0.3
+path_cost = 1.0
+harvest_resource_id = &"wheat"
+harvest_amount = 1
+tool_required = &""
+material_id = &"wheat"
+albedo_color = Color(0.82, 0.68, 0.28, 1)
+texture_top = &"wheat"
+texture_bottom = &"wheat"
+texture_side = &"wheat"

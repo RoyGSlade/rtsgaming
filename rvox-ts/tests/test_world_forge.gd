@@ -154,6 +154,116 @@ func test_shell_and_box_build_as_single_undoable_actions() -> void:
 	assert_eq(document.blocks.size(), 27, "Filled box should include its center")
 
 
+func test_mirror_x_places_a_reflected_copy_with_mirrored_rotation() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	var document: ForgeDocument = editor.get("_document")
+	editor.set("_mirror_mode", "x")
+	editor.set("_mirror_x", 0)
+	editor.set("_brush_rotation", 1)
+	editor.set("_place_kind", "block")
+	editor.call("_place_at", Vector3i(3, 0, 2))
+	assert_eq(document.blocks.size(), 2, "Mirror X should place the block and one reflected copy")
+	assert_true(document.has_block(Vector3i(3, 0, 2)))
+	assert_true(document.has_block(Vector3i(-3, 0, 2)), "Reflected copy should land at 2*mirror_x - x")
+	assert_eq(document.get_block(Vector3i(3, 0, 2)).get("rotation_steps"), 1)
+	assert_eq(document.get_block(Vector3i(-3, 0, 2)).get("rotation_steps"), 3, "Flipping X maps rotation r -> (4 - r) & 3")
+	editor.call("_undo")
+	assert_eq(document.blocks.size(), 0, "Both copies should be one undoable transaction")
+
+
+func test_mirror_rotation_mapping_per_axis() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	assert_eq(editor.call("_mirrored_block_data", {"rotation_steps": 0}, false, true).get("rotation_steps"), 2, "Flipping Z maps r=0 (facing +Z) to r=2 (facing -Z)")
+	assert_eq(editor.call("_mirrored_block_data", {"rotation_steps": 1}, false, true).get("rotation_steps"), 1, "A shape facing along X is unchanged by a Z flip")
+	assert_eq(editor.call("_mirrored_block_data", {"rotation_steps": 1}, true, true).get("rotation_steps"), 3, "Flipping both axes is a half turn")
+
+
+func test_mirror_cell_on_the_plane_places_once() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	editor.set("_mirror_mode", "x")
+	editor.set("_mirror_x", 0)
+	var cells: Array = editor.call("_mirror_cells", Vector3i(0, 0, 5))
+	assert_eq(cells.size(), 1, "A cell on the mirror plane maps onto itself and must not duplicate")
+	editor.set("_mirror_mode", "xz")
+	var quad: Array = editor.call("_mirror_cells", Vector3i(3, 0, 4))
+	assert_eq(quad.size(), 4, "X+Z mirror expands an off-plane cell into four copies")
+
+
+func test_mirror_applies_to_two_point_tools_as_one_transaction() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	var document: ForgeDocument = editor.get("_document")
+	editor.set("_mirror_mode", "z")
+	editor.set("_mirror_z", 0)
+	editor.set("_tool", "fill")
+	editor.call("_handle_two_point_tool", Vector3i(1, 0, 1))
+	editor.call("_handle_two_point_tool", Vector3i(2, 0, 2))
+	assert_eq(document.blocks.size(), 8, "A 2x2 fill plus its Z mirror is 8 blocks")
+	assert_true(document.has_block(Vector3i(1, 0, -1)), "Mirrored fill should land at 2*mirror_z - z")
+	editor.call("_undo")
+	assert_eq(document.blocks.size(), 0, "Pattern and mirror should undo together")
+
+
+func test_tool_pattern_cells_cover_every_two_point_tool() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	assert_eq((editor.call("_tool_pattern_cells", "line", Vector3i.ZERO, Vector3i(2, 2, 2)) as Array).size(), 3)
+	assert_eq((editor.call("_tool_pattern_cells", "fill", Vector3i.ZERO, Vector3i(2, 0, 2)) as Array).size(), 9)
+	assert_eq((editor.call("_tool_pattern_cells", "box", Vector3i.ZERO, Vector3i(2, 2, 2)) as Array).size(), 27)
+	assert_eq((editor.call("_tool_pattern_cells", "shell", Vector3i.ZERO, Vector3i(2, 2, 2)) as Array).size(), 26)
+
+
+func test_two_point_preview_ghosts_every_cell_a_click_would_place() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	editor.set("_tool", "box")
+	editor.set("_anchor_cell", Vector3i.ZERO)
+	editor.call("_update_two_point_preview", Vector3i(2, 2, 2))
+	var hover: Node3D = editor.get("_hover_mesh")
+	var preview: MultiMeshInstance3D = null
+	for child: Node in hover.get_children():
+		if child is MultiMeshInstance3D:
+			preview = child
+	assert_true(preview != null, "Two-point preview should build a MultiMesh ghost")
+	if preview != null:
+		assert_eq(preview.multimesh.instance_count, 27, "Preview should ghost exactly the cells the box tool would place")
+
+
+func test_connected_cells_helper_respects_its_preview_limit() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	var document: ForgeDocument = editor.get("_document")
+	for x: int in range(6):
+		document.set_block(Vector3i(x, 0, 0), {"block_id": "stone", "shape_id": "cube"})
+	assert_eq((editor.call("_connected_cells", Vector3i.ZERO, 3) as Array).size(), 3, "Preview flood fill should stop at its cap")
+	assert_eq((editor.call("_connected_cells", Vector3i.ZERO) as Array).size(), 6, "Uncapped flood fill should cover the run")
+
+
+func test_block_render_material_resolves_per_block_and_caches() -> void:
+	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
+	var editor: Control = track(script.new()) as Control
+	editor.setup(null)
+	var info: Dictionary = editor.get("_block_texture_info")
+	assert_true(info.has(&"stone"), "Palette load should capture texture info per block")
+	assert_eq(str((info[&"stone"] as Dictionary).get("layer")), "stone")
+	assert_eq(str((info[&"grass"] as Dictionary).get("layer")), "grass_top", "Grass should render with its top layer, not the dirt side band")
+	var first: StandardMaterial3D = editor.call("_block_render_material", &"stone", false)
+	assert_true(first != null)
+	assert_eq(editor.call("_block_render_material", &"stone", false), first, "Materials should be cached per block+selection state")
+	var selected: StandardMaterial3D = editor.call("_block_render_material", &"stone", true)
+	assert_ne(selected, first, "Selected state needs its own tinted material")
+
+
 func test_connected_selection_crosses_mixed_structural_materials() -> void:
 	var script := load("res://addons/world_forge/world_forge_main.gd") as Script
 	var editor: Control = track(script.new()) as Control
@@ -260,10 +370,10 @@ func test_part_registry_loads_starter_parts_with_valid_material_and_sockets() ->
 func test_shape_registry_loads_starter_shape_set_in_palette_order() -> void:
 	var registry: ShapeRegistry = track(ShapeRegistryScript.new()) as ShapeRegistry
 	registry.load_shapes()
-	var expected: Array[StringName] = [&"cube", &"slab", &"slab_top", &"stair", &"fence", &"pane", &"plate"]
+	var expected: Array[StringName] = [&"cube", &"slab", &"slab_top", &"stair", &"stair_top", &"fence", &"pane", &"plate", &"door", &"torch", &"lantern", &"brazier"]
 	for id: StringName in expected:
 		assert_true(registry.has_shape(id), "Missing starter shape: %s" % id)
-	assert_eq(registry.list_ids(), expected, "Shape palette order should match the original hardcoded array")
+	assert_eq(registry.list_ids(), expected, "Shape palette order should follow sort_order (starter set, then light fixtures)")
 	var stair: BlockShapeProfile = registry.get_shape(&"stair")
 	assert_true(stair.supports_rotation, "Stairs should still be marked rotatable")
 
@@ -306,7 +416,7 @@ func test_editor_catalogs_load_from_registries_and_preserve_dict_shape() -> void
 	var shapes: Array = editor.get("_shapes")
 	var components: Array = editor.get("_components")
 	var markers: Array = editor.get("_markers")
-	assert_eq(shapes.size(), 7)
+	assert_eq(shapes.size(), 12)
 	assert_eq(components.size(), 9)
 	assert_eq(markers.size(), 7)
 	var firebox: Dictionary = editor.call("_find_definition", components, "forge_firebox")

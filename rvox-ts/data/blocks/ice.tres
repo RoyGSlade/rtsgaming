@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"ice"
+display_name = "Ice"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+diggable = true
+hardness = 0.8
+path_cost = 1.6
+harvest_resource_id = &"ice"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"ice"
+albedo_color = Color(0.72, 0.84, 0.94, 1)
+texture_top = &"ice"
+texture_bottom = &"ice"
+texture_side = &"ice"

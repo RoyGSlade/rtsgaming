@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"birch_planks"
+display_name = "Birch Planks"
+category = &"construction"
+solid = true
+transparent = false
+buildable = true
+diggable = true
+hardness = 1.0
+flammability = 0.8
+path_cost = 999.0
+harvest_resource_id = &"wood"
+harvest_amount = 1
+tool_required = &"axe"
+material_id = &"birch_planks"
+albedo_color = Color(0.77, 0.69, 0.53, 1)
+texture_top = &"birch_planks"
+texture_bottom = &"birch_planks"
+texture_side = &"birch_planks"

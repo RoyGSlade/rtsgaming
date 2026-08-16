@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"mossy_cobblestone"
+resolution = 128
+pattern = 1
+base_color = Color(0.48, 0.51, 0.45, 1)
+accent_color = Color(0.29, 0.42, 0.23, 1)
+accent_density = 0.5
+noise_seed = 328
+contrast = 1.0

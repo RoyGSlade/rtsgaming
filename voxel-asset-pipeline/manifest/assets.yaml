@@ -1,0 +1,28 @@
+# Asset manifest — the heart of the pipeline.
+# Adding a prop  = ~4 lines + `pipeline.py build <name>`.
+# Adding a unit  = ~6 lines + `pipeline.py build <name>`, one Mixamo pause,
+#                  then `pipeline.py resume <name>`.
+#
+# Schema per asset:
+#   name:        key (kebab-case, used for all filenames)
+#   type:        prop | unit
+#   prompt:      subject description only — the style/pose boilerplate lives
+#                in the workflow templates (tools/comfyui/workflows/)
+#   tris:        poly budget after decimation (default: prop 2000, unit 4000)
+#   lods:        true to also emit LOD1 (50%) and LOD2 (25%)   [default false]
+#   animations:  units only — clip names from animations.yaml  [default: all]
+#   voxelize:    optional true — blocky Remesh pass in Blender for true voxel
+#                geometry instead of smooth-mesh-with-voxel-texture
+
+assets:
+  torch:
+    type: prop
+    prompt: a wooden torch with an iron bracket, unlit
+    tris: 1000
+
+  soldier:
+    type: unit
+    prompt: a medieval soldier with a sword and round shield, leather armor
+    tris: 4000
+    lods: true
+    animations: [idle, walk, run, attack_melee, death]

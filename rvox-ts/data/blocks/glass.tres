@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"glass"
+display_name = "Glass"
+category = &"building"
+solid = true
+transparent = true
+walkable = false
+buildable = true
+diggable = true
+hardness = 0.4
+flammability = 0.0
+path_cost = 999.0
+rule_tags = PackedStringArray("brittle")
+construction_item_id = &"glass"
+construction_item_count = 1
+durability = 20.0
+material_id = &"glass"
+albedo_color = Color(0.76, 0.88, 0.96, 0.42)
+roughness = 0.08

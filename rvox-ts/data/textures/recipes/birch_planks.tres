@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"birch_planks"
+resolution = 128
+pattern = 4
+base_color = Color(0.77, 0.69, 0.53, 1)
+accent_color = Color(0.62, 0.53, 0.38, 1)
+accent_density = 0.35
+noise_seed = 321
+contrast = 1.0

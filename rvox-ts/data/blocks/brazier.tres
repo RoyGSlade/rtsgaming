@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"brazier"
+display_name = "Brazier"
+category = &"lighting"
+solid = false
+transparent = true
+walkable = false
+buildable = true
+diggable = false
+hardness = 1.0
+path_cost = 999.0
+shape_id = &"brazier"
+rule_tags = PackedStringArray("light_source", "open_flame", "heat_source")
+construction_item_id = &"brazier"
+construction_item_count = 1
+durability = 80.0
+material_id = &"brazier"
+albedo_color = Color(0.28, 0.26, 0.25, 1)
+roughness = 0.75
+light_energy = 4.2
+light_color = Color(1.0, 0.62, 0.28, 1)
+light_range = 11.0
+flame_effect = true

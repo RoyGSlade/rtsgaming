@@ -1,0 +1,2999 @@
+{
+  "id": "small_medieval_home_4",
+  "display_name": "Small Medieval Home 4",
+  "category": "medieval-houses",
+  "era": "village",
+  "footprint": [
+    7,
+    8
+  ],
+  "health": 1010,
+  "workers_required": 1,
+  "required_functional_tags": [
+    "foundation"
+  ],
+  "blocks": [
+    {
+      "pos": [
+        1,
+        0,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        3
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        0,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        2,
+        0,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        3,
+        0,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        4,
+        0,
+        1
+      ],
+      "block_id": "wood_door",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false,
+      "shape_id": "door",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        4,
+        0,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        3
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        5,
+        0,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "foundation",
+      "tags": [
+        "foundation"
+      ],
+      "build_stage": "foundation",
+      "requires_support": false
+    },
+    {
+      "pos": [
+        1,
+        1,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        1,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        1,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        1,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        1,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        1,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        1,
+        1
+      ],
+      "block_id": "wood_door",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "door",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        4,
+        1,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        1,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        2,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        2,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        2,
+        3
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        2,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        2,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        2,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        2,
+        2,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        2,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        4,
+        2,
+        1
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        4,
+        2,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        5,
+        2,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        2,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        2,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        2,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        0,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        0,
+        3,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        0
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        2
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        3
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        4
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        3,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        0
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        0
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        2
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        3
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        4
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        3,
+        7
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        3,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        6,
+        3,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        4,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        4,
+        2
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        4,
+        3
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        4,
+        4
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        4,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        4,
+        1
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        4,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        4,
+        1
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        4,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        4,
+        4,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        4,
+        4,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        2
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        3
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        4
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        5
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        4,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        5,
+        4,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        5,
+        4,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        5,
+        4,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        5,
+        4,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        5,
+        4,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        5,
+        4,
+        5
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        5,
+        4,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        5,
+        4,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        6,
+        4,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        6,
+        4,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        6,
+        4,
+        3
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        6,
+        4,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        6,
+        4,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        6,
+        4,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "slab",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        1,
+        5,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        5,
+        2
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        5,
+        4
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        5,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        5,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        2
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        5
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        5,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        6,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        6,
+        2
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        6,
+        3
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        6,
+        4
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        6,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        6,
+        1
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        2,
+        6,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        6,
+        1
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 0
+    },
+    {
+      "pos": [
+        3,
+        6,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        4,
+        6,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        6,
+        2
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        6,
+        3
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        6,
+        4
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        6,
+        5
+      ],
+      "block_id": "roof_shingles",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        6,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        0,
+        7,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        0,
+        7,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        0,
+        7,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        0,
+        7,
+        3
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        0,
+        7,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        0,
+        7,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        0,
+        7,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        1,
+        7,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        1,
+        7,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        7,
+        2
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        7,
+        3
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        7,
+        4
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        7,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        7,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        1,
+        7,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        7,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        7,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        7,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        3,
+        7,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        7,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        4,
+        7,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        2
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        3
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        4
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        5
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        6
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        7,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        5,
+        7,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        2
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        3
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        4
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        6
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        5,
+        7,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        1,
+        8,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        1,
+        8,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        8,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        1,
+        8,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        1,
+        8,
+        4
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        8,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        8,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        2,
+        8,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        8,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        8,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        3,
+        8,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        3,
+        8,
+        1
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        3,
+        8,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair_top",
+      "rotation_steps": 2
+    },
+    {
+      "pos": [
+        4,
+        8,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        4,
+        8,
+        1
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        8,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        4,
+        8,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        4,
+        8,
+        4
+      ],
+      "block_id": "oak_log",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        8,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        4,
+        8,
+        6
+      ],
+      "block_id": "wood_planks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        4,
+        8,
+        7
+      ],
+      "block_id": "stone_bricks",
+      "layer": "wall",
+      "tags": [
+        "wall"
+      ],
+      "build_stage": "wall",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        1,
+        9,
+        1
+      ],
+      "block_id": "stone",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        1,
+        9,
+        4
+      ],
+      "block_id": "stone",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        2,
+        9,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        9,
+        1
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        9,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        9,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        9,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        2,
+        9,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 3
+    },
+    {
+      "pos": [
+        3,
+        9,
+        0
+      ],
+      "block_id": "stone_bricks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        3,
+        9,
+        1
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        3,
+        9,
+        2
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        3,
+        9,
+        3
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        3,
+        9,
+        4
+      ],
+      "block_id": "wood_planks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        3,
+        9,
+        5
+      ],
+      "block_id": "stone_bricks",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true,
+      "shape_id": "stair",
+      "rotation_steps": 1
+    },
+    {
+      "pos": [
+        4,
+        9,
+        1
+      ],
+      "block_id": "stone",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    },
+    {
+      "pos": [
+        4,
+        9,
+        4
+      ],
+      "block_id": "stone",
+      "layer": "roof",
+      "tags": [
+        "roof"
+      ],
+      "build_stage": "roof",
+      "requires_support": true
+    }
+  ],
+  "sockets": [],
+  "storage_slots": [],
+  "recipes": [],
+  "source_url": "https://www.grabcraft.com/minecraft/small-medieval-home-4/medieval-houses"
+}

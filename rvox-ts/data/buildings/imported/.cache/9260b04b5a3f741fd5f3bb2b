@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+<head>  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="google-site-verification" content="7sjLXDzjt7NHNE7JFUO3kwSuuQ4NXD7i2yPY5sm1-H4" />
+  <meta name="p:domain_verify" content="13a0cae17c1f9880ac86ae94ca4ada1e"/>
+  <meta property="fb:admins" content="921279664577442"/>
+<meta property="fb:app_id" content="921279664577442"/>
+   <link rel="shortcut icon" href="https://www.grabcraft.com/favicon.ico" />   
+    <title>Medieval Houses - Blueprints for MineCraft Houses, Castles, Towers, and more | GrabCraft</title>
+  <meta name="keywords" content="Wold's biggest Minecraft models, objects, stuff, builds, blueprints library." />
+<meta name="description" content="This is page where all your Minecraft objects, builds, blueprints and objects come together. See how it is made!" />
+  
+  
+  <script type="text/javascript">
+    var WWW_URL = 'https://www.grabcraft.com/';
+    var REL_WWW_URL = '/';
+  </script>
+  
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/south-street/jquery-ui.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Aldrich:400,600,700,300|Lato:400,600,700,300|Open+Sans:400,600,700,300|Poiret+One:100,200,300,400,500,600,700|Dosis:400,500,600">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/manager/css/lytebox.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/assets/touchbox/css/touchbox.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/css/dragdealer.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/css/messages.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/template/default/css/menus.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/template/default/css/responsive.css">
+<link rel="stylesheet" href="https://www.grabcraft.com/template/default/css/style.css?v=3">
+<link rel="stylesheet" href="/css/shop.css">
+<link rel="stylesheet" href="/css/jquery.selectbox.css">
+<link rel="stylesheet" href="/css/content.blocks.css">
+<script src="https://www.grabcraft.com/js/custom-script.js"></script>
+<script src="https://www.grabcraft.com/js/dragdealer.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="https://www.grabcraft.com/js/es5-shim.min.js"></script>
+<script src="https://www.grabcraft.com/js/es5-sham.min.js"></script>
+<script src="//publisher.eboundservices.com/adsInternalReferral/adsInternalReferral.js?ver=20180207"></script>
+<script src="https://www.grabcraft.com/manager/js/lytebox.js"></script>
+<script src="https://www.grabcraft.com/js/translator.js"></script>
+<script src="https://www.grabcraft.com/js/menus.js"></script>
+<script src="https://www.grabcraft.com/js/jquery.cookie.js"></script>
+<script src="https://www.grabcraft.com/js/general.js"></script>
+<script src="https://www.grabcraft.com/assets/touchbox/js/touchbox.js"></script>
+<script src="https://www.grabcraft.com/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/shop.js"></script>
+<script src="/js/shop.filters.block.js"></script>
+<script src="/js/jquery.selectbox.js"></script>
+
+ 
+  
+  <script>
+(function(w, d) {
+w.adthrive = w.adthrive || {};
+w.adthrive.cmd = w.adthrive.cmd || [];
+w.adthrive.plugin = 'adthrive-ads-1.0.40-manual';
+w.adthrive.host = 'ads.adthrive.com';
+var s = d.createElement('script');
+s.async = true;
+s.referrerpolicy='no-referrer-when-downgrade';
+s.src = 'https://' + w.adthrive.host + '/sites/5f4f980a3b647d069851e702/ads.min.js?referrer=' + w.encodeURIComponent(w.location.href);
+var n = d.getElementsByTagName('script')[0];
+n.parentNode.insertBefore(s, n);
+})(window, document);
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7HWP6N');</script>
+<!-- End Google Tag Manager -->
+  
+  
+  
+  <script >(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			  ga('create', 'UA-65422543-1', 'auto');
+			  ga('send', 'pageview');
+
+$(document).on('tab-select', function() {
+    ga('send', 'pageview', location.pathname + location.search + location.hash);
+});</script>
+
+  
+
+ </head>
+
+
+<body id="page-minecraft" class="sidebar_off shop">
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/et_EE/all.js#xfbml=1&appId=921279664577442";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> 
+  <div id="background_header"></div>
+<div id="page">
+
+	<div class="container">
+        
+        <div class="visible-sm visible-xs visible-xxs menu-icon-wrapper">
+            <i class="fa fa-bars toggle-menu closed"></i>    
+        </div>
+        
+        <div id="main-menu-wrapper">
+            <div class="main-menu-wrap menu-wrap"  id="main-menu-wrap" ><ul class="menu level_1 multilevel-menu parent-menu drop-enabled horizontal-menu drop-right" id="main-menu"><li class="menu-24  level_1 first"><a href="/home/" >Home&nbsp;</a></li><li class="menu-20  level_1 selected"><a href="/minecraft/" >Objects&nbsp;</a><ul class="menu level_2 block child-menu" ><li class="cats-3 level_2 selected first"><a href="/minecraft/buildings" >BUILDINGS&nbsp;(4322)</a><ul class="menu level_3 block child-menu subsub" ><li class="cats-4 level_3 first"><a href="/minecraft/castles" >Castles&nbsp;(24)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-158 level_4 first last"><a href="/minecraft/medieval-castles" >Medieval Castles&nbsp;(20)</a></li></ul></li><li class="cats-46 level_3"><a href="/minecraft/churches" >Churches&nbsp;(77)</a></li><li class="cats-56 level_3"><a href="/minecraft/famous-films" >Famous Firms&nbsp;(141)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-60 level_4 first"><a href="/minecraft/cafes" >Cafés&nbsp;(23)</a></li><li class="cats-57 level_4"><a href="/minecraft/hotels" >Hotels&nbsp;(26)</a></li><li class="cats-58 level_4"><a href="/minecraft/restaurants" >Restaurants&nbsp;(60)</a></li><li class="cats-133 level_4"><a href="/minecraft/malls" >Malls&nbsp;(21)</a></li><li class="cats-160 level_4 last"><a href="/minecraft/service-stations" >Service Stations&nbsp;(11)</a></li></ul></li><li class="cats-52 level_3"><a href="/minecraft/fictional" >Fictional&nbsp;(26)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-53 level_4 first"><a href="/minecraft/movies" >Movies&nbsp;(3)</a></li><li class="cats-54 level_4"><a href="/minecraft/cartoons" >Cartoons&nbsp;(17)</a></li><li class="cats-161 level_4 last"><a href="/minecraft/video-games" >Video Games&nbsp;(6)</a></li></ul></li><li class="cats-10 level_3 selected"><a href="/minecraft/houses" >Houses&nbsp;(3019)</a><ul class="menu level_4 block child-menu subsub" ><li class="cats-42 level_4 first"><a href="/minecraft/wooden-houses" >Wooden Houses&nbsp;(211)</a></li><li class="cats-44 level_4"><a href="/minecraft/stone-houses" >Stone Houses&nbsp;(78)</a></li><li class="cats-45 level_4"><a href="/minecraft/modern-houses" >Modern Houses&nbsp;(346)</a></li><li class="cats-101 level_4 selected"><a href="/minecraft/medieval-houses" >Medieval Houses&nbsp;(1227)</a></li><li class="cats-43 level_4"><a href="/minecraft/quartz-houses" >Quartz Houses&nbsp;(24)</a></li><li class="cats-157 level_4"><a href="/minecraft/brick-houses" >Brick Houses&nbsp;(36)</a></li><li class="cats-159 level_4"><a href="/minecraft/tree-houses" >Tree Houses&nbsp;(32)</a></li><li class="cats-163 level_4"><a href="/minecraft/survival-houses" >Survival Houses&nbsp;(34)</a></li><li class="cats-191 level_4"><a href="/minecraft/starter-houses" >Starter Houses&nbsp;(19)</a></li><li class="cats-193 level_4 last"><a href="/minecraft/other-193" >Other&nbsp;(1011)</a></li></ul></li><li class="cats-48 level_3"><a href="/minecraft/sightseeing-buildings" >Sightseeing buildings&nbsp;(396)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-49 level_4 first"><a href="/minecraft/towers" >Towers&nbsp;(125)</a></li><li class="cats-50 level_4"><a href="/minecraft/skyscrapers" >Skyscrapers&nbsp;(11)</a></li><li class="cats-51 level_4"><a href="/minecraft/stadiums" >Stadiums&nbsp;(3)</a></li><li class="cats-162 level_4 last"><a href="/minecraft/miscellaneous-162" >Miscellaneous&nbsp;(196)</a></li></ul></li><li class="cats-143 level_3"><a href="/minecraft/farm-buildings" >Farm Buildings&nbsp;(227)</a></li><li class="cats-167 level_3"><a href="/minecraft/military-buildings" >Military Buildings&nbsp;(341)</a></li><li class="cats-195 level_3 last"><a href="/minecraft/ruins" >Ruins&nbsp;(53)</a></li></ul></li><li class="cats-96 level_2"><a href="/minecraft/outdoors" >OUTDOORS&nbsp;(928)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-97 level_3 first"><a href="/minecraft/parks" >Parks&nbsp;(22)</a></li><li class="cats-99 level_3"><a href="/minecraft/gardens" >Gardens&nbsp;(18)</a></li><li class="cats-98 level_3"><a href="/minecraft/bridges" >Bridges&nbsp;(42)</a></li><li class="cats-144 level_3"><a href="/minecraft/roads" >Roads&nbsp;(45)</a></li><li class="cats-190 level_3 last"><a href="/minecraft/other-190" >Other&nbsp;(800)</a></li></ul></li><li class="cats-5 level_2"><a href="/minecraft/statues" >STATUES&nbsp;(386)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-9 level_3 first"><a href="/minecraft/items" >Items&nbsp;(35)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-70 level_4 first"><a href="/minecraft/logos" >Logos&nbsp;(2)</a></li><li class="cats-71 level_4"><a href="/minecraft/tools" >Tools&nbsp;</a></li><li class="cats-72 level_4"><a href="/minecraft/minecraft-items" >Minecraft Items&nbsp;(22)</a><ul class="menu level_5 child-menu subsub" ><li class="cats-73 level_5 first"><a href="/minecraft/armor" >Armor&nbsp;</a></li><li class="cats-74 level_5"><a href="/minecraft/tools-1" >Tools&nbsp;</a></li><li class="cats-75 level_5 last"><a href="/minecraft/blocks" >Blocks&nbsp;</a></li></ul></li><li class="cats-151 level_4 last"><a href="/minecraft/miscellaneous-151" >Miscellaneous&nbsp;(11)</a></li></ul></li><li class="cats-65 level_3"><a href="/minecraft/animals" >Animals&nbsp;(71)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-66 level_4 first"><a href="/minecraft/farm-animals-1" >Farm Animals&nbsp;(11)</a></li><li class="cats-67 level_4"><a href="/minecraft/wild-animals-1" >Wild Animals&nbsp;(28)</a></li><li class="cats-68 level_4"><a href="/minecraft/fictional-animals-1" >Fictional Animals&nbsp;(25)</a></li><li class="cats-69 level_4"><a href="/minecraft/birds-1" >Birds&nbsp;(3)</a></li><li class="cats-145 level_4"><a href="/minecraft/pets" >Pets&nbsp;(3)</a></li><li class="cats-146 level_4 last"><a href="/minecraft/insects" >Insects&nbsp;(1)</a></li></ul></li><li class="cats-76 level_3"><a href="/minecraft/fictional-characters" >Fictional Characters&nbsp;(142)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-78 level_4 first"><a href="/minecraft/cartoon-characters" >Cartoon Characters&nbsp;(34)</a></li><li class="cats-147 level_4"><a href="/minecraft/comic-book-characters" >Comic Book Characters&nbsp;(10)</a></li><li class="cats-79 level_4"><a href="/minecraft/minecraft-creatures" >Minecraft Creatures&nbsp;(31)</a></li><li class="cats-80 level_4"><a href="/minecraft/movie-characters" >Movie Characters&nbsp;(20)</a></li><li class="cats-77 level_4"><a href="/minecraft/superheroes" >Superheroes&nbsp;(8)</a></li><li class="cats-150 level_4"><a href="/minecraft/supervillains" >Supervillains&nbsp;(3)</a></li><li class="cats-149 level_4"><a href="/minecraft/tv-series-characters" >TV Series Characters&nbsp;(1)</a></li><li class="cats-148 level_4"><a href="/minecraft/video-game-characters" >Video Game Characters&nbsp;(6)</a></li><li class="cats-196 level_4 last"><a href="/minecraft/new-category" >Mythological Creatures&nbsp;(16)</a></li></ul></li><li class="cats-81 level_3"><a href="/minecraft/miscellaneous" >Miscellaneous&nbsp;</a><ul class="menu level_4 child-menu subsub" ><li class="cats-82 level_4 first"><a href="/minecraft/memes" >Memes&nbsp;</a></li><li class="cats-83 level_4 last"><a href="/minecraft/emoji" >Emoji&nbsp;</a></li></ul></li><li class="cats-152 level_3 last"><a href="/minecraft/famous-characters" >Famous Characters&nbsp;(66)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-153 level_4 first"><a href="/minecraft/youtubers" >Youtubers&nbsp;(66)</a></li><li class="cats-154 level_4"><a href="/minecraft/gamers" >Gamers&nbsp;</a></li><li class="cats-155 level_4"><a href="/minecraft/reality-show-characters" >Reality Show Characters&nbsp;</a></li><li class="cats-166 level_4 last"><a href="/minecraft/singers" >Singers&nbsp;</a></li></ul></li></ul></li><li class="cats-168 level_2"><a href="/minecraft/pixel-art-168" >PIXEL ART&nbsp;(295)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-169 level_3 first"><a href="/minecraft/fictional-characters-169" >Fictional Characters&nbsp;(163)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-176 level_4 first"><a href="/minecraft/superheroes-176" >Superheroes&nbsp;(72)</a></li><li class="cats-179 level_4"><a href="/minecraft/tv-series-characters-179" >TV Series Characters&nbsp;(10)</a></li><li class="cats-180 level_4"><a href="/minecraft/video-game-characters-180" >Video Game Characters&nbsp;(32)</a></li><li class="cats-183 level_4"><a href="/minecraft/cartoon-characters-183" >Cartoon Characters&nbsp;(43)</a></li><li class="cats-184 level_4"><a href="/minecraft/comic-book-characters-184" >Comic Book Characters&nbsp;(3)</a></li><li class="cats-185 level_4 last"><a href="/minecraft/movie-characters-185" >Movie Characters&nbsp;(3)</a></li></ul></li><li class="cats-170 level_3"><a href="/minecraft/items-170" >Items&nbsp;(86)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-172 level_4 first"><a href="/minecraft/logos-172" >Logos&nbsp;(46)</a></li><li class="cats-173 level_4"><a href="/minecraft/minecraft-items-173" >Minecraft Items&nbsp;(24)</a></li><li class="cats-177 level_4 last"><a href="/minecraft/fictional-items" >Fictional Items&nbsp;(16)</a></li></ul></li><li class="cats-171 level_3"><a href="/minecraft/miscellaneous-171" >Miscellaneous&nbsp;(45)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-174 level_4 first"><a href="/minecraft/memes-174" >Memes&nbsp;(5)</a></li><li class="cats-175 level_4"><a href="/minecraft/emoji-175" >Emoji&nbsp;(12)</a></li><li class="cats-178 level_4 last"><a href="/minecraft/other" >Other&nbsp;(28)</a></li></ul></li><li class="cats-181 level_3 last"><a href="/minecraft/famous-characters-181" >Famous Characters&nbsp;(1)</a></li></ul></li><li class="cats-85 level_2"><a href="/minecraft/transportation" >TRANSPORTATION&nbsp;(1550)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-86 level_3 first"><a href="/minecraft/cars" >Cars&nbsp;(106)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-90 level_4 first"><a href="/minecraft/rally" >Rally&nbsp;(3)</a></li><li class="cats-91 level_4"><a href="/minecraft/sports-cars" >Sports Cars&nbsp;(32)</a></li><li class="cats-92 level_4 last"><a href="/minecraft/family-cars" >Family Cars&nbsp;(44)</a></li></ul></li><li class="cats-87 level_3"><a href="/minecraft/ships" >Ships&nbsp;(227)</a><ul class="menu level_4 child-menu subsub" ><li class="cats-93 level_4 first"><a href="/minecraft/sailing-ships" >Sailing Ships&nbsp;(51)</a></li><li class="cats-94 level_4"><a href="/minecraft/cruise-ships" >Cruise Ships&nbsp;(3)</a></li><li class="cats-137 level_4"><a href="/minecraft/historical-ships" >Historical Ships&nbsp;(30)</a></li><li class="cats-140 level_4"><a href="/minecraft/boats" >Boats&nbsp;(92)</a></li><li class="cats-192 level_4"><a href="/minecraft/submarines" >Submarines&nbsp;(3)</a></li><li class="cats-194 level_4"><a href="/minecraft/warships" >Warships&nbsp;(15)</a></li><li class="cats-198 level_4 last"><a href="/minecraft/airships" >Airships&nbsp;(25)</a></li></ul></li><li class="cats-88 level_3"><a href="/minecraft/emergency-vehicles" >Emergency Vehicles&nbsp;(167)</a></li><li class="cats-100 level_3"><a href="/minecraft/planes" >Planes&nbsp;(207)</a></li><li class="cats-156 level_3"><a href="/minecraft/buses" >Buses&nbsp;(22)</a></li><li class="cats-164 level_3"><a href="/minecraft/working-vehicles" >Working Vehicles&nbsp;(247)</a></li><li class="cats-165 level_3"><a href="/minecraft/other-transportation" >Other Transportation&nbsp;(503)</a></li><li class="cats-197 level_3 last"><a href="/minecraft/spaceships" >Spaceships&nbsp;(71)</a></li></ul></li><li class="cats-186 level_2 last"><a href="/minecraft/working-mechanisms" >Working Mechanisms&nbsp;(86)</a><ul class="menu level_3 child-menu subsub" ><li class="cats-187 level_3 first"><a href="/minecraft/machines" >Machines&nbsp;(48)</a></li><li class="cats-188 level_3"><a href="/minecraft/items-188" >Items&nbsp;(22)</a></li><li class="cats-189 level_3 last"><a href="/minecraft/secret-passageways" >Secret Passageways&nbsp;(8)</a></li></ul></li></ul></li><li class="menu-33  level_1"><a href="/blog/" >Blog&nbsp;</a></li><li class="menu-26  level_1"><a href="/feedback/" >Feedback&nbsp;</a></li><li class="menu-28  level_1 last"><a href="/blog/how-to-build-houses-in-minecraft-using-blueprints/id/12" >How to use GrabCraft&nbsp;</a></li></ul></div>
+        </div>
+		<div id="wrapper">
+			
+			<div id="header">
+			
+                <a href="/" id="logo_header">&nbsp;</a>	
+                
+                <form method="post" action="" onsubmit="return submitSearch();" id="search_form">
+<div id="search-box">
+	
+    <p class="input_label">SEARCH, GRAB AND CRAFT IN PASSION&nbsp;</p>
+    					
+	<input type="text" name="search" id="search" placeholder="Search..." value="" maxlength="40" />
+	
+	<input type="submit" id="searchsubmit" value="&nbsp;" />
+	
+</div>
+</form>                
+			</div> <!-- /#header -->
+			
+			<div id="main">
+			     
+                <div class="row">
+                
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 sidebar-wrapper">
+                        
+                        <div id="sidebar" class="sidebar syncHeight">
+
+    <div class="secondary-menu-wrap menu-wrap"  id="secondary-menu-wrap" ><ul class="menu level_1 multilevel-menu parent-menu vertical-menu drop-down" id="secondary-menu"><li class="cats-3 level_1 selected first"><a href="/minecraft/buildings" >BUILDINGS&nbsp;(4322)</a><ul class="menu level_2 block child-menu" ><li class="cats-4 level_2 first"><a href="/minecraft/castles" >Castles&nbsp;(24)</a></li><li class="cats-46 level_2"><a href="/minecraft/churches" >Churches&nbsp;(77)</a></li><li class="cats-56 level_2"><a href="/minecraft/famous-films" >Famous Firms&nbsp;(141)</a></li><li class="cats-52 level_2"><a href="/minecraft/fictional" >Fictional&nbsp;(26)</a></li><li class="cats-10 level_2 selected"><a href="/minecraft/houses" >Houses&nbsp;(3019)</a><ul class="menu level_3 block child-menu subsub" ><li class="cats-42 level_3 first"><a href="/minecraft/wooden-houses" >Wooden Houses&nbsp;(211)</a></li><li class="cats-44 level_3"><a href="/minecraft/stone-houses" >Stone Houses&nbsp;(78)</a></li><li class="cats-45 level_3"><a href="/minecraft/modern-houses" >Modern Houses&nbsp;(346)</a></li><li class="cats-101 level_3 selected"><a href="/minecraft/medieval-houses" >Medieval Houses&nbsp;(1227)</a></li><li class="cats-43 level_3"><a href="/minecraft/quartz-houses" >Quartz Houses&nbsp;(24)</a></li><li class="cats-157 level_3"><a href="/minecraft/brick-houses" >Brick Houses&nbsp;(36)</a></li><li class="cats-159 level_3"><a href="/minecraft/tree-houses" >Tree Houses&nbsp;(32)</a></li><li class="cats-163 level_3"><a href="/minecraft/survival-houses" >Survival Houses&nbsp;(34)</a></li><li class="cats-191 level_3"><a href="/minecraft/starter-houses" >Starter Houses&nbsp;(19)</a></li><li class="cats-193 level_3 last"><a href="/minecraft/other-193" >Other&nbsp;(1011)</a></li></ul></li><li class="cats-48 level_2"><a href="/minecraft/sightseeing-buildings" >Sightseeing buildings&nbsp;(396)</a></li><li class="cats-143 level_2"><a href="/minecraft/farm-buildings" >Farm Buildings&nbsp;(227)</a></li><li class="cats-167 level_2"><a href="/minecraft/military-buildings" >Military Buildings&nbsp;(341)</a></li><li class="cats-195 level_2 last"><a href="/minecraft/ruins" >Ruins&nbsp;(53)</a></li></ul></li><li class="cats-96 level_1"><a href="/minecraft/outdoors" >OUTDOORS&nbsp;(928)</a><ul class="menu level_2 block child-menu" ><li class="cats-97 level_2 first"><a href="/minecraft/parks" >Parks&nbsp;(22)</a></li><li class="cats-99 level_2"><a href="/minecraft/gardens" >Gardens&nbsp;(18)</a></li><li class="cats-98 level_2"><a href="/minecraft/bridges" >Bridges&nbsp;(42)</a></li><li class="cats-144 level_2"><a href="/minecraft/roads" >Roads&nbsp;(45)</a></li><li class="cats-190 level_2 last"><a href="/minecraft/other-190" >Other&nbsp;(800)</a></li></ul></li><li class="cats-5 level_1"><a href="/minecraft/statues" >STATUES&nbsp;(386)</a><ul class="menu level_2 block child-menu" ><li class="cats-9 level_2 first"><a href="/minecraft/items" >Items&nbsp;(35)</a></li><li class="cats-65 level_2"><a href="/minecraft/animals" >Animals&nbsp;(71)</a></li><li class="cats-76 level_2"><a href="/minecraft/fictional-characters" >Fictional Characters&nbsp;(142)</a></li><li class="cats-152 level_2 last"><a href="/minecraft/famous-characters" >Famous Characters&nbsp;(66)</a></li></ul></li><li class="cats-168 level_1"><a href="/minecraft/pixel-art-168" >PIXEL ART&nbsp;(295)</a><ul class="menu level_2 block child-menu" ><li class="cats-169 level_2 first"><a href="/minecraft/fictional-characters-169" >Fictional Characters&nbsp;(163)</a></li><li class="cats-170 level_2"><a href="/minecraft/items-170" >Items&nbsp;(86)</a></li><li class="cats-171 level_2"><a href="/minecraft/miscellaneous-171" >Miscellaneous&nbsp;(45)</a></li><li class="cats-181 level_2 last"><a href="/minecraft/famous-characters-181" >Famous Characters&nbsp;(1)</a></li></ul></li><li class="cats-85 level_1"><a href="/minecraft/transportation" >TRANSPORTATION&nbsp;(1550)</a><ul class="menu level_2 block child-menu" ><li class="cats-86 level_2 first"><a href="/minecraft/cars" >Cars&nbsp;(106)</a></li><li class="cats-87 level_2"><a href="/minecraft/ships" >Ships&nbsp;(227)</a></li><li class="cats-88 level_2"><a href="/minecraft/emergency-vehicles" >Emergency Vehicles&nbsp;(167)</a></li><li class="cats-100 level_2"><a href="/minecraft/planes" >Planes&nbsp;(207)</a></li><li class="cats-156 level_2"><a href="/minecraft/buses" >Buses&nbsp;(22)</a></li><li class="cats-164 level_2"><a href="/minecraft/working-vehicles" >Working Vehicles&nbsp;(247)</a></li><li class="cats-165 level_2"><a href="/minecraft/other-transportation" >Other Transportation&nbsp;(503)</a></li><li class="cats-197 level_2 last"><a href="/minecraft/spaceships" >Spaceships&nbsp;(71)</a></li></ul></li><li class="cats-186 level_1 last"><a href="/minecraft/working-mechanisms" >Working Mechanisms&nbsp;(86)</a><ul class="menu level_2 block child-menu" ><li class="cats-187 level_2 first"><a href="/minecraft/machines" >Machines&nbsp;(48)</a></li><li class="cats-188 level_2"><a href="/minecraft/items-188" >Items&nbsp;(22)</a></li><li class="cats-189 level_2 last"><a href="/minecraft/secret-passageways" >Secret Passageways&nbsp;(8)</a></li></ul></li></ul></div>
+    
+    <div class="sidebar-commericals">
+        
+                
+        <div class="sidebar-right-wrapper">
+        
+            <div class="fb-page" data-href="https://www.facebook.com/GrabCraft" data-width="300" data-height="240" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/GrabCraft"><a href="https://www.facebook.com/GrabCraft">GrabCraft</a></blockquote></div></div>
+            
+            <div class="default-wrapper">
+            
+            </div>
+        
+        </div>
+        
+    </div>
+    
+</div>
+                            
+                    </div>
+                    
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 content-wrapper">
+                        
+                        <div id="content-area" class="content-area syncHeight">
+
+        
+        	
+    
+	<div id="content" itemscope itemtype="http://schema.org/Thing">
+	
+		<h1 id="content-title" itemprop="name">Medieval Houses</h1>
+		
+		<div class="wrap">
+<div id="options-filter" data-base-url="/minecraft/medieval-houses/">
+	
+	
+	<div class="buttons-block block" style="float: left; clear: both; width: 100%; text-align: left;">
+		<select name="sort" id="sort-option" ><option value="price1" >Easiest objects first</option>
+<option value="price2" >Difficult objects first</option>
+<option value="date1"  selected="selected" >Newest first</option>
+<option value="date2" >Oldest first</option>
+<option value="name1" >Sort by name Z-A</option>
+<option value="name2" >Sort by name A-Z</option>
+</select><input type="text" name="search-keyword" value="" id="search-keyword" placeholder="Enter keyword..." class="inactive" ><a href="javascript: void(0);" id="submit-filters" class="btn btn-apply" onclick="submitOptionFilters('!|!');" >Update</a><a href="javascript: void(0);" id="reset-filters" class="btn btn-reset" onclick="resetOptionFilters();" >Clear</a>	</div>
+
+</div>
+<div class="clearfix"></div>
+
+<script>
+	
+	$('#options-filter select').selectBoxIt();
+	
+	$('#options-filter #search-keyword').bind('focus blur change keyup', function(){
+	
+		if(!$(this).val() || $(this).val() == $(this).attr('placeholder')) 
+		{ 
+			$(this).addClass('inactive'); 
+		
+		} else {
+			
+			$(this).removeClass('inactive'); 
+		} 
+	});
+	
+ 	$('#options-filter').keyup(function(e){
+ 		
+ 		if(e.which == 13) { submitOptionFilters('!|!'); }
+ 	});
+	
+	syncHeight('#options-filter .option-values');
+</script><div class="products row-size-4">
+
+	<div class="product-box item-1 first col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/unfurnished-nordic-large-house-1/medieval-houses" class="image" title="Unfurnished Nordic Large House 1">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_unfurnished-nordic-large-house-1-22146.png" alt="Unfurnished Nordic Large House 1" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/unfurnished-nordic-large-house-1/medieval-houses" title="Unfurnished Nordic Large House 1">
+				Unfurnished Nordic Large House 1			</a>
+			</h3>
+		
+		
+            <div class="product-description">Nordic Large houses are one of the best out there, I am sure of that. Well if You love big...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;3902</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/unfurnished-nordic-large-house-1/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/unfurnished-nordic-large-house-1/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-2  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/spruce-medieval-house-1/medieval-houses" class="image" title="Spruce Medieval House 1">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_spruce-medieval-house-1-22182.png" alt="Spruce Medieval House 1" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/spruce-medieval-house-1/medieval-houses" title="Spruce Medieval House 1">
+				Spruce Medieval House 1			</a>
+			</h3>
+		
+		
+            <div class="product-description">Oh wow, this house here is something special, isn't it? This dark wood - Spuce tree looks ...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1977</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/spruce-medieval-house-1/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/spruce-medieval-house-1/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-3  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/nordic-unfurnished-mansion/medieval-houses" class="image" title="Nordic Unfurnished Mansion">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_nordic-unfurnished-mansion-22154.png" alt="Nordic Unfurnished Mansion" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/nordic-unfurnished-mansion/medieval-houses" title="Nordic Unfurnished Mansion">
+				Nordic Unfurnished Mansion			</a>
+			</h3>
+		
+		
+            <div class="product-description">Now this is life - living in a fabulous mansion in the middle of the Nordic countries. Can...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;10318</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/nordic-unfurnished-mansion/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/nordic-unfurnished-mansion/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-4 last col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/viking-tavern/medieval-houses" class="image" title="Viking Tavern">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_viking-tavern-22102.png" alt="Viking Tavern" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/viking-tavern/medieval-houses" title="Viking Tavern">
+				Viking Tavern			</a>
+			</h3>
+		
+		
+            <div class="product-description">Oh Taverns, the best friends for a traveler. Well this Viking Tavern here looks huge actua...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;2334</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/viking-tavern/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/viking-tavern/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-5  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/unfurnished-nordic-home-1/medieval-houses" class="image" title="Unfurnished Nordic Home 1">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_unfurnished-nordic-home-1-22126.png" alt="Unfurnished Nordic Home 1" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/unfurnished-nordic-home-1/medieval-houses" title="Unfurnished Nordic Home 1">
+				Unfurnished Nordic Home 1			</a>
+			</h3>
+		
+		
+            <div class="product-description">You can cry, it is understandable ... this Nordic home is beautiful and it really is a hom...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1001</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/unfurnished-nordic-home-1/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/unfurnished-nordic-home-1/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-6  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/nordic-small-home/medieval-houses" class="image" title="Nordic Small Home">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_nordic-small-home-22122.png" alt="Nordic Small Home" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/nordic-small-home/medieval-houses" title="Nordic Small Home">
+				Nordic Small Home			</a>
+			</h3>
+		
+		
+            <div class="product-description">Oh how Nordic houses make my eyes watery - they are such wonderful houses and if You are g...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1136</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/nordic-small-home/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/nordic-small-home/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-7  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/small-viking-hut/medieval-houses" class="image" title="Small Viking Hut">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_small-viking-hut-22064.png" alt="Small Viking Hut" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/small-viking-hut/medieval-houses" title="Small Viking Hut">
+				Small Viking Hut			</a>
+			</h3>
+		
+		
+            <div class="product-description">A small Viking hut! Can You imagine living as a true strong and powerful Viking and owning...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1254</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/small-viking-hut/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/small-viking-hut/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-8 last col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/minimalist-gothic-house/medieval-houses" class="image" title="Minimalist Gothic House">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_minimalist-gothic-house-22061.png" alt="Minimalist Gothic House" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/minimalist-gothic-house/medieval-houses" title="Minimalist Gothic House">
+				Minimalist Gothic House			</a>
+			</h3>
+		
+		
+            <div class="product-description">Well this Gothic house here is looking rather adorable. It reminds me of Hobbit houses for...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;144</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/minimalist-gothic-house/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/minimalist-gothic-house/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-9  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/gothic-medieval-house-2/medieval-houses" class="image" title="Gothic Medieval House 2">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_gothic-medieval-house-2-22053.png" alt="Gothic Medieval House 2" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/gothic-medieval-house-2/medieval-houses" title="Gothic Medieval House 2">
+				Gothic Medieval House 2			</a>
+			</h3>
+		
+		
+            <div class="product-description">Medieval houses are amazing but You know which ones are even better - Yes, Gothic houses! ...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1429</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/gothic-medieval-house-2/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/gothic-medieval-house-2/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-10  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/gothic-medieval-house-1/medieval-houses" class="image" title="Gothic Medieval House 1">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_gothic-medieval-house-1-22049.png" alt="Gothic Medieval House 1" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/gothic-medieval-house-1/medieval-houses" title="Gothic Medieval House 1">
+				Gothic Medieval House 1			</a>
+			</h3>
+		
+		
+            <div class="product-description">Who is in to Gothic Medieval houses? If You are then You have just found a piece of gold r...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;894</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/gothic-medieval-house-1/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/gothic-medieval-house-1/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-11  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/medieval-grocery-store/medieval-houses" class="image" title="Medieval Grocery Store">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_medieval-grocery-store-22002.png" alt="Medieval Grocery Store" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/medieval-grocery-store/medieval-houses" title="Medieval Grocery Store">
+				Medieval Grocery Store			</a>
+			</h3>
+		
+		
+            <div class="product-description">You know what? I bet working in this grocery store would be a lot of fun! First of all, th...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1030</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/medieval-grocery-store/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/medieval-grocery-store/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-12 last col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/medieval-blacksmith-homestad/medieval-houses" class="image" title="Medieval Blacksmith Homestad">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_medieval-blacksmith-homestad-22014.png" alt="Medieval Blacksmith Homestad" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/medieval-blacksmith-homestad/medieval-houses" title="Medieval Blacksmith Homestad">
+				Medieval Blacksmith Homestad			</a>
+			</h3>
+		
+		
+            <div class="product-description">Well what do We have in here? A little blacksmith that is looking absolutely amazing and s...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;885</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/medieval-blacksmith-homestad/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/medieval-blacksmith-homestad/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-13  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/tall-medieval-unfurnished-house-5/medieval-houses" class="image" title="Tall Medieval Unfurnished House 5">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_tall-medieval-unfurnished-house-5-21732.png" alt="Tall Medieval Unfurnished House 5" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/tall-medieval-unfurnished-house-5/medieval-houses" title="Tall Medieval Unfurnished House 5">
+				Tall Medieval Unfurnished House 5			</a>
+			</h3>
+		
+		
+            <div class="product-description">Beautiful, unique and rather interesting Medieval house - is that what we all want? Well i...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1631</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/tall-medieval-unfurnished-house-5/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/tall-medieval-unfurnished-house-5/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-14  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/tall-medieval-brick-house-4/medieval-houses" class="image" title="Tall Medieval Brick House 4">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_tall-medieval-brick-house-4-21740.png" alt="Tall Medieval Brick House 4" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/tall-medieval-brick-house-4/medieval-houses" title="Tall Medieval Brick House 4">
+				Tall Medieval Brick House 4			</a>
+			</h3>
+		
+		
+            <div class="product-description">A brick house for Your beautiful Medieval town is finally here. Well there are plenty of h...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;1839</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/tall-medieval-brick-house-4/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/tall-medieval-brick-house-4/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-15  col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/tall-medieval-brick-house-3/medieval-houses" class="image" title="Tall Medieval Brick House 3">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_tall-medieval-brick-house-3-21736.png" alt="Tall Medieval Brick House 3" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/tall-medieval-brick-house-3/medieval-houses" title="Tall Medieval Brick House 3">
+				Tall Medieval Brick House 3			</a>
+			</h3>
+		
+		
+            <div class="product-description">A brick house into Your Medieval village, how about that? Check out this house here, how t...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;828</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/tall-medieval-brick-house-3/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/tall-medieval-brick-house-3/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div><div class="product-box item-16 last col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="wrap">
+	
+		<div class="product-image">
+			<a href="/minecraft/unfurnished-medieval-brick-house-3/medieval-houses" class="image" title="Unfurnished Medieval Brick House 3">
+				<img src="https://www.grabcraft.com/files/products/thumb/thumb_unfurnished-medieval-brick-house-3-21698.png" alt="Unfurnished Medieval Brick House 3" border="0" title=""  />			</a>
+		</div>
+	
+		<div class="text-info">
+	
+			<h3 class="name"><a href="/minecraft/unfurnished-medieval-brick-house-3/medieval-houses" title="Unfurnished Medieval Brick House 3">
+				Unfurnished Medieval Brick House 3			</a>
+			</h3>
+		
+		
+            <div class="product-description">A beautiful house for all Medieval villages is here. It is looking rather good, don't You ...</div>
+                    
+            <div class="price">
+                <div class="regular-price"><b><i class="fa fa-cubes"></i>&nbsp;Block count:&nbsp;454</b></div>
+            </div>
+            
+            
+            <a href="/minecraft/unfurnished-medieval-brick-house-3/medieval-houses#general" class="button more-info details">Details</a>
+			<a href="/minecraft/unfurnished-medieval-brick-house-3/medieval-houses#blueprints" class="button more-info blueprints">Blueprints</a>
+            
+        	            
+        
+		</div> <!-- /.text-info -->
+		
+			
+	</div>
+</div>
+</div>
+
+<div><ul class="pagination pagination-sm "  >
+        			<li class="first"><a href="/minecraft/medieval-houses/" title="">&laquo;&laquo;</a></li><li class="prev"><a href="/minecraft/medieval-houses/pg/1" title="">«</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/1" class="page_inactive">1</a></li><li class="page_number page_active active"><a href="/minecraft/medieval-houses/pg/2" class="page_active active">2</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/3" class="page_inactive">3</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/4" class="page_inactive">4</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/5" class="page_inactive">5</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/6" class="page_inactive">6</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/7" class="page_inactive">7</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/8" class="page_inactive">8</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/9" class="page_inactive">9</a></li><li class="page_number page_inactive"><a href="/minecraft/medieval-houses/pg/10" class="page_inactive">10</a></li><li class="next"><a href="/minecraft/medieval-houses/pg/3" title="">»</a></li><li class="last"><a href="/minecraft/medieval-houses/pg/77" title="">&raquo;&raquo;</a></li>	
+				</ul></div> <!-- pagination -->
+<script>
+	$(window).load(function(){ 
+		
+		setTimeout(function(){ 
+			
+			syncHeight('.products .product_box .image'); 
+			syncHeight('.products .product_box h3.name'); 
+			syncHeight('.products .product_box .text-info'); 
+			
+		} , 300); 
+	});
+</script></div>
+	   
+               
+	</div>
+	
+</div>                        
+                    </div>
+                </div>
+			
+			</div> <!-- /#main -->	
+			
+            <div id="signup_modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <p class="close_modal">Close</p>
+            </div>
+            
+            <div class="modal-body">
+                <h2>Attention! Some serious Minecraft Blueprints around here!</h2>
+                <p class="modal-intro">Sign up for the weekly newsletter to be the first to know about the most recent and dangerous floorplans!</p>
+                
+                <input type="text" name="modal_email" placeholder="E-mail" />
+                <input type="text" name="modal_name" placeholder="Name" />
+                <input type="submit" name="submit" onclick="submitModalNewsletterForm();" value="Get Ideas!" />
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+        $(function() {
+            var cookieValue     = $.cookie("has_seen_signup_modal");
+            var cookieSessionId = $.cookie("session_id");
+            var sessionId       = $.cookie("PHPSESSID");
+            
+            console.log(sessionId);
+            
+            if(cookieValue != "1") {
+                if(sessionId != cookieSessionId) {
+                    setTimeout(function() {
+                        $('#signup_modal').modal('show');
+                    },20000);
+                }
+            }
+                        
+            $.cookie("session_id", sessionId);
+            
+            $('.close_modal').click(function() {
+                $('#signup_modal').modal('hide');
+            });
+        });
+    
+
+</script>            
+			<div id="footer">
+                
+                <div id="registration-feedback"></div>
+                
+                <div class="container">
+                    
+                    <div class="row">
+                        
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="footer-content-blocks"><div class="links-block">
+	<h3 class="block-title">Quicklinks</h3>
+	
+	    
+    <ul>
+    
+                    
+            <li><a href="/blog/how-to-build-houses-in-minecraft-using-blueprints/id/12" >How to use GrabCraft</a></li>
+            
+                
+    </ul>
+    
+    	
+</div><div class="links-block">
+	<h3 class="block-title">Legal</h3>
+	
+	    
+    <ul>
+    
+                    
+            <li><a href="/terms-of-use-privacy-policy/" >Terms of Service and Privacy Policy</a></li>
+            
+                
+    </ul>
+    
+    	
+</div></div>                        </div>
+                        
+                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                            
+                            <div id="news-letter">
+                                
+                                <form id="order-newsletter" method="post">
+                                    <h3 class="newsletter-title">Sign up for newsletter</h3>
+                                    <input type="text" name="email" placeholder="E-mail" />
+                                    <input type="text" name="name" placeholder="Name" />
+                                    <input type="submit" name="submit" value="Get Ideas!" />
+                                </form>
+                                
+                            </div>
+                            
+                        </div>
+                
+                    </div>
+                    
+                    <div class="default-wrapper">
+                        <div id="law_text">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG.</div>
+                    </div>
+                
+                </div>
+                
+			</div> <!-- /#footer -->
+		
+		</div> <!-- /#wrapper -->
+	
+	</div> <!-- /#container -->
+
+</div> <!-- /#page -->
+<div id="background_footer"></div><script>
+		
+	windowSizeInfo();	
+	$(window).resize(function(){
+		windowSizeInfo();
+	});
+	
+	function windowSizeInfo()
+	{
+		var w = window.innerWidth;
+		var screen_type;
+		
+		if(w >= 1200) { screen_type = 'lg'; }
+		else if(w >= 992) { screen_type = 'md'; }
+		else if(w >= 768) { screen_type = 'sm'; }
+		else if(w >= 480) { screen_type = 'xs'; }
+		else { screen_type = 'xxs'; }		
+			
+		$('body').removeClass('screen-lg screen-md screen-sm screen-xs screen-xxs').addClass('screen-' + screen_type);		
+	}
+    
+    $(window).scroll(function() {
+        if($(window).scrollTop() > 0) {
+            $('#header').addClass('sticky');
+            $('#header').removeClass('usual');
+        } else {
+            $('#header').removeClass('sticky');
+            $('#header').addClass('usual');
+            
+            
+        }
+    })
+    
+    $(function() {
+        $('i.fa-bars.toggle-menu').click(function() {
+            if($(this).hasClass('open')) {
+                $('#main-menu-wrapper').hide(400);
+                $(this).removeClass('open');
+                $(this).addClass('closed');
+            } else {
+                $('#main-menu-wrapper').show(400);
+                $(this).addClass('open');
+                $(this).removeClass('closed');
+            }
+        })
+    });
+	
+</script>
+
+<script type="text/javascript" async src="https://btloader.com/tag?o=5698917485248512&upapi=true"></script>
+
+
+
+</body>
+
+</html>

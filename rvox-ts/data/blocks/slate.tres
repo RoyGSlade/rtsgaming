@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"slate"
+display_name = "Slate"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 2.0
+path_cost = 1.35
+harvest_resource_id = &"stone"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"slate"
+albedo_color = Color(0.36, 0.39, 0.43, 1)
+texture_top = &"slate"
+texture_bottom = &"slate"
+texture_side = &"slate"

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"tile_floor"
-resolution = 64
+resolution = 128
 pattern = 3
 base_color = Color(0.82, 0.8, 0.76, 1)
 accent_color = Color(0.68, 0.66, 0.62, 1)

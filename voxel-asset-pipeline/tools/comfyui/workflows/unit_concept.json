@@ -1,0 +1,64 @@
+{
+  "_comment": "Stage 1, units: FLUX.2 Klein 9B GGUF + Klein voxel LoRA character sheet. {PROMPT} filled by run_workflow.py. Fixed seed + fixed LoRA weight: consistency over beauty. EDIT-AFTER-DOWNLOAD: clip_name and vae_name are placeholders until the Klein text encoder (Qwen3-8B) and flux2 VAE land in models/text_encoders + models/vae — check actual filenames and update both workflow JSONs.",
+  "unet": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": { "unet_name": "Flux2-Klein-9B-True-V3-Q4_K.gguf" }
+  },
+  "clip": {
+    "class_type": "CLIPLoader",
+    "inputs": { "clip_name": "qwen3_8b_flux2_klein.safetensors", "type": "flux2" }
+  },
+  "vae": {
+    "class_type": "VAELoader",
+    "inputs": { "vae_name": "flux2_vae.safetensors" }
+  },
+  "lora": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": ["unet", 0],
+      "lora_name": "voxel_style.safetensors",
+      "strength_model": 0.9
+    }
+  },
+  "positive": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["clip", 0],
+      "text": "voxel art style, {PROMPT}, T-pose, arms out straight to the sides, front orthographic view, full body in frame, neutral lighting, plain solid background, 3D depth and volume"
+    }
+  },
+  "negative": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["clip", 0],
+      "text": "blurry, cropped, partial body, flat 2D drawing, busy background"
+    }
+  },
+  "latent": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": { "width": 1024, "height": 1024, "batch_size": 1 }
+  },
+  "sampler": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": ["lora", 0],
+      "positive": ["positive", 0],
+      "negative": ["negative", 0],
+      "latent_image": ["latent", 0],
+      "seed": 42,
+      "steps": 20,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "decode": {
+    "class_type": "VAEDecode",
+    "inputs": { "samples": ["sampler", 0], "vae": ["vae", 0] }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": { "images": ["decode", 0], "filename_prefix": "unit_concept" }
+  }
+}

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"granite"
+display_name = "Granite"
+category = &"terrain"
+solid = true
+transparent = false
+walkable = true
+buildable = true
+diggable = true
+hardness = 2.5
+path_cost = 1.35
+harvest_resource_id = &"stone"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"granite"
+albedo_color = Color(0.62, 0.54, 0.5, 1)
+texture_top = &"granite"
+texture_bottom = &"granite"
+texture_side = &"granite"

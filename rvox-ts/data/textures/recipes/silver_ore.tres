@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"silver_ore"
+resolution = 128
+pattern = 1
+base_color = Color(0.5, 0.5, 0.52, 1)
+accent_color = Color(0.84, 0.86, 0.9, 1)
+accent_density = 0.2
+noise_seed = 315
+contrast = 1.0

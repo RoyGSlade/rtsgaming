@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"mud"
+resolution = 128
+pattern = 2
+base_color = Color(0.36, 0.28, 0.2, 1)
+accent_color = Color(0.27, 0.2, 0.14, 1)
+accent_density = 0.4
+noise_seed = 303
+contrast = 1.0

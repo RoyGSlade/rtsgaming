@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/textures/texture_recipe.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+layer_name = &"mossy_stone"
+resolution = 128
+pattern = 2
+base_color = Color(0.55, 0.57, 0.53, 1)
+accent_color = Color(0.3, 0.45, 0.24, 1)
+accent_density = 0.45
+noise_seed = 312
+contrast = 1.0

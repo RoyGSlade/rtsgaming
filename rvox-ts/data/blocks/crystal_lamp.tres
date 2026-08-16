@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"crystal_lamp"
+display_name = "Crystal Lamp"
+category = &"lighting"
+solid = true
+transparent = false
+walkable = false
+buildable = true
+diggable = true
+hardness = 1.5
+path_cost = 999
+harvest_resource_id = &"crystal_shard"
+harvest_amount = 1
+tool_required = &"pickaxe"
+material_id = &"crystal_lamp"
+albedo_color = Color(0.55, 0.78, 0.82, 1)
+light_energy = 2.0
+light_color = Color(0.65, 0.9, 0.95, 1)
+light_range = 6.5
+texture_top = &"crystal_lamp"
+texture_bottom = &"crystal_lamp"
+texture_side = &"crystal_lamp"

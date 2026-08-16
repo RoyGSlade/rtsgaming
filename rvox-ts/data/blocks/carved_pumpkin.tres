@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"carved_pumpkin"
+display_name = "Carved Pumpkin"
+category = &"lighting"
+solid = true
+transparent = false
+walkable = false
+buildable = false
+diggable = true
+hardness = 0.4
+path_cost = 1.4
+harvest_resource_id = &"pumpkin"
+harvest_amount = 1
+tool_required = &""
+material_id = &"carved_pumpkin"
+albedo_color = Color(0.9, 0.55, 0.15, 1)
+light_energy = 1.6
+light_color = Color(1.0, 0.55, 0.15, 1)
+light_range = 5.5
+texture_top = &"carved_pumpkin"
+texture_bottom = &"carved_pumpkin"
+texture_side = &"carved_pumpkin"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"pine_log"
+display_name = "Pine Log"
+category = &"tree"
+solid = true
+transparent = false
+hardness = 1.3
+flammability = 0.95
+path_cost = 999.0
+harvest_resource_id = &"wood_log"
+harvest_amount = 4
+tool_required = &"axe"
+material_id = &"pine_log"
+albedo_color = Color(0.34, 0.22, 0.12, 1)
+texture_top = &"pine_log_top"
+texture_bottom = &"pine_log_top"
+texture_side = &"pine_log_side"

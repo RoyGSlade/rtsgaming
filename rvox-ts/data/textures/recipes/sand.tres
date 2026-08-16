@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"sand"
-resolution = 64
+resolution = 128
 pattern = 1
 base_color = Color(0.86, 0.77, 0.55, 1)
 accent_color = Color(0.93, 0.85, 0.64, 1)

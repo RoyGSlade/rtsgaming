@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"crystal_ore"
+display_name = "Crystal Ore"
+category = &"ore"
+solid = true
+transparent = false
+diggable = true
+hardness = 4.0
+path_cost = 999.0
+harvest_resource_id = &"crystal_shard"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"crystal_ore"
+albedo_color = Color(0.45, 0.5, 0.56, 1)
+texture_top = &"crystal_ore"
+texture_bottom = &"crystal_ore"
+texture_side = &"crystal_ore"

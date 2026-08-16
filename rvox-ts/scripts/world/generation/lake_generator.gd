@@ -22,12 +22,13 @@ extends RefCounted
 
 const DIRECTIONS: Array[Vector2i] = [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]
 
-# Tuned for a 128x128 chunk (4x the original 32x32 linear size — 16x the
-# area). MAX_FEATURES/MAX_SEED_ATTEMPTS/MAX_BASIN_SIZE scale with the
-# extra area; MIN_BASIN_SIZE/MAX_RISE_FROM_SEED stay small since those
-# describe an individual pond's shape, not the map size.
-const MAX_FEATURES := 10
-const MAX_SEED_ATTEMPTS := 150
+# Feature count/attempts scale with map area (these values are the tuned
+# 128x128 baseline); MIN/MAX_BASIN_SIZE and MAX_RISE_FROM_SEED stay fixed
+# since they describe an individual pond's shape, not the map size — and a
+# bounded basin also keeps the priority-flood's linear frontier-min scan
+# cheap no matter how large the map gets.
+const FEATURES_PER_128 := 10
+const SEED_ATTEMPTS_PER_128 := 150
 const MIN_BASIN_SIZE := 6
 const MAX_BASIN_SIZE := 400
 const MAX_RISE_FROM_SEED := 6
@@ -35,6 +36,9 @@ const MAX_RISE_FROM_SEED := 6
 func mark_lakes(chunk: ChunkData, config: WorldGenConfig, water_simulator: WaterFlowSimulator = null) -> void:
     if not config.generate_water:
         return
+    var area_scale := float(chunk.chunk_size * chunk.chunk_size) / (128.0 * 128.0)
+    var max_features := maxi(1, roundi(FEATURES_PER_128 * area_scale))
+    var max_seed_attempts := maxi(20, roundi(SEED_ATTEMPTS_PER_128 * area_scale))
     var rng := RandomNumberGenerator.new()
     rng.seed = config.world_seed + 701
 
@@ -46,7 +50,7 @@ func mark_lakes(chunk: ChunkData, config: WorldGenConfig, water_simulator: Water
 
     var placed := 0
     var attempts := 0
-    while placed < MAX_FEATURES and attempts < MAX_SEED_ATTEMPTS:
+    while placed < max_features and attempts < max_seed_attempts:
         attempts += 1
         var seed_pos := Vector2i(
             rng.randi_range(2, chunk.chunk_size - 3),

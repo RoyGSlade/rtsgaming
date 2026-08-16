@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"silver_ore"
+display_name = "Silver Ore"
+category = &"ore"
+solid = true
+transparent = false
+diggable = true
+hardness = 3.2
+path_cost = 999.0
+harvest_resource_id = &"raw_silver_ore"
+harvest_amount = 2
+tool_required = &"pickaxe"
+material_id = &"silver_ore"
+albedo_color = Color(0.6, 0.6, 0.62, 1)
+texture_top = &"silver_ore"
+texture_bottom = &"silver_ore"
+texture_side = &"silver_ore"

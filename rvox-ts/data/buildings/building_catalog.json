@@ -1,0 +1,163 @@
+{
+  "buildings": [
+    {
+      "id": "town_hall",
+      "name": "Town Hall",
+      "category": "core",
+      "description": "Settlement heart. Population, jobs, and the loss condition all live here.",
+      "footprint": [
+        6,
+        6
+      ],
+      "height": 5,
+      "color": "#c9a86a",
+      "cost": {
+        "wood": 80,
+        "stone": 60
+      }
+    },
+    {
+      "id": "house",
+      "name": "House",
+      "category": "core",
+      "description": "Shelters workers. More houses, more hands.",
+      "footprint": [
+        7,
+        8
+      ],
+      "height": 3,
+      "color": "#b08d57",
+      "cost": {
+        "wood": 20,
+        "stone": 5
+      },
+      "blueprint": "res://data/buildings/imported/small_medieval_home_4.json"
+    },
+    {
+      "id": "storage_yard",
+      "name": "Storage Yard",
+      "category": "core",
+      "description": "Open stockpile. Haulers drop gathered resources here.",
+      "footprint": [
+        4,
+        4
+      ],
+      "height": 2,
+      "color": "#8d7a5a",
+      "cost": {
+        "wood": 25
+      }
+    },
+    {
+      "id": "mine",
+      "name": "Mine",
+      "category": "economy",
+      "description": "Extracts raw ore and coal from ore-bearing ground.",
+      "footprint": [
+        3,
+        3
+      ],
+      "height": 3,
+      "color": "#7a7a85",
+      "cost": {
+        "wood": 30,
+        "stone": 10
+      }
+    },
+    {
+      "id": "lumber_camp",
+      "name": "Lumber Camp",
+      "category": "economy",
+      "description": "Woodcutters fell trees and stack lumber here.",
+      "footprint": [
+        3,
+        3
+      ],
+      "height": 3,
+      "color": "#6f8f4f",
+      "cost": {
+        "wood": 15
+      }
+    },
+    {
+      "id": "smelter",
+      "name": "Smelter",
+      "category": "economy",
+      "description": "Raw ore plus coal becomes iron ingots.",
+      "footprint": [
+        3,
+        4
+      ],
+      "height": 4,
+      "color": "#a4552f",
+      "cost": {
+        "wood": 10,
+        "stone": 40
+      }
+    },
+    {
+      "id": "tannery",
+      "name": "Tannery",
+      "category": "economy",
+      "description": "Turns raw hides into leather wraps for the forge.",
+      "footprint": [
+        4,
+        3
+      ],
+      "height": 3,
+      "color": "#9c6b3f",
+      "cost": {
+        "wood": 30
+      }
+    },
+    {
+      "id": "forge",
+      "name": "Forge",
+      "category": "economy",
+      "description": "The payoff machine: ingots, wraps, and handles become iron swords.",
+      "footprint": [
+        5,
+        5
+      ],
+      "height": 4,
+      "color": "#5f6b7a",
+      "cost": {
+        "wood": 20,
+        "stone": 45
+      },
+      "blueprint": "res://data/buildings/forge_blueprint_example.json"
+    },
+    {
+      "id": "barracks",
+      "name": "Barracks",
+      "category": "military",
+      "description": "Recruits equip forged swords and become swordsmen.",
+      "footprint": [
+        5,
+        4
+      ],
+      "height": 4,
+      "color": "#8a4a4a",
+      "cost": {
+        "wood": 50,
+        "stone": 30
+      }
+    },
+    {
+      "id": "watchtower",
+      "name": "Watchtower",
+      "category": "military",
+      "description": "Tall lookout. First line against raider attacks.",
+      "footprint": [
+        2,
+        2
+      ],
+      "height": 7,
+      "color": "#75655a",
+      "cost": {
+        "wood": 25,
+        "stone": 20
+      }
+    }
+  ]
+}

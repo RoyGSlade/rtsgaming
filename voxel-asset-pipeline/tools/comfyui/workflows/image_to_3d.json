@@ -1,0 +1,78 @@
+{
+  "_comment": "Stage 2: image -> textured GLB via Pixal3D GGUF inside ComfyUI (Arowx's ComfyUI-Trellis2-GGUF pack, based on its shipped Simple.json). {IMAGE} and {PREFIX} are filled by run_workflow.py. Q8_0 fits the 16GB card comfortably (Q4_K_M runs in ~6GB if needed). If model load fails on flash_attn, switch backend to 'xformers' or 'sdpa'. Known Pixal3D limits: back side is hallucinated (no multi-view yet), texturing is weak - Blender cleanup + RTS camera distance absorb both.",
+  "load_model": {
+    "class_type": "Trellis2LoadModel_GGUF",
+    "inputs": {
+      "modelname": "Pixal3D-GGUF",
+      "model_format": "GGUF Q8_0",
+      "backend": "flash_attn",
+      "device": "cuda",
+      "low_vram": true,
+      "keep_models_loaded": true
+    }
+  },
+  "load_image": {
+    "class_type": "LoadImage",
+    "inputs": { "image": "{IMAGE}" }
+  },
+  "preprocess": {
+    "class_type": "Trellis2PreProcessImage_GGUF",
+    "inputs": {
+      "image": ["load_image", 0],
+      "padding": 0,
+      "remove_background": true
+    }
+  },
+  "generate": {
+    "class_type": "Trellis2MeshWithVoxelGenerator_GGUF",
+    "inputs": {
+      "pipeline": ["load_model", 0],
+      "image": ["preprocess", 0],
+      "seed": 42,
+      "pipeline_type": "1024_cascade",
+      "sparse_structure_steps": 12,
+      "shape_steps": 12,
+      "texture_steps": 12,
+      "max_num_tokens": 999999,
+      "sparse_structure_resolution": 32,
+      "max_views": 4,
+      "generate_texture_slat": true,
+      "use_tiled_decoder": true,
+      "sampler": "euler"
+    }
+  },
+  "postprocess": {
+    "class_type": "Trellis2PostProcessAndUnWrapAndRasterizer_GGUF",
+    "inputs": {
+      "mesh": ["generate", 0],
+      "bvh": ["generate", 1],
+      "mesh_cluster_threshold_cone_half_angle_rad": 60.0,
+      "mesh_cluster_refine_iterations": 0,
+      "mesh_cluster_global_iterations": 1,
+      "mesh_cluster_smooth_strength": 1,
+      "texture_size": 2048,
+      "remesh": true,
+      "remesh_band": 1.0,
+      "remesh_project": 0.0,
+      "target_face_num": 500000,
+      "simplify_method": "Cumesh",
+      "fill_holes": true,
+      "texture_alpha_mode": "OPAQUE",
+      "dual_contouring_resolution": "1024",
+      "double_side_material": false,
+      "remove_floaters": true,
+      "bake_on_vertices": false,
+      "use_custom_normals": false,
+      "uv_unwrap_method": "Xatlas",
+      "remove_inner_faces": true
+    }
+  },
+  "export": {
+    "class_type": "Trellis2ExportMesh_GGUF",
+    "inputs": {
+      "trimesh": ["postprocess", 0],
+      "filename_prefix": "3D/{PREFIX}",
+      "file_format": "glb"
+    }
+  }
+}

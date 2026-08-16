@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 layer_name = &"grass_side"
-resolution = 64
+resolution = 128
 pattern = 2
 base_color = Color(0.42, 0.28, 0.16, 1)
 accent_color = Color(0.32, 0.56, 0.24, 1)

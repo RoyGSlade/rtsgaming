@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/metadata/block_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"coal_block"
+display_name = "Coal Block"
+category = &"ore"
+solid = true
+transparent = false
+walkable = false
+buildable = true
+diggable = true
+hardness = 3.0
+path_cost = 999
+harvest_resource_id = &"coal"
+harvest_amount = 9
+tool_required = &"pickaxe"
+material_id = &"coal_block"
+albedo_color = Color(0.06, 0.06, 0.07, 1)
+texture_top = &"coal_block"
+texture_bottom = &"coal_block"
+texture_side = &"coal_block"

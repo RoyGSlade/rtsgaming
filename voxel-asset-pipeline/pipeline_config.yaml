@@ -1,0 +1,4 @@
+# Local tool locations — edit to match this machine.
+blender: /home/donaven/Desktop/blender-5.1.2-linux-x64/blender
+comfyui_url: http://127.0.0.1:8188        # started via ../ComfyUI/run_comfyui.sh
+comfyui_output: /home/donaven/Desktop/rtsgaming/ComfyUI/output

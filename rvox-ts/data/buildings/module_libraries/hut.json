@@ -1,0 +1,311 @@
+{
+  "id": "hut",
+  "display_name": "Hut",
+  "category": "housing",
+  "era": "village",
+  "modules": [
+    {
+      "id": "stone_footing",
+      "block_id": "stone",
+      "roles": [
+        "foundation"
+      ],
+      "layer": "foundation",
+      "build_stage": "foundation",
+      "weight": 1.0,
+      "sockets_h": [
+        "footing"
+      ]
+    },
+    {
+      "id": "log_post",
+      "block_id": "oak_log",
+      "roles": [
+        "corner"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 1.0,
+      "sockets_up": [
+        "post"
+      ],
+      "sockets_down": [
+        "post"
+      ],
+      "tags": [
+        "frame"
+      ]
+    },
+    {
+      "id": "plank_wall",
+      "block_id": "wood_planks",
+      "roles": [
+        "wall"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 6.0,
+      "sockets_h": [
+        "wall"
+      ],
+      "sockets_up": [
+        "wall"
+      ],
+      "sockets_down": [
+        "wall"
+      ]
+    },
+    {
+      "id": "wall_window",
+      "block_id": "glass",
+      "roles": [
+        "wall"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 1.5,
+      "min_y": 2,
+      "max_y": 6,
+      "sockets_h": [
+        "wall"
+      ],
+      "sockets_up": [
+        "wall"
+      ],
+      "sockets_down": [
+        "wall"
+      ],
+      "forbid_h": [
+        "wall_window"
+      ],
+      "forbid_v": [
+        "wall_window"
+      ],
+      "tags": [
+        "window"
+      ]
+    },
+    {
+      "id": "stone_skirt",
+      "block_id": "stone_bricks",
+      "roles": [
+        "wall"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 8.0,
+      "max_y": 1,
+      "sockets_h": [
+        "wall"
+      ],
+      "sockets_up": [
+        "wall"
+      ],
+      "sockets_down": [
+        "wall"
+      ],
+      "tags": [
+        "facade"
+      ]
+    },
+    {
+      "id": "plank_floor",
+      "block_id": "wood_planks",
+      "roles": [
+        "floor"
+      ],
+      "layer": "floor",
+      "build_stage": "floor",
+      "weight": 4.0,
+      "sockets_h": [
+        "floor"
+      ]
+    },
+    {
+      "id": "tile_inlay",
+      "block_id": "tile_floor",
+      "roles": [
+        "floor"
+      ],
+      "layer": "floor",
+      "build_stage": "floor",
+      "weight": 2.0,
+      "sockets_h": [
+        "floor"
+      ]
+    },
+    {
+      "id": "interior_air",
+      "block_id": "air",
+      "roles": [
+        "interior"
+      ],
+      "layer": "interior",
+      "build_stage": "wall",
+      "weight": 1.0,
+      "sockets_h": [
+        "air"
+      ],
+      "sockets_up": [
+        "air"
+      ],
+      "sockets_down": [
+        "air"
+      ],
+      "tags": [
+        "interior"
+      ]
+    },
+    {
+      "id": "shingle_roof",
+      "block_id": "roof_shingles",
+      "roles": [
+        "roof"
+      ],
+      "layer": "roof",
+      "build_stage": "roof",
+      "weight": 1.0,
+      "sockets_h": [
+        "roof"
+      ],
+      "sockets_up": [
+        "roof"
+      ],
+      "sockets_down": [
+        "roof"
+      ]
+    },
+    {
+      "id": "support_column",
+      "block_id": "oak_log",
+      "roles": [
+        "column"
+      ],
+      "layer": "wall",
+      "build_stage": "wall",
+      "weight": 1.0,
+      "sockets_up": [
+        "column"
+      ],
+      "sockets_down": [
+        "column"
+      ],
+      "tags": [
+        "support"
+      ]
+    }
+  ],
+  "tiers": [
+    {
+      "tier": 1,
+      "name": "Shack",
+      "size": {
+        "width": [
+          4,
+          5
+        ],
+        "depth": [
+          4,
+          5
+        ],
+        "wall_height": [
+          3,
+          3
+        ]
+      },
+      "roof": "pyramid",
+      "chimney": false,
+      "health": 120,
+      "workers_required": 0,
+      "modules": [
+        "stone_footing",
+        "log_post",
+        "plank_wall",
+        "plank_floor",
+        "interior_air",
+        "shingle_roof"
+      ],
+      "lighting": {
+        "wall_torch": "torch",
+        "spacing": 4
+      }
+    },
+    {
+      "tier": 2,
+      "name": "Cottage",
+      "size": {
+        "width": [
+          6,
+          8
+        ],
+        "depth": [
+          5,
+          7
+        ],
+        "wall_height": [
+          4,
+          4
+        ]
+      },
+      "roof": "pyramid",
+      "chimney": true,
+      "health": 260,
+      "workers_required": 0,
+      "modules": [
+        "stone_footing",
+        "log_post",
+        "plank_wall",
+        "wall_window",
+        "plank_floor",
+        "tile_inlay",
+        "interior_air",
+        "shingle_roof"
+      ],
+      "lighting": {
+        "wall_torch": "torch",
+        "spacing": 4,
+        "entrance": "lantern"
+      }
+    },
+    {
+      "tier": 3,
+      "name": "Manor",
+      "size": {
+        "width": [
+          9,
+          12
+        ],
+        "depth": [
+          8,
+          10
+        ],
+        "wall_height": [
+          6,
+          7
+        ]
+      },
+      "roof": "pyramid",
+      "chimney": true,
+      "health": 520,
+      "workers_required": 0,
+      "modules": [
+        "stone_footing",
+        "log_post",
+        "plank_wall",
+        "wall_window",
+        "stone_skirt",
+        "plank_floor",
+        "tile_inlay",
+        "interior_air",
+        "shingle_roof",
+        "support_column"
+      ],
+      "lighting": {
+        "wall_torch": "torch",
+        "spacing": 5,
+        "entrance": "lantern"
+      },
+      "stories": 2
+    }
+  ]
+}
