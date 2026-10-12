@@ -53,6 +53,12 @@ var manifest: ScenarioManifest
 
 var profile: ProfileStore
 
+## Autosaves the in-progress run so a force-close/background can resume it
+## (DEMO_PLAN.md §8). Periodic + on app pause/close; cleared when the run ends.
+const AUTOSAVE_INTERVAL := 30.0
+var _run_store := RunStore.new()
+var _autosave_accum := 0.0
+
 var _planner := ScenarioPlanner.new()
 var _markers_root: Node3D
 var _train_accum := 0.0
@@ -82,6 +88,29 @@ func _process(delta: float) -> void:
 		if _train_accum >= TRAIN_INTERVAL:
 			_train_accum = 0.0
 			_try_train_swordsman()
+		_autosave_accum += delta
+		if _autosave_accum >= AUTOSAVE_INTERVAL:
+			_autosave_accum = 0.0
+			save_run()
+
+
+## Persist the in-progress run (seed + manifest + economy + director) so it can
+## resume after a force-close. No-op once the run has ended.
+func save_run() -> void:
+	if manifest == null or not manifest.valid or economy == null or director == null:
+		return
+	if director.outcome != MissionDirector.Outcome.NONE:
+		return
+	_run_store.save(manifest, economy, director)
+
+
+## Save immediately when the app is backgrounded or the window is closing
+## (Android pause / desktop close), so nothing is lost on force-close.
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_PAUSED \
+			or what == NOTIFICATION_WM_CLOSE_REQUEST \
+			or what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		save_run()
 
 
 ## Turn one banked sword into a swordsman, up to the objective goal. The forged
@@ -200,6 +229,8 @@ func _on_run_ended(outcome: int) -> void:
 				profile.award_unlock(unlock)
 		profile.record_run_result(won, director.swords_produced if director != null else 0)
 		profile.save_profile()
+	# The run is over — drop its autosave so it isn't resumed.
+	_run_store.clear()
 	run_resolved.emit(outcome, unlock)
 
 

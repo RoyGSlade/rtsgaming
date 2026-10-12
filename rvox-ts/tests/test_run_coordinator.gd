@@ -113,6 +113,30 @@ func test_loss_banks_no_unlock() -> void:
 	SaveIO.remove(path)
 
 
+func test_autosave_persists_then_clears_the_run() -> void:
+	var path := "user://__test_saves__/coord_run.json"
+	SaveIO.remove(path)
+	var h := _harness()
+	var coord: RunCoordinator = h["coord"]
+	var eco: EconomyController = h["eco"]
+	coord._run_store = RunStore.new(path)
+
+	var m := ScenarioManifest.new()
+	m.valid = true
+	m.seed = 77
+	coord.manifest = m
+	eco.add_stock(&"wood", 5)
+
+	coord.save_run()
+	assert_true(coord._run_store.has_run(), "In-progress run is autosaved")
+	assert_eq(int(coord._run_store.load_run()["seed"]), 77, "Save carries the seed for deterministic resume")
+
+	# Ending the run drops its autosave so a finished run isn't resumed.
+	coord._on_run_ended(MissionDirector.Outcome.LOSS)
+	assert_false(coord._run_store.has_run(), "Finished run's autosave is cleared")
+	SaveIO.remove(path)
+
+
 func test_stations_activate_only_when_their_building_completes() -> void:
 	# "Buildings are machines": no production until the smelter/forge are built.
 	var h := _harness()
